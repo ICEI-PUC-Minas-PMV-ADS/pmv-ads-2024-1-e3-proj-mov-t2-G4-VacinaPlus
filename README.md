@@ -19,7 +19,7 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 ## Orientador
 
-* MSc. José Wilson da Costa.
+* Udo Fritzke Junior.
 
 ## Instruções de utilização
 
