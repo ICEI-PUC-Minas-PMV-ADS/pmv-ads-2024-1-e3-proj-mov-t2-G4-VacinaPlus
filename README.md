@@ -7,6 +7,7 @@
 `Terceiro Semestre (E3)`
 
 Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+teste
 
 ## Integrantes
 
