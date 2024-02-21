@@ -3,16 +3,10 @@
 Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
+A utilização de carteirinhas de vacinação em papel propicia a acumulação desnecessária e excessiva de cartões de vacina, sujeitos a rasuras ou perdas ao longo do tempo, resultando na perda de controle sobre o histórico de vacinação. A administração inadequada de vacinas aumenta o risco de propagação de doenças, além de causar o inconveniente da repetição da vacinação.
 
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Com o intuito de conectar o crescente enfoque em práticas sustentáveis com a tecnologia, e considerando a indispensabilidade da internet no cotidiano, seja para entretenimento, gestão financeira ou o uso variado de aplicativos, procuramos promover a acessibilidade a um serviço online para cadastro, controle e registro do histórico de vacinação dos membros da família, de maneira conveniente e dinâmica.
 
 ## Objetivos
 
