@@ -10,12 +10,12 @@ Com o intuito de conectar o crescente enfoque em práticas sustentáveis com a t
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+Objetivo central do nosso projeto visa integrar um serviço de registro de vacinação que ainda hoje é feito para o usuário em papel. O que dificulta o controle tendo em vista que muitos acabam perdidos e com isso gerando um baixíssimo índice de retorno para as próximas doses de vacinas que são aplicadas ao longo da vida. Então nosso objetivo é digitalizar o cartão de vacinação dos cidadãos, para que com isso tenham um controle fácil e preciso das vacinas aplicadas ao longo da vida. Abaixo vou citar dois objetivos que são específicos do nosso sistema.  
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
+
  
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+> - Ter o registro de todas as vacinas que foram tomadas pela pessoa ou seja um histórico de vacinação.
+> - Receber os alertas para as próximas doses sem precisar se preocupar porque o nosso aplicativo irá informar pra você com antecedência.
 
 ## Justificativa
 
