@@ -14,8 +14,8 @@ Objetivo central do nosso projeto visa integrar um serviço de registro de vacin
 
 
  
-> - Ter o registro de todas as vacinas que foram tomadas pela pessoa ou seja um histórico de vacinação.
-> - Receber os alertas para as próximas doses sem precisar se preocupar porque o nosso aplicativo irá informar pra você com antecedência.
+- Ter o registro de todas as vacinas que foram tomadas pela pessoa ou seja um histórico de vacinação.
+- Receber os alertas para as próximas doses sem precisar se preocupar porque o nosso aplicativo irá informar pra você com antecedência.
 
 ## Justificativa
 
