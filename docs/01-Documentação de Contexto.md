@@ -19,7 +19,9 @@ Objetivo central do nosso projeto visa integrar um serviço de registro de vacin
 
 ## Justificativa
 
-A implementação de um cartão de vacinas virtual no celular é uma medida inovadora e essencial no contexto atual da saúde pública. Em meio a desafios como a pandemia global e a necessidade de rastreamento de vacinação em larga escala, a digitalização desse documento se mostra como uma solução eficaz. Além de proporcionar conveniência aos usuários, eliminando a necessidade de carregar um cartão físico, a versão virtual oferece atualizações em tempo real, facilitando o acesso às informações de imunização. Isso não apenas simplifica processos administrativos para profissionais de saúde, mas também contribui para a prevenção de doenças ao garantir que os indivíduos estejam sempre cientes de seu status de vacinação. Ao criar um cartão de vacinas virtual, estamos alinhando a tecnologia com a saúde pública, promovendo uma abordagem mais ágil, acessível e eficiente para o acompanhamento e a promoção da imunização, resultando em benefícios significativos para a sociedade como um todo.
+A implementação de um cartão de vacinas virtual no celular é uma medida inovadora e essencial no contexto atual da saúde pública. Em meio a desafios como a pandemia global e a necessidade de rastreamento de vacinação em larga escala, a digitalização desse documento se mostra como uma solução eficaz. Além de proporcionar conveniência aos usuários, eliminando a necessidade de carregar um cartão físico, a versão virtual oferece atualizações em tempo real, facilitando o acesso às informações de imunização. 
+
+Isso não apenas simplifica processos administrativos para profissionais de saúde, mas também contribui para a prevenção de doenças ao garantir que os indivíduos estejam sempre cientes de seu status de vacinação. Ao criar um cartão de vacinas virtual, estamos alinhando a tecnologia com a saúde pública, promovendo uma abordagem mais ágil, acessível e eficiente para o acompanhamento e a promoção da imunização, resultando em benefícios significativos para a sociedade como um todo.
 
 
 ## Público-Alvo
