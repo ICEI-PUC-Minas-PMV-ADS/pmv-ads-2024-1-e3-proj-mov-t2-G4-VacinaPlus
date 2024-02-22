@@ -19,12 +19,8 @@ Objetivo central do nosso projeto visa integrar um serviço de registro de vacin
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+A implementação de um cartão de vacinas virtual no celular é uma medida inovadora e essencial no contexto atual da saúde pública. Em meio a desafios como a pandemia global e a necessidade de rastreamento de vacinação em larga escala, a digitalização desse documento se mostra como uma solução eficaz. Além de proporcionar conveniência aos usuários, eliminando a necessidade de carregar um cartão físico, a versão virtual oferece atualizações em tempo real, facilitando o acesso às informações de imunização. Isso não apenas simplifica processos administrativos para profissionais de saúde, mas também contribui para a prevenção de doenças ao garantir que os indivíduos estejam sempre cientes de seu status de vacinação. Ao criar um cartão de vacinas virtual, estamos alinhando a tecnologia com a saúde pública, promovendo uma abordagem mais ágil, acessível e eficiente para o acompanhamento e a promoção da imunização, resultando em benefícios significativos para a sociedade como um todo.
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
 
 ## Público-Alvo
 
