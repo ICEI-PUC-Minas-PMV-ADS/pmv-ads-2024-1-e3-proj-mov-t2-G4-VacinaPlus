@@ -1,7 +1,14 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+Estamos desenvolvendo um aplicativo móvel que visa criar um cartão de vacinas digital para simplificar o acesso às informações de saúde, especialmente relacionadas à imunização. A motivação por trás desse projeto surge da necessidade de superar desafios causados pela perda ou danificação frequente de cartões físicos, agravados pela falta de um sistema centralizado para consulta rápida das doses recebidas.
 
+Com a pandemia de Covid-19 e a crescente conscientização sobre a importância das vacinas, tornou-se essencial ter um meio eficiente para rastrear e gerenciar o histórico de vacinação. O problema enfrentado pelos usuários é a carência de uma solução prática e segura para armazenar e acessar seus registros de vacinação, muitas vezes sem conhecimento sobre os calendários de imunização e datas de reforço.
+
+O aplicativo proposto atenderá a todas as faixas etárias, permitindo que os usuários registrem suas vacinas digitalmente, eliminando a necessidade de documentos físicos. Além disso, oferecerá um acompanhamento personalizado, permitindo que os usuários visualizem seu histórico de vacinação, recebam lembretes para doses de reforço e acessem informações relevantes sobre cada vacina.
+
+A justificativa para essa iniciativa está na praticidade proporcionada pela possibilidade de ter um cartão de vacinas digital no celular, facilitando o acesso rápido e seguro às informações. Além disso, reconhecemos que a imunização é fundamental para prevenir doenças e proteger a saúde individual e coletiva. 
+
+Com essa solução, esperamos atender a um amplo público-alvo, desde pais acompanhando a vacinação de seus filhos até idosos que precisam manter seus registros atualizados. Profissionais de saúde, escolas e empresas também poderão verificar o status vacinal de pacientes, alunos ou funcionários. Essa iniciativa visa promover a saúde pública e facilitar o acesso às informações essenciais sobre vacinas, contribuindo para um ambiente mais informado e saudável.
 ## Problema
 
 A utilização de carteirinhas de vacinação em papel propicia a acumulação desnecessária e excessiva de cartões de vacina, sujeitos a rasuras ou perdas ao longo do tempo, resultando na perda de controle sobre o histórico de vacinação. A administração inadequada de vacinas aumenta o risco de propagação de doenças, além de causar o inconveniente da repetição da vacinação.
