@@ -8,37 +8,30 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
+Pedro Paulo tem 41 anos, é empresário recém-formado em Comércio exterior. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está a procura de uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros. Sua fobia de germes e bactérias é seu maior inimigo, um aplicativo que o lembre das vacinas necessárias antes de suas contantes viagens será de grande ajuda contra sua fobia.
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
+Guilherme Nascimento tem 38 anos, casado, trabalha como padeiro em uma padaria no centro da cidade, após o falecimento de seu pai por hepatite b, passou a se preocupar mais com a sua saúde buscando sempre que possível estar em dia com suas vacinas, busca um aplicativo que possa lembrá-lo das mesmas já que sua rotina é muito puxada.
 
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
+Adriana Santos aos 29 anos já é gerente de supermercado e mãe de dois filhos, um de 10 e outro de 6 anos, depois que seu filho mais novo foi internado por pneumonia após contrair sarampo, passou a redobrar os cuidados com a família, ela quer um aplicativo que reúne todas as vacinas que todos da família devem manter em dia.
+
+Maria Oliveira tem 26 anos, solteira, está cursando enfermagem, e seu estágio é no hospital local. Ela está sempre atenta às últimas práticas médicas e procura maneiras de melhorar o atendimento ao paciente. Muitos pacientes relatam não conseguirem lembrar dos dias das vacinas, ela busca um aplicativo que notifique seus pacientes dos dias e quais vacinas tomar. 
+
 Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
 
 ## Histórias de Usuários
 
 Com base na análise das personas forma identificadas as seguintes histórias de usuários:
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
+|EU COMO... | QUERO/PRECISO ...  |PARA ...                  |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
-
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
+|Pedro | Desejo organizar adequadamente minhas vacinas | Para não perder tempo |
+|Pedro |Desejo ter acesso as informações na palma da mão | Para não ter o risco de perder |
+|Guilherme | Desejo que me envie lembretes sobre as datas de vacinação | Por que esqueço com frequência das coisas que não são relacionadas ao meu trabalho |
+|Guilherme | Desejo monitorar surtos de doenças específicas | Por que não acompanho as notícias pela tv |
+|Adriana | Desejo monitorar as vacinas da minha família | Por que não quer perder os dias certos |
+|Adriana | Desejo informações atualizadas sobre os protocolos de vacinação | Para que eu esteja sempre bem informada |
+|Maria | Desejo acessar rapidamente o histórico de vacinação sempre que necessário | Para que seja possível monitorar as informações com facilidade |
+|Maria | Desejo controle sobre as vacinas | Para que todas as informações estejam em um lugar só |
 
 ## Modelagem do Processo de Negócio 
 
