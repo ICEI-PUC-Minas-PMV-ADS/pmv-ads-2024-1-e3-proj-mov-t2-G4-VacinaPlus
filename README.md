@@ -6,8 +6,7 @@
 
 `Terceiro Semestre (E3)`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
-teste
+O projeto em desenvolvimento é um aplicativo de cartão de vacinas digital. Nele, os usuários terão acesso a informações sobre suas vacinas e saúde. O aplicativo permitirá que os usuários visualizem seu histórico de vacinação, saibam quais vacinas já receberam e acompanhem suas datas de imunização. Além disso, o app fornecerá informações relevantes sobre saúde, como lembretes para doses de reforço e orientações gerais. Com essa ferramenta, os usuários poderão manter seus registros de saúde de forma prática e segura.
 
 ## Integrantes
 
