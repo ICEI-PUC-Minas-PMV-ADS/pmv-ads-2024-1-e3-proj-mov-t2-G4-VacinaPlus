@@ -1,9 +1,15 @@
 
 # Metodologia
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a></span>
+A equipe decidiu utilizar o *Product Backlog* começando com uma lista priorizada de todas as funcionalidades e requisitos da carteira de vacinação. Isso inclui recursos como rastreamento de vacinas, lembretes, acesso fácil aos registros e compartilhamento seguro de informações. Em seguida *Sprint Planning* em reuniões de planejamento de sprint, selecionamos um conjunto de itens do backlog para trabalhar durante o sprint. Priorizando as funcionalidades mais importantes e que agreguem valor imediato aos usuários. Nas *Sprints* dividimos o trabalho em sprints de curto prazo, durando não mais que duas a quatro semanas. Durante cada sprint, a equipe se concentrou em completar as tarefas selecionadas do backlog. Durante as *Daily Standups* realizamos reuniões diárias curtas (standups) para acompanhar o progresso, identificar possíveis impedimentos e garantir que a equipe esteja alinhada com os objetivos do sprint. Nas *Sprint Review* ao final de cada sprint, apresentamos as funcionalidades desenvolvidas à equipe e aos stakeholders para feedback e validação. Com a *Sprint Retrospective* realizamos uma retrospectiva no final de cada sprint para revisar o que funcionou bem, identificamos oportunidades de melhoria e ajustar o processo conforme necessário. Por fim, nas *Iterações* com base no feedback recebido durante as revisões e retrospectivas, ajustamos o backlog e planejamos os próximos sprints de acordo.
 
-Descreva aqui a metodologia de trabalho do grupo para atacar o problema. Definições sobre os ambiente de trabalho utilizados pela  equipe para desenvolver o projeto. Abrange a relação de ambientes utilizados, a estrutura para gestão do código fonte, além da definição do processo e ferramenta através dos quais a equipe se organiza (Gestão de Times).
+*Sprint*   | Etapa da Disciplina                                         | Entregável/Artefato 
+---------- | ----------------------------------------------------------- | -----------------
+1          | [Etapa 1 - Análise e Projeto de Sistemas de Software](https://pucminas.instructure.com/courses/178232/assignments/859902) | <ul><li>Documento de Contexto;</li><li>Especificação do Problema;</li>
+2          | [Etapa 2 - Projeto da solução](https://pucminas.instructure.com/courses/178232/assignments/859911) | <ul><li>Metodologia;</li><li>Arquitetura da Solução;</li><li>Projeto de Interface;</li><li>Programação de Funcionalidades ;</li><li>Planos de Testes de Funcionalidades e Usabilidade;</li><li>Registros de Testes de Funcionalidades e Usabilidade;</li><li>Criar tabelas, gráficos ou dashboards com no mínimo 5 indicadores de desempenho e metas para o processo de negócio;</li>
+3          | [Etapa 3 - Desenvolvimento da solução - Fase 1](https://pucminas.instructure.com/courses/178232/assignments/859928) | <ul><li>Programação de Funcionalidades ;</li><li>Planos de Testes de Funcionalidades e Usabilidade;</li><li>Registros de Testes de Funcionalidades e Usabilidade;</li>
+4          | [Etapa 4 - Desenvolvimento da solução Fase 2](https://pucminas.instructure.com/courses/178232/assignments/859947) | <ul><li>Programação de Funcionalidades;</li><li>Planos de Testes de Funcionalidades e Usabilidade;</li><li>Registros de Testes de Funcionalidades e Usabilidade;</li>
+5          | [Etapa 5 - Relatórios das avaliações e entrega da solução](https://pucminas.instructure.com/courses/178232/assignments/859961) | <ul><li>Considerações Finais;</li><li>Entrega de Vídeo de Apresentação Final e PDF usado na Apresentação;</li><li>Realização da Apresentação Final;</li>
 
 ## Relação de Ambientes de Trabalho
 
@@ -45,43 +51,38 @@ Discuta como a configuração do projeto foi feita na ferramenta de versionament
 
 ### Divisão de Papéis
 
-Apresente a divisão de papéis entre os membros do grupo.
+ Os papéis *Scrum* foram estabelecidos da seguinte forma:
 
-Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento. A equipe está organizada da seguinte maneira:
-- Scrum Master: Felipe Domingos;
-- Product Owner: Rommel Carneiro;
-- Equipe de Desenvolvimento: Pedro Penna, Pedro Ivo, Rodrigo Richard;
-- Equipe de Design: Simone Nogueira.
-
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
-> - [Os papéis do Scrum e a verdade sobre cargos nessa técnica](https://www.atlassian.com/br/agile/scrum/roles)
+Papel                | Responsável
+---------------------| -------------------------
+***Product Owner***  | Felipe Joseph S de Almeida
+***Scrum Master***   | Eduardo Gonçalves Sena
+***Developers***     | Simon Henrique Souza C, Stefany Barbosa Ribeiro, Pedro Henrique Gomes de Souza, Gabriel Yan Moreira Laignier
 
 ### Processo
 
-Coloque  informações sobre detalhes da implementação do Scrum seguido pelo grupo. O grupo deverá fazer uso do recurso de gerenciamento de projeto oferecido pelo GitHub, que permite acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
- 
-> **Links Úteis**:
-> - [Planejamento e Gestáo Ágil de Projetos](https://pucminas.instructure.com/courses/87878/pages/unidade-2-tema-2-utilizacao-de-ferramentas-para-controle-de-versoes-de-software)
-> - [Sobre quadros de projeto](https://docs.github.com/pt/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards)
-> - [Project management, made simple](https://github.com/features/project-management/)
-> - [Sobre quadros de projeto](https://docs.github.com/pt/github/managing-your-work-on-github/about-project-boards)
-> - [Como criar Backlogs no Github](https://www.youtube.com/watch?v=RXEy6CFu9Hk)
-> - [Tutorial Slack](https://slack.com/intl/en-br/)
+Para a organização e distribuição das tarefas do projeto, o grupo esta utilizando o GitHub, seguindo os critérios de:
+
+- `Backlog`: todas as atividades que devem ser realizadas no projeto, desde a documentação até o desenvolvimento final do site.
+- `To do (atualizado a cada vencimento de prazo)`: Apresenta o prazo da sprint atual e o que foi definido previamente para ser  realizado até o final da mesma.
+- `In progress`: O que está sendo feito.
+- `Done`: Tudo o que foi finalizado.
+
+#### Backlog em 01/03/2024
+![Backlog010324](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/128644865/eadd5187-ff64-4bd7-b1c7-8723fe261fae)
+
 
 ### Ferramentas
 
-As ferramentas empregadas no projeto são:
+O desenvolvimento deste projeto foi facilitado pelo uso das seguintes ferramentas:
 
-- Editor de código.
-- Ferramentas de comunicação
-- Ferramentas de desenho de tela (_wireframing_)
-
-O editor de código foi escolhido porque ele possui uma integração com o sistema de versão. As ferramentas de comunicação utilizadas possuem integração semelhante e por isso foram selecionadas. Por fim, para criar diagramas utilizamos essa ferramenta por melhor captar as necessidades da nossa solução.
-
-Liste quais ferramentas foram empregadas no desenvolvimento do projeto, justificando a escolha delas, sempre que possível.
- 
-> **Possíveis Ferramentas que auxiliarão no gerenciamento**: 
-> - [Slack](https://slack.com/)
-> - [Github](https://github.com/)
+Finalidade                                          | Ferramenta                   |
+--------------------------------------------------- |----------------------------- |
+Hospedagem do código-fonte                          | *Github*                     |
+Hospedagem da documentação                          | *Github*                     |
+Gerenciamento do projeto                            | *Github*                     |
+Criação dos *wireframes* e do *userflow* interativo |                       |
+Comunicação assíncrona                              | *WhatsApp*                   |
+Comunicação síncrona                                | *Microsoft Teams*            |
+Edição de código e texto                            |          |
+Servidor de hospedagem                              | *Github*                     |
