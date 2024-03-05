@@ -72,8 +72,18 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|RF-001| O aplicativo deve permitir ao usuário criar uma conta.  | ALTA | 
+|RF-002| O aplicativo deve permitir que o usuário faça login.  | ALTA |
+|RF-003| O aplicativo deve permitir ao usuário gerenciar seu cadastro.   | ALTA |
+|RF-004| O aplicativo deve fornecer um sistema de notificação para lembrar o usuário sobre datas importantes relacionadas à administração de vacinas, como datas de reforço ou atualizações necessárias.   | BAIXA |
+|RF-005| O aplicativo deve permitir ao usuário gerenciar o cadastro das vacinas.   | ALTA |
+|RF-006| O aplicativo deve mostrar o histórico das vacinas cadastradas pelo usuário.   | ALTA |
+|RF-007| O aplicativo deve permitir ao usuário buscar informações sobre diferentes tipos de vacinas disponíveis, incluindo sua eficácia, efeitos colaterais e recomendações de uso.    | ALTA |
+|RF-008| O aplicativo deve permitir ao usuário exportar ou imprimir o histórico de vacinas para compartilhamento com profissionais de saúde ou para documentação pessoal.    | MÉDIA |
+|RF-009| O aplicativo deve permitir acesso à documentação de termos e condições de uso e de políticas de privacidade.  | BAIXA |
+|RF-010| O aplicativo deve permitir ao usuário buscar informações sobre vacinas disponíveis.   | MÉDIA |
+|RF-011| O aplicativo deve notificar o usuário sobre novidades relacionadas à saúde pública, como campanhas de vacinação ou atualizações de políticas de imunização.   | BAIXA |
+|RF-012| O aplicativo deve possibilitar ao usuário adicionar informações sobre alergias ou restrições médicas relevantes para a administração de vacinas. | MÉDIA |
 
 ### Requisitos não Funcionais
 
