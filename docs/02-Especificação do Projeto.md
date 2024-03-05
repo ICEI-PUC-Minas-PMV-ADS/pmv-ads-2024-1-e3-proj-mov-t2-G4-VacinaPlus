@@ -1,10 +1,6 @@
 # Especificações do Projeto
 
-<span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
-
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
-
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
+Com a colaboração ativa dos usuários, definimos com precisão os desafios e focos essenciais do projeto. Realizamos entrevistas online, abordando tópicos predefinidos, para coletar insights valiosos. Essa interação dinâmica permitiu a consolidação dos dados em personas e histórias de usuários, proporcionando uma compreensão mais rica e interativa do problema em questão.
 
 ## Personas
 
@@ -15,8 +11,6 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 ![MOTab](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/128644865/5a94cc6d-74dc-4ed0-b714-bd162928b20d)
 
 ![GNTab](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/128644865/752dfb2a-3cdf-4d1e-8899-83ae48469f71)
-
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
 
 ## Histórias de Usuários
 
