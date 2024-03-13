@@ -23,7 +23,8 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 ## Modelo Físico
 
-Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do banco de dados. Este arquivo deverá ser incluído dentro da pasta src\bd.
+![Untitled (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/126032592/0c0d120f-7d7a-4e58-a314-1e34950308ce)
+
 
 ## Tecnologias Utilizadas
 
