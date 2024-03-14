@@ -8,7 +8,7 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 ## Diagrama de Classes
 
-![vacinamais_page-0001](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/126032592/5ba24e59-8b8f-40a4-9c91-d531f2f22d14)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/129537841/ffdca6bd-0626-42e2-b7dc-6f673ff629cb)
 
 
 ## Modelo ER
