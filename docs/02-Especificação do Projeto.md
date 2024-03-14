@@ -53,9 +53,13 @@ Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em segu
 
 ## Indicadores de Desempenho
 
-Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores.  
-
-![Indicadores de Desempenho](img/02-indic-desemp.png)
+| Nº | Indicador | Objetivo | Descrição | Cálculo | Fonte de Dados | Perspectiva | Meta | Periodicidade |
+|----|-----------|----------|-----------|---------|----------------|-------------|------|---------------|
+|	1	| ... | ... | ... | ... | ... | ... | ... |
+|	2	| ... | ... | ... | ... | ... | ... | ... |
+|	3	| ... | ... | ... | ... | ... | ... | ... |
+|	4	| ... | ... | ... | ... | ... | ... | ... |
+|	5	| ... | ... | ... | ... | ... | ... | ... |
 
 ## Requisitos
 
