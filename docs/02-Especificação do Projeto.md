@@ -31,11 +31,13 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 ### Análise da Situação Atual
 
-Apresente aqui os problemas existentes que viabilizam sua proposta. Apresente o modelo do sistema como ele funciona hoje. Caso sua proposta seja inovadora e não existam processos claramente definidos, apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente, mesmo que não se utilize tecnologia computacional. 
+Atualmente, o uso de papel para registros de vacinas é considerado antiquado e restritivo, exigindo constantes adições de novas folhas para atualizações. Além disso, o processo é manual e há o risco de perder documentos tão importantes como os cartões de vacinação. Para solucionar essas questões, imaginamos um sistema que simplifica e organiza o registro de vacinas.
+
+Dada a prevalência de dispositivos eletrônicos como computadores, tablets e smartphones, propomos aproveitar essa tecnologia para desenvolver uma aplicação móvel. Com esta aplicação, os usuários teriam controle total sobre suas vacinas na ponta dos dedos, de maneira fácil e organizada.
 
 ### Descrição Geral da Proposta
 
-Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias.
+Descubra o Vacina+, a solução completa para gerenciar seu histórico de vacinação de forma simples e eficaz, diretamente na ponta dos seus dedos! Esqueça a papelada e as preocupações - com o Vacina+, você pode registrar suas vacinas de maneira rápida, fácil e organizada. Mantenha o controle total sobre quais vacinas você já tomou, suas doses, datas importantes e até mesmo receba lembretes sobre suas próximas vacinações necessárias. Armazene e acesse informações importantes, históricos de vacinação e quaisquer vacinas pendentes com qualidade, rapidez e eficiência. Com o Vacina+, você tem o poder de gerenciar sua saúde com total confiança e controle.
 
 ### Processo 1 – NOME DO PROCESSO
 
@@ -51,12 +53,9 @@ Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em segu
 
 ## Indicadores de Desempenho
 
-Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores. 
-
-Usar o seguinte modelo: 
+Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores.  
 
 ![Indicadores de Desempenho](img/02-indic-desemp.png)
-Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe a ser apresentado a posteriori. 
 
 ## Requisitos
 
