@@ -166,6 +166,8 @@ O gerenciamento adequado de tarefas contribuirá para que o projeto alcance alto
 
 ## Gestão de Orçamento
 
-O processo de determinar o orçamento do projeto é uma tarefa que depende, além dos produtos (saídas) dos processos anteriores do gerenciamento de custos, também de produtos oferecidos por outros processos de gerenciamento, como o escopo e o tempo.
+A administração financeira de um projeto é crucial para prever e controlar seus gastos e orçamentos. É fundamental garantir que o planejamento financeiro esteja alinhado com o cronograma do projeto, a fim de evitar surpresas ao longo de sua execução, como destacado por Dias (2024) e conforme recomendado pelo Guia PMBoK.
+
+Para criar a tabela de orçamento a seguir, foram considerados os custos ao longo de um período de seis meses, incluindo a contratação de seis stakeholders, a aquisição de seis estações de trabalho, a assinatura de um plano de acesso à internet e a licença de software de desenvolvimento.
 
 ![Orçamento](img/02-orcamento.png)
