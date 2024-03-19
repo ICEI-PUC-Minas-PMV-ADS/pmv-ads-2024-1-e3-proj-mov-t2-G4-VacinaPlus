@@ -138,7 +138,19 @@ De acordo com o PMBoK v6 as dez áreas que constituem os pilares para gerenciar 
 
 Com diagramas bem organizados que permitem gerenciar o tempo nos projetos, o gerente de projetos agenda e coordena tarefas dentro de um projeto para estimar o tempo necessário de conclusão.
 
-![Diagrama de rede simplificado notação francesa (método francês)](img/02-diagrama-rede-simplificado.png)
+Com o intuito de fornecer uma visão abrangente das atividades e de suas interações, bem como destacar os prazos associados a cada uma, o nosso projeto foi subdividido em etapas com datas específicas de conclusão. Cada etapa está estritamente alinhada com as datas estabelecidas no diagrama de rede simplificado, garantindo assim o cumprimento dos prazos previstos.
+
+| Etapa da Disciplina                                         | Período  
+| ----------------------------------------------------------- | -----------------
+| Etapa 1 - Análise e Projeto de Sistemas de Software | <ul><li>Duração: 39 Dias</li><li>Inico: 01/02/24</li><li>Fim: 10/03/24</li>
+| Etapa 2 - Projeto da solução | <ul><li>Duração: 20 Dias</li><li>Inico: 11/03/24</li><li>Fim: 31/03/24</li>
+| Etapa 3 - Desenvolvimento da solução - Fase 1 | <ul><li>Duração: 20 Dias</li><li>Inico: 01/04/24</li><li>Fim: 21/04/24</li>
+| Etapa 4 - Desenvolvimento da solução Fase 2 | <ul><li>Duração: 34 Dias</li><li>Inico: 22/04/24</li><li>Fim: 26/05/24</li>
+| Etapa 5 - Relatórios das avaliações e entrega da solução | <ul><li>Duração: 26 Dias</li><li>Inico: 27/05/24</li><li>Fim: 23/06/24</li>
+
+Para organização e distribuição das tarefas do projeto, o grupo utilizará o aplicativo de gerenciamento de projetos Git Projects.
+
+![Captura de tela 2024-03-18 213910](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/74187849/f0aaec02-3fe2-4df3-ac0a-372878b555e9)
 
 O gráfico de Gantt ou diagrama de Gantt também é uma ferramenta visual utilizada para controlar e gerenciar o cronograma de atividades de um projeto. Com ele, é possível listar tudo que precisa ser feito para colocar o projeto em prática, dividir em atividades e estimar o tempo necessário para executá-las.
 
