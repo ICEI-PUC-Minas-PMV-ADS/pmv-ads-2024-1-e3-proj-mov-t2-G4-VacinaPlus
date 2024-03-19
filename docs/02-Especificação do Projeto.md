@@ -107,6 +107,21 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 O diagrama de casos de uso é o próximo passo após a elicitação de requisitos, que utiliza um modelo gráfico e uma tabela com as descrições sucintas dos casos de uso e dos atores. Ele contempla a fronteira do sistema e o detalhamento dos requisitos funcionais com a indicação dos atores, casos de uso e seus relacionamentos. 
 
+|    CASO DE USO    |         DESCRIÇÃO         |     REQUISITO FUNCIONAL
+--------------------| ------------------------- | -----------------------
+| Criar Conta | <ul><li>O usuário seleciona a opção de criar uma nova conta.</li><li>O usuário preenche os campos necessários, como nome, e-mail e senha.</li><li>O sistema valida os dados inseridos pelo usuário.</li><li>O sistema cria a conta e redireciona o usuário para a tela de login.</li> | RF-001 |
+| Fazer Login | <ul><li>O usuário insere suas credenciais de login (e-mail e senha).</li><li>O sistema verifica as credenciais inseridas pelo usuário.</li><li>Se as credenciais estiverem corretas, o sistema autentica o usuário e o redireciona para a tela principal do aplicativo.</li><li>Se as credenciais estiverem incorretas, o sistema exibe uma mensagem de erro e permite que o usuário tente novamente.</li> | RF-002 |
+| Gerenciar Cadastro | <ul><li>O usuário acessa a opção de gerenciar seu cadastro na tela principal do aplicativo.</li><li>O sistema exibe as informações cadastradas pelo usuário e permite que ele as edite conforme necessário.</li><li>O usuário salva as alterações feitas em seu cadastro.</li> | RF-003 |
+| Receber Notificações | <ul><li>O usuário recebe notificações sobre datas importantes relacionadas à administração de vacinas e novidades em saúde pública.</li><li>As notificações são exibidas no dispositivo do usuário de acordo com suas preferências de configuração.</li> | RF-004 |
+| Cadastrar Vacina | <ul><li> O usuário seleciona a opção de cadastrar uma nova vacina. </li><li> O sistema exibe um formulário onde o usuário pode inserir informações sobre a vacina, como nome, data de administração e outras informações relevantes. </li><li> O usuário salva as informações da vacina. </li> | RF-005 |
+| Gerenciar Vacinas | <ul><li> O usuário acessa a opção de gerenciar suas vacinas na tela principal do aplicativo. </li><li> O sistema exibe a lista de vacinas cadastradas pelo usuário e permite que ele as edite, exclua ou adicione novas vacinas conforme necessário. </li> | RF-006 |
+| Acessar Informações sobre Vacinas | <ul><li> O usuário seleciona a opção de buscar informações sobre vacinas disponíveis. </li><li> O sistema exibe uma lista de vacinas disponíveis, incluindo informações sobre eficácia, efeitos colaterais e recomendações de uso. </li> | RF-007 |
+| Acessar Histórico de Vacinas | <ul><li> O usuário acessa a opção de visualizar o histórico de vacinas na tela principal do aplicativo. </li><li> O sistema exibe uma lista das vacinas previamente cadastradas pelo usuário. </li> | RF-010 |
+| Exportar/Imprimir Histórico de Vacinas | <ul><li> O usuário seleciona a opção de exportar ou imprimir o histórico de vacinas. </li><li> O sistema gera um arquivo ou uma visualização imprimível do histórico de vacinas do usuário. </li> | RF-008 |
+| Acessar Documentações | <ul><li> O usuário acessa a opção de acessar documentações de termos e condições de uso e políticas de privacidade. </li><li> O sistema exibe as documentações para que o usuário possa revisá-las conforme necessário. </li> | RF-009 |
+| Adicionar Informações sobre Alergias ou Restrições Médicas | <ul><li> O usuário acessa a opção de adicionar informações sobre alergias ou restrições médicas relevantes. </li><li> O sistema exibe um formulário onde o usuário pode inserir essas informações. </li><li> O usuário salva as informações adicionadas. </li> | RF-012 |
+
+
 # Matriz de Rastreabilidade
 
 A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualização dos relacionamento entre requisitos e outros artefatos ou objetos, permitindo a rastreabilidade entre os requisitos e os objetivos de negócio. 
