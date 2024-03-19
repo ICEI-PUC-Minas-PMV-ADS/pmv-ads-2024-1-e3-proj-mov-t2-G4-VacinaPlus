@@ -152,6 +152,8 @@ Para organização e distribuição das tarefas do projeto, o grupo utilizará o
 
 ![Captura de tela 2024-03-18 213910](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/74187849/f0aaec02-3fe2-4df3-ac0a-372878b555e9)
 
+## Diagrama de Gantt
+
 O gráfico de Gantt ou diagrama de Gantt também é uma ferramenta visual utilizada para controlar e gerenciar o cronograma de atividades de um projeto. Com ele, é possível listar tudo que precisa ser feito para colocar o projeto em prática, dividir em atividades e estimar o tempo necessário para executá-las.
 
 ![Gráfico de Gantt](img/02-grafico-gantt.png)
