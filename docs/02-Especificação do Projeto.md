@@ -45,11 +45,13 @@ Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em segu
 
 ![Processo 1](img/02-bpmn-proc1.png)
 
-### Processo 2 – NOME DO PROCESSO
+### Processo 2 – Cadastro de Usuário
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN.
+Abaixo estamos exibindo como um novo usuário pode se cadastrar em nosso sistema.
 
-![Processo 2](img/02-bpmn-proc2.png)
+- Melhoria que pode ser implementada é a de que a partir do término da inserção das informações cadastrais, o usuário ser direcionado para a tela de Login.
+
+![Processo_2 drawio](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/99f93e3a-eb01-49f1-84cb-3aa61981dfb5)
 
 ## Indicadores de Desempenho
 
