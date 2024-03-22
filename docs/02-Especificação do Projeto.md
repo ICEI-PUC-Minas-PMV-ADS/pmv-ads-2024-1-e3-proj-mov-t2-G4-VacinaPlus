@@ -39,11 +39,14 @@ Dada a prevalência de dispositivos eletrônicos como computadores, tablets e sm
 
 Descubra o Vacina+, a solução completa para gerenciar seu histórico de vacinação de forma simples e eficaz, diretamente na ponta dos seus dedos! Esqueça a papelada e as preocupações - com o Vacina+, você pode registrar suas vacinas de maneira rápida, fácil e organizada. Mantenha o controle total sobre quais vacinas você já tomou, suas doses, datas importantes e até mesmo receba lembretes sobre suas próximas vacinações necessárias. Armazene e acesse informações importantes, históricos de vacinação e quaisquer vacinas pendentes com qualidade, rapidez e eficiência. Com o Vacina+, você tem o poder de gerenciar sua saúde com total confiança e controle.
 
-### Processo 1 – NOME DO PROCESSO
+### Processo 1 – Usuário / Sistema
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN. 
+Visão geral da interação do Usuário e sistema.
 
-![Processo 1](img/02-bpmn-proc1.png)
+- Melhoria podemos citar uso de imagens e ícones sugestivos para melhorar a experiência do usuário.
+
+![Processo_1 drawio (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/c2a33a87-4dbb-43b0-b3f1-18c8b2f0719c)
+
 
 ### Processo 2 – Cadastro de Usuário
 
