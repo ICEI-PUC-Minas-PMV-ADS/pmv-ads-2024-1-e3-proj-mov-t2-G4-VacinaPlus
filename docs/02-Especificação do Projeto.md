@@ -60,11 +60,11 @@ Abaixo estamos exibindo como um novo usuário pode se cadastrar em nosso sistema
 
 | Nº | Indicador | Objetivo | Descrição | Cálculo | Fonte de Dados | Perspectiva | Meta | Periodicidade |
 |----|-----------|----------|-----------|---------|----------------|-------------|------|---------------|
-|	1	| Cadastros na plataforma | Medir a quantidade de cadastros na plataforma | Quando novos usuário fizerem cadastros contabilizar esse número. | N° de cadastros no mês | Banco de dados do App | Crescimento da aplicação | 50 novos usuários por mês | Contabilizados no mês |
-|	2	| Quantidade de reclamações | Medir a quantidade de reclamações | Saber quais pontos incomodam os usuários | Play Store e Apple Store | Relatórios e área de mensagens da Play Store e Apple Store | Melhoria da Aplicação | Nenhuma reclamação | | Contabilizados no mês | 
-|	3	| Quantidade de doses tomadas | ... | ... | ... | ... | ... | ... |
-|	4	| Retorno para doses de reforço | ... | ... | ... | ... | ... | ... |
-|	5	| Nível de satisfação do cliente | ... | ... | ... | ... | ... | ... |
+|	1	| Cadastros na plataforma | Medir a quantidade de cadastros na plataforma | Quando novos usuário fizerem cadastros contabilizar esse número. | N° de cadastros no mês | Banco de dados | Crescimento da aplicação | 50 novos usuários por mês | Contabilizados no mês |
+|	2	| Quantidade de reclamações | Medir a quantidade de reclamações | Saber quais pontos incomodam os usuários | Play Store e Apple Store | Relatórios e área de mensagens da Play Store e Apple Store | Melhoria da Aplicação | Nenhuma reclamação | Contabilizados no mês |  
+|	3	| Quantidade de doses tomadas | Medir se as doses para cada usuário estão sendo tomadas | Saber se a cobertura vacinal está correta | Doses por faixa etária | Banco de dados | Aumentar a cobertura vacinal e aumento da imunidade de rebanho | Atingir mín de 80% da cobertura vacinal | Contabilizados no mês |
+|	4	| Retorno para doses de reforço | Medir o índice de retorno para vacinas com mais de uma dose | Informar ao usuário que ainda tem doses para serem tomadas | Quantidade de doses para uma determinada doença | Banco de dados | Impedir o cenário atual de baixo índice de adesão à doses de reforço | Mín de 80% de doses de reforço | Contabilizados no mês |
+|	5	| Nível de satisfação do cliente | Medir o quanto a aplicação cumpre seu papel | Medir por índices que a cobertura vacinal está nos índices adequados | Estatísticas da cobertura vacinal | Banco de dados | Atingir os níveis de cobertura vacinal corretos e determinados pela OMS | Cumprir as metas da OMS | Contabilizados no mês |
 
 ## Requisitos
 
