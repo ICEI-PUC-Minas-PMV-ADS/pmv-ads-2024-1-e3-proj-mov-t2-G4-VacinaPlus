@@ -60,11 +60,11 @@ Abaixo estamos exibindo como um novo usuário pode se cadastrar em nosso sistema
 
 | Nº | Indicador | Objetivo | Descrição | Cálculo | Fonte de Dados | Perspectiva | Meta | Periodicidade |
 |----|-----------|----------|-----------|---------|----------------|-------------|------|---------------|
-|	1	| ... | ... | ... | ... | ... | ... | ... |
-|	2	| ... | ... | ... | ... | ... | ... | ... |
-|	3	| ... | ... | ... | ... | ... | ... | ... |
-|	4	| ... | ... | ... | ... | ... | ... | ... |
-|	5	| ... | ... | ... | ... | ... | ... | ... |
+|	1	| Cadastros na plataforma | Medir a quantidade de cadastros na plataforma | Quando novos usuário fizerem cadastros contabilizar esse número. | N° de cadastros no mês | Banco de dados do App | Crescimento da aplicação | 50 novos usuários por mês | Contabilizados no mês |
+|	2	| Quantidade de reclamações | Medir a quantidade de reclamações | Saber quais pontos incomodam os usuários | Play Store e Apple Store | Relatórios e área de mensagens da Play Store e Apple Store | Melhoria da Aplicação | Nenhuma reclamação | | Contabilizados no mês | 
+|	3	| Quantidade de doses tomadas | ... | ... | ... | ... | ... | ... |
+|	4	| Retorno para doses de reforço | ... | ... | ... | ... | ... | ... |
+|	5	| Nível de satisfação do cliente | ... | ... | ... | ... | ... | ... |
 
 ## Requisitos
 
