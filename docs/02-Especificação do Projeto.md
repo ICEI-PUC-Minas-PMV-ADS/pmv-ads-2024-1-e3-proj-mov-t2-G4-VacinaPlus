@@ -171,8 +171,15 @@ O gerenciamento adequado de tarefas contribuirá para que o projeto alcance alto
 
 ## Gestão de Orçamento
 
-A administração financeira de um projeto é crucial para prever e controlar seus gastos e orçamentos. É fundamental garantir que o planejamento financeiro esteja alinhado com o cronograma do projeto, a fim de evitar surpresas ao longo de sua execução, como destacado por Dias (2024) e conforme recomendado pelo Guia PMBoK.
 
-Para criar a tabela de orçamento a seguir, foram considerados os custos ao longo de um período de seis meses, incluindo a contratação de seis stakeholders, a aquisição de seis estações de trabalho, a assinatura de um plano de acesso à internet e a licença de software de desenvolvimento.
+Para criar a tabela de orçamento a seguir, foram considerados os custos ao longo de um período de seis meses, incluindo a contratação de um stakeholder, cinco desenvolvedores alem de aquisição de seis estações de trabalho, a assinatura de um plano de acesso à internet, e de gastos com hora de trabalho de cada integrante do projeto.
 
-![Orçamento](img/02-orcamento.png)
+ ## Orçamento Para Implantação do Software                          
+
+                           
+|     Item       |  Recursos Orçados   |    R$       |       Descrição                    |
+|----------------|---------------------|-------------|------------------------------------|
+|      1         |  Recursos humanos   | 20.250,00   | Salário =          R$ 3.375,00     |             
+|      2         |    Hardware         | 48.000,00   | Notebook =         R$ 8.000,00     |          
+|      3         |    Rede             | 1.440,00    | Internet / mês =   R$ 120,00       |         
+|      4         |    Total            | 69.690,00   | Total gasto na criação do software |
