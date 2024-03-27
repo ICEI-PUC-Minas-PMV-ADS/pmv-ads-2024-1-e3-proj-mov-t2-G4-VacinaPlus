@@ -131,7 +131,7 @@ O diagrama de casos de uso é o próximo passo após a elicitação de requisito
 
 A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualização dos relacionamento entre requisitos e outros artefatos ou objetos, permitindo a rastreabilidade entre os requisitos e os objetivos de negócio. 
 
-![Captura de tela 2024-03-26 205508](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/74187849/1eb16827-5843-406e-be3c-ce803cdeb2e2)
+![Captura de tela 2024-03-27 185807](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/74187849/bb746d25-2e21-4b22-ab2c-09f7fde82cbd)
 
 # Gerenciamento de Projeto
 
