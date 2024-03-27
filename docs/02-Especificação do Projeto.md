@@ -158,8 +158,9 @@ Para organização e distribuição das tarefas do projeto, o grupo utilizará o
 ## Diagrama de Gantt
 
 Abaixo listamos todas as atividades e processos doa nossa aplicação quem estão nos status de concluídos, em andamento e que ainda não foram iniciados, utilizando como modelo o Diagrama de Gantt.
-![01](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/f8355b5f-45a0-4925-9387-69a81b185be3)
-![02](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/6bd3e828-8319-436d-9ffc-aaf109358737)
+
+![Captura de tela 2024-03-26 221743](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/f0fb4fc9-8c17-4891-851f-881999557f8b)
+
 
 ## Gerenciamento de Equipe
 
