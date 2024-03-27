@@ -166,7 +166,7 @@ Abaixo listamos todas as atividades e processos doa nossa aplicação quem estã
 
 O gerenciamento adequado de tarefas contribuirá para que o projeto alcance altos níveis de produtividade. Por isso, é fundamental que ocorra a gestão de tarefas e de pessoas, de modo que os times envolvidos no projeto possam ser facilmente gerenciados. 
 
-![Captura de tela 2024-03-26 205352](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/74187849/e2348d26-4044-403e-9ba7-12e488ee8f67)
+![Captura de tela 2024-03-27 183745](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/74187849/ea52173d-e819-45b6-92bc-e988c21783bb)
 
 ## Gestão de Orçamento
 
