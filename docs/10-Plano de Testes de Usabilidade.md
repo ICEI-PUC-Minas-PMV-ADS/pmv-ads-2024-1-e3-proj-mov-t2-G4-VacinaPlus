@@ -42,40 +42,13 @@ Os usuários foram instruidos a responder o questionário a seguir:
 ## Realização da Tarefa:
 Por favor, avalie sua capacidade de completar as tarefas propostas no sistema.
 
-Tarefa 1:
-- 1 (Extremamente Difícil) 
-- 2 (Muito Difícil)
-- 3 (Moderado)
-- 4 (Fácil)
-- 5 (Muito Fácil)
-  
-Tarefa 2:
-- 1 (Extremamente Difícil) 
-- 2 (Muito Difícil)
-- 3 (Moderado)
-- 4 (Fácil)
-- 5 (Muito Fácil)
-
-Tarefa 3:
-- 1 (Extremamente Difícil) 
-- 2 (Muito Difícil)
-- 3 (Moderado)
-- 4 (Fácil)
-- 5 (Muito Fácil)
-  
-Tarefa 4:
-- 1 (Extremamente Difícil) 
-- 2 (Muito Difícil)
-- 3 (Moderado)
-- 4 (Fácil)
-- 5 (Muito Fácil)
-  
-Tarefa 5:
-- 1 (Extremamente Difícil) 
-- 2 (Muito Difícil)
-- 3 (Moderado)
-- 4 (Fácil)
-- 5 (Muito Fácil)
+| Tarefa | Nível de satisfação  |
+|--------|----------------------|
+| 1      |                      |
+| 2      |                      |
+| 3      |                      |
+| 4      |                      |
+| 5      |                      |
   
 ## Erros Cometidos:
 
@@ -85,60 +58,37 @@ Por favor, descreva quaisquer erros que você percebeu ao realizar as tarefas.
 
 Avalie o tempo que você levou para completar cada tarefa.
 
-- Tarefa 1: [tempo gasto]
-- Tarefa 2: [tempo gasto]
-- Tarefa 3: [tempo gasto]
-- Tarefa 4: [tempo gasto]
-- Tarefa 5: [tempo gasto]
+| Tarefa |      Tempo Gasto     |
+|--------|----------------------|
+| 1      |                      |
+| 2      |                      |
+| 3      |                      |
+| 4      |                      |
+| 5      |                      |
 
 ## Nível de Dificuldade Percebido:
 
 Como você avaliaria o nível de dificuldade das tarefas?
 
-Tarefa 1:
-- 1 (Extremamente Difícil) 
-- 2 (Muito Difícil)
-- 3 (Moderado)
-- 4 (Fácil)
-- 5 (Muito Fácil)
-  
-Tarefa 2:
-- 1 (Extremamente Difícil) 
-- 2 (Muito Difícil)
-- 3 (Moderado)
-- 4 (Fácil)
-- 5 (Muito Fácil)
-  
-Tarefa 3:
-- 1 (Extremamente Difícil) 
-- 2 (Muito Difícil)
-- 3 (Moderado)
-- 4 (Fácil)
-- 5 (Muito Fácil)
-  
-Tarefa 4:
-- 1 (Extremamente Difícil) 
-- 2 (Muito Difícil)
-- 3 (Moderado)
-- 4 (Fácil)
-- 5 (Muito Fácil)
-  
-Tarefa 5:
-- 1 (Extremamente Difícil) 
-- 2 (Muito Difícil)
-- 3 (Moderado)
-- 4 (Fácil)
-- 5 (Muito Fácil)
+| Tarefa | Nível de satisfação  |
+|--------|----------------------|
+| 1      |                      |
+| 2      |                      |
+| 3      |                      |
+| 4      |                      |
+| 5      |                      |
   
 ## Nível de Satisfação:
 
 Por favor, indique o seu nível de satisfação com a experiência geral de uso do sistema.
 
-- 1 (Insatisfeito)
-- 2 (Pouco Satisfeito)
-- 3 (Neutro)
-- 4 (Satisfeito)
-- 5 (Muito Satisfeito)
+| Tarefa | Nível de satisfação  |
+|--------|----------------------|
+| 1      |                      |
+| 2      |                      |
+| 3      |                      |
+| 4      |                      |
+| 5      |                      |
 
 ## Análise de Dados
 
