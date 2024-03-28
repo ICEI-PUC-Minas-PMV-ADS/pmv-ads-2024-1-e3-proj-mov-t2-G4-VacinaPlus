@@ -110,7 +110,12 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 ## Diagrama de Casos de Uso
 
-O diagrama de casos de uso é o próximo passo após a elicitação de requisitos, que utiliza um modelo gráfico e uma tabela com as descrições sucintas dos casos de uso e dos atores. Ele contempla a fronteira do sistema e o detalhamento dos requisitos funcionais com a indicação dos atores, casos de uso e seus relacionamentos. 
+Abaixo representamos o diagrama de caso de uso do App Vacina Mais
+
+
+![Diagrama de caso de uso Vacina Mais](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/f92ad3e7-8aed-4210-8ed1-3b959c69b98e)
+
+
 
 |    CASO DE USO    |         DESCRIÇÃO         |     REQUISITO FUNCIONAL
 --------------------| ------------------------- | -----------------------
