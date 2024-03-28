@@ -113,7 +113,8 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 Abaixo representamos o diagrama de caso de uso do App Vacina Mais
 
 
-![Diagrama de caso de uso Vacina Mais](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/f92ad3e7-8aed-4210-8ed1-3b959c69b98e)
+![diagrama](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/d8f702ec-184a-47ea-9d2e-255a6eac1281)
+
 
 
 
