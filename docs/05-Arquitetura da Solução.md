@@ -16,12 +16,9 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 ## 5.3 Esquema Relacional
 
-![vacinamais](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/126032592/6f085a84-94a5-4907-a204-68b5de49b764)
-
+![Untitled (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/126032592/0c0d120f-7d7a-4e58-a314-1e34950308ce)
 
 ## 5.4 Modelo Físico
-
-![Untitled (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/126032592/0c0d120f-7d7a-4e58-a314-1e34950308ce)
 
 
 ## 5.5 Tecnologias Utilizadas
