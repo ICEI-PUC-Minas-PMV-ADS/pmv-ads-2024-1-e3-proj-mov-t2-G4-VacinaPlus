@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Image, Text, StyleSheet } from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
@@ -7,82 +7,107 @@ const LoginComponent = () => {
 
   const navigation = useNavigation();
 
-  const [text, setText] = React.useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  function handleSignIn() {
+    if (email === '' || password === '') {
+      alert("Preencha os campos")
+      return;
+    }
+    const data = {
+      email,
+      password
+    }
+
+    console.log(data);
+  }
 
   return (
     <View style={styles.container}>
 
-        <Image
-            style={styles.Logo}
-            source={require('../../assets/logo-plus.png')}
-        />
+      <Image
+        style={styles.Logo}
+        source={require('../../assets/logo-plus.png')}
+      />
 
-        <Text
-            style={styles.h1}>
-                Bem-vindo
-        </Text>
-        <Text
-            style={styles.h3}>
-                Faça login para continuar
-        </Text>
+      <Text
+        style={styles.h1}>
+        Bem-vindo
+      </Text>
 
-        <TextInput
-            style={styles.input}
-            mode="outlined"
-            label="Email"
-            value={text}
-            onChangeText={text => setText(text)} />
-        <TextInput
-            style={styles.input}
-            mode="outlined"
-            label="Senha"
-            secureTextEntry
-            right={<TextInput.Icon icon="eye" />} />
-        
-        <Text
-            style={styles.text01} onPress={() => navigation.navigate('EsqueceuSenha')}>
-                Esqueceu a senha ?
-        </Text>
+      <Text
+        style={styles.h3}>
+        Faça login para continuar
+      </Text>
 
-        <Button 
-            style={styles.button}
-            mode="contained"  onPress={() => console.log('Pressed')}>
-                Entrar
-        </Button>
+      <TextInput
+        style={styles.input}
+        mode="outlined"
+        value={email}
+        placeholder='Email'
+        onChangeText={setEmail} />
+      <TextInput
+        style={styles.input}
+        mode="outlined"
+        value={password}
+        placeholder='Sua senha'
+        onChangeText={setPassword}
+        secureTextEntry
+        right={<TextInput.Icon icon="eye" />} />
 
+      <Text
+        style={styles.esqueceuSenha} onPress={() => navigation.navigate('EsqueceuSenha')}>
+        Esqueceu a senha ?
+      </Text>
+      
+      <Button
+        style={styles.button}
+        mode="contained" onPress={handleSignIn}>
+        Entrar
+      </Button>
+
+      <View style={styles.footer}>
         <Text
-            style={styles.text02}>
-                Não tem uma Conta? <Text style={styles.textcolor} onPress={() => navigation.navigate('Cadastro')}>Cadastre-se</Text>
+          style={styles.CadastreSe}>
+          Não tem uma Conta? <Text style={styles.textcolor} onPress={() => navigation.navigate('Cadastro')}>Cadastre-se</Text>
         </Text>
+      </View>
 
     </ View>
-
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 100
+    padding: 10,
+  },
+  footer: {
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    flex: 3,
   },
   Logo: {
     width: 300,
     height: 300,
   },
   button: {
+    marginTop: 20,
     paddingVertical: 3,
     borderRadius: 5,
-    width: 175,
+    width: 300,
     backgroundColor: '#1fb6ff',
   },
-  text01: {
+  esqueceuSenha: {
+    marginRight: 165,
     fontSize: 15,
     color: '#1fb6ff',
     marginBottom: 20
   },
-  text02: {
+  CadastreSe: {
     fontSize: 15,
     color: '#000',
     marginVertical: 20
@@ -106,7 +131,6 @@ const styles = StyleSheet.create({
     width: 300,
     height: 57,
     marginVertical: 10,
-    borderRadius: 3,
   }
 });
 

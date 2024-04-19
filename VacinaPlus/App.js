@@ -4,6 +4,7 @@ import MainComponent from './src/views/index';
 import LoginComponent from './src/views/login';
 import SenhaComponent from './src/views/esqueceuSenha';
 import CadastroComponent from './src/views/cadastro';
+import TelaHome from './src/views/home';
 
 const Stack = createStackNavigator();
 
@@ -11,10 +12,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Main" component={MainComponent} />
-        <Stack.Screen name="Login" component={LoginComponent} />
-        <Stack.Screen name="EsqueceuSenha" component={SenhaComponent} />
-        <Stack.Screen name="Cadastro" component={CadastroComponent} />
+        <Stack.Screen name="Main" component={MainComponent} options={{ title: ''}}/>
+        <Stack.Screen name="Login" component={LoginComponent} options={{ title: ''}}/>
+        <Stack.Screen name="Cadastro" component={CadastroComponent} options={{ title: ''}}/>
+        <Stack.Screen name="EsqueceuSenha" component={SenhaComponent} options={{ title: ''}}/>
+        <Stack.Screen name="Home" component={TelaHome} options={{ title: ''}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

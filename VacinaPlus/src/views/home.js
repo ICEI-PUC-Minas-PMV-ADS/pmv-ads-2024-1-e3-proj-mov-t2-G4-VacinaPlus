@@ -1,7 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const TelaHome = () => {
+
+  const navigation = useNavigation();
+  
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.greeting}>Olá, Nome Sobrenome</Text>
