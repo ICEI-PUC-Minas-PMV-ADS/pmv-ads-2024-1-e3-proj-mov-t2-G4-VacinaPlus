@@ -8,17 +8,17 @@ const App = () => {
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Imagens/Avisos</Text>
         <View style={styles.imageGrid}>
-          {/* Adicione seus ícones ou imagens aqui */}
+          {/* ícone ou imagens aqui */}
         </View>
       </View>
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Notícias</Text>
         <View style={styles.newsList}>
-          {/* Adicione seus itens de notícias aqui */}
+          {/*  itens de notícias aqui */}
         </View>
       </View>
       <View style={styles.navBar}>
-        {/* Adicione seus ícones de navegação aqui */}
+        {/*ícones de navegação aqui */}
       </View>
     </ScrollView>
   );
@@ -44,15 +44,14 @@ const styles = StyleSheet.create({
   imageGrid: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    // Adicione mais estilos conforme necessário
+    // Adicione mais estilos 
   },
   newsList: {
-    // Adicione estilos para sua lista de notícias
+    //  estilos para lista de notícias
   },
   navBar: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    // Adicione mais estilos conforme necessário
   },
 });
 
