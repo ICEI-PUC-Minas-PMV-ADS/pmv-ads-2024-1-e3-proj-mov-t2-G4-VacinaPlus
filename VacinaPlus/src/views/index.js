@@ -1,8 +1,11 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, Linking } from 'react-native';
 import { Button } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
 
 export default function MainComponent() {
+
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -19,10 +22,10 @@ export default function MainComponent() {
 
         <Button 
             style={styles.button}
-            mode="contained"  onPress={() => console.log('Pressed')}>
+            mode="contained"  onPress={() => navigation.navigate('Login')}>
                 Começar
         </Button>
-
+        
     </View>
   );
 }
@@ -51,4 +54,3 @@ const styles = StyleSheet.create({
     marginBottom: 40
   }
 });
-
