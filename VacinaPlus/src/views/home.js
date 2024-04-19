@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
 
-const App = () => {
+const TelaHome = () => {
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.greeting}>Olá, Nome Sobrenome</Text>
@@ -55,4 +55,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default TelaHome;
