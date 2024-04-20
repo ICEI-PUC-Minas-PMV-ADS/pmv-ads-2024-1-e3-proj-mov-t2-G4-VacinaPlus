@@ -1,30 +1,69 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, Dimensions } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
+
+// Obter as dimensões da tela
+const { width, height } = Dimensions.get('window');
 
 const TelaHome = () => {
+  // Funções para lidar com a pressão dos botões
+  const handlePressInicio = () => {
+    console.log('Início pressionado');
+  };
 
-  const navigation = useNavigation();
-  
+  const handlePressVacinas = () => {
+    console.log('Vacinas pressionado');
+  };
+
+  const handlePressAgenda = () => {
+    console.log('Agenda pressionado');
+  };
+
+  const handlePressPerfil = () => {
+    console.log('Perfil pressionado');
+  };
+
   return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.greeting}>Olá, Nome Sobrenome</Text>
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Imagens/Avisos</Text>
-        <View style={styles.imageGrid}>
-          {/* ícone ou imagens aqui */}
+    <View style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+        {/* Cabeçalho com logo e texto de boas-vindas */}
+        <View style={styles.header}>
+          <Image source={require('../../assets/logo-plus.png')} style={styles.logo} />
+          <Text style={styles.welcome}>Olá, Usuário!</Text>
+          <TouchableOpacity style={styles.notificationButton}>
+            <Icon name="notifications" size={25} color="#00BFFF" />
+          </TouchableOpacity>
         </View>
-      </View>
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Notícias</Text>
-        <View style={styles.newsList}>
-          {/*  itens de notícias aqui */}
+        
+        {/* Seção de Imagens/Anúncios */}
+        <View style={styles.section}>
+          <Image source={{ uri: '../../assets/.jpg' }} style={styles.image} />
+          <Text style={styles.sectionText}>Seu anúncio ou notícia aqui</Text>
         </View>
-      </View>
+        
+        {/* Mais seções conforme necessário */}
+      </ScrollView>
+      
+      {/* Barra de Navegação com botões em azul claro */}
       <View style={styles.navBar}>
-        {/*ícones de navegação aqui */}
+        <TouchableOpacity style={styles.navButton} onPress={handlePressInicio}>
+          <Icon name="home" size={25} color="#00BFFF" />
+          <Text style={styles.navButtonText}>Início</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navButton} onPress={handlePressVacinas}>
+          <Icon name="medkit" size={25} color="#00BFFF" />
+          <Text style={styles.navButtonText}>Vacinas</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navButton} onPress={handlePressAgenda}>
+          <Icon name="calendar" size={25} color="#00BFFF" />
+          <Text style={styles.navButtonText}>Agenda</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navButton} onPress={handlePressPerfil}>
+          <Icon name="person" size={25} color="#00BFFF" />
+          <Text style={styles.navButtonText}>Perfil</Text>
+        </TouchableOpacity>
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
@@ -33,29 +72,57 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
-  greeting: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    margin: 20,
+  scrollView: {
+    marginBottom: 60,
+  },
+  header: {
+    width: width,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    padding: 10,
+  },
+  logo: {
+    width: 50, // Defina o tamanho da sua logo
+    height: 50, // Defina o tamanho da sua logo
+    marginRight: 10,
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'left',
+    margin: 10,
+  },
+  notificationButton: {
+    padding: 10,
+    marginLeft: 'auto', // Isso empurrará o botão de notificação para a direita
   },
   section: {
-    margin: 20,
+    padding: 20,
+    alignItems: 'center',
   },
-  sectionTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
+  image: {
+    width: width - 40, // Responsivo à largura da tela
+    height: height / 4, // Responsivo à altura da tela
+    resizeMode: 'contain',
   },
-  imageGrid: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    // Adicione mais estilos 
-  },
-  newsList: {
-    //  estilos para lista de notícias
+  sectionText: {
+    marginTop: 10,
   },
   navBar: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: 'transparent', // Alterado para fundo transparente
     flexDirection: 'row',
     justifyContent: 'space-around',
+    paddingVertical: 10,
+  },
+  navButton: {
+    alignItems: 'center',
+  },
+  navButtonText: {
+    color: '#00BFFF', // Cor azul claro para o texto dos botões
   },
 });
 
