@@ -13,12 +13,12 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Vacina" component={VacinaComponent} options={{ title: ''}}/>
-        <Stack.Screen name="Home" component={TelaHome} options={{ title: ''}}/>
-        <Stack.Screen name="Main" component={MainComponent} options={{ title: ''}}/>
-        <Stack.Screen name="Login" component={LoginComponent} options={{ title: ''}}/>
-        <Stack.Screen name="Cadastro" component={CadastroComponent} options={{ title: ''}}/>
-        <Stack.Screen name="EsqueceuSenha" component={SenhaComponent} options={{ title: ''}}/>
+        <Stack.Screen name="Vacina" component={VacinaComponent} options={{ header:() => null}}/>
+        <Stack.Screen name="Home" component={TelaHome} options={{header:() => null}}/>
+        <Stack.Screen name="Main" component={MainComponent} options={{ header:() => null}}/>
+        <Stack.Screen name="Login" component={LoginComponent} options={{ header:() => null}}/>
+        <Stack.Screen name="Cadastro" component={CadastroComponent} options={{ header:() => null}}/>
+        <Stack.Screen name="EsqueceuSenha" component={SenhaComponent} options={{ header:() => null}}/>
        </Stack.Navigator>
     </NavigationContainer>
   );

@@ -7,130 +7,132 @@ import { useNavigation } from '@react-navigation/native';
 const { width, height } = Dimensions.get('window');
 
 const TelaHome = () => {
-   const navigation = useNavigation();
+
+    const navigation = useNavigation();
     const [text, setText] = React.useState("");
     const [Vacina2, setVacina2] = React.useState("");
-  const handlePressInicio = () => {
-    console.log('Início pressionado');
-  };
+    const handlePressInicio = () => {
+        console.log('Início pressionado');
+    };
 
-  const handlePressVacinas = () => {
-    console.log('Vacinas pressionado');
-  };
+    const handlePressVacinas = () => {
+        console.log('Vacinas pressionado');
+    };
 
-  const handlePressAgenda = () => {
-    console.log('Agenda pressionado');
-  };
+    const handlePressAgenda = () => {
+        console.log('Agenda pressionado');
+    };
 
-  const handlePressPerfil = () => {
-    console.log('Perfil pressionado');
-  };
+    const handlePressPerfil = () => {
+        console.log('Perfil pressionado');
+    };
 
-  return (
-    <View style={styles.container}>
-      <ScrollView style={styles.scrollView}>
+    const [visible, setVisible] = React.useState(false);
+    const showModal = () => setVisible(true);
+    const hideModal = () => setVisible(false);
+    const containerStyle = {backgroundColor: 'white', padding: 20};
+
+    return (
+        <View style={styles.container}>
+            <ScrollView style={styles.scrollView}>
+                {/* Header*/}
+                <View style={styles.header}>
+                    <Appbar.BackAction  style={styles.appbar} onPress={() => {}} />
+                    <Text style={styles.welcome}>Vacinas</Text>
+                    <TouchableOpacity style={styles.notificationButton}>
+                    <Icon name="notifications" size={25} color="#00BFFF" />                        
+                    </TouchableOpacity>
+                </View>
+                {/* Seção de Vacinas */}
+                <View style={styles.section}>
+                    <Text style={styles.text02}>
+                        Minhas Vacinas
+                    </Text>
+                    <TextInput
+                        style={styles.input}
+                        mode="outlined"
+                        label="Vacina 1"
+                        value={text}
+                        onChangeText={text => setText(text)} />
+                    <TextInput
+                        style={styles.input}
+                        mode="outlined"
+                        label="Vacina 2"
+                        value={Vacina2}
+                        onChangeText={text => setText(Vacina2)} />
+                    <TextInput
+                        style={styles.input}
+                        mode="outlined"
+                        label="Vacina 3"
+                        value={Vacina2}
+                        onChangeText={text => setText(Vacina2)} />
+                    <Text
+                        style={styles.text01} onPress={() => navigation.navigate('')}>
+                            Histórico de Vacinas
+                    </Text>
+                    </View>
+                    {/* Cards de doses por idade*/}
+                    <View style={styles.cards}>
+                        <Text style={styles.text02}>
+                           Doses para Tomar
+                        </Text>
+                        <ScrollView horizontal>
+                            <View style={{...styles.cardContainer, flexDirection: 'row', justifyContent: 'space-between' }}>
+                                <Card style={styles.card}>
+                                    <Card.Cover style={styles.Cover} source={{ uri: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSIqDF-F2_tSXys9VvU7mRI6QmSmvkSpfSGeFBxlpLhf3Yt_x_9' }} />
+                                    <Card.Title style={styles.title} title="Criança" />
+                                </Card>
+                                <Card style={styles.card}>
+                                    <Card.Cover style={styles.Cover} source={{ uri: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSIqDF-F2_tSXys9VvU7mRI6QmSmvkSpfSGeFBxlpLhf3Yt_x_9' }} />
+                                    <Card.Title style={styles.title} title="Adolescente" />
+                                </Card>
+                                <Card style={styles.card}>
+                                    <Card.Cover style={styles.Cover} source={{ uri: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSIqDF-F2_tSXys9VvU7mRI6QmSmvkSpfSGeFBxlpLhf3Yt_x_9' }} />
+                                    <Card.Title style={styles.title} title="Adulto" />
+                                </Card>
+                                <Card style={styles.card}>
+                                    <Card.Cover style={styles.Cover} source={{ uri: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSIqDF-F2_tSXys9VvU7mRI6QmSmvkSpfSGeFBxlpLhf3Yt_x_9' }} />
+                                    <Card.Title style={styles.title} title="Gestante" />
+                                </Card>
+                                <Card style={styles.card}>
+                                    <Card.Cover style={styles.Cover} source={{ uri: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSIqDF-F2_tSXys9VvU7mRI6QmSmvkSpfSGeFBxlpLhf3Yt_x_9' }} />
+                                    <Card.Title style={styles.title} title="Idoso" />
+                                </Card>
+                            </View>
+                        </ScrollView>
+                    </View>
+                    {/* Carteira De Vacinação*/}
+                    <View style={styles.banner}>
+                        <Text style={styles.text02}>
+                            Carteira De Vacinação
+                        </Text>
+                        <View style={styles.space}>
+                            <Image source={{uri: '../../assets/teste.png'}} style={{ width: '100%', height: '100%' }} />
+                        </View>
+                    </View>
+            </ScrollView>
         
-        <View style={styles.header}>
-        <Appbar.BackAction  style={styles.appbar} onPress={() => {}} />
-          <Text style={styles.welcome}>Vacinas</Text>
-          <TouchableOpacity style={styles.notificationButton}>
-            <Icon name="notifications" size={25} color="#00BFFF" />
-          </TouchableOpacity>
+                    {/* Barra de Navegação com botões*/}
+                    <View style={styles.navBar}>
+                        <TouchableOpacity style={styles.navButton} onPress={handlePressInicio}>
+                            <Icon name="home" size={25} color="#00BFFF" />
+                            <Text style={styles.navButtonText}>Início</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.navButton} onPress={handlePressVacinas}>
+                            <Icon name="medkit" size={25} color="#00BFFF" />
+                            <Text style={styles.navButtonText}>Vacinas</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.navButton} onPress={handlePressAgenda}>
+                            <Icon name="calendar" size={25} color="#00BFFF" />
+                            <Text style={styles.navButtonText}>Agenda</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.navButton} onPress={handlePressPerfil}>
+                            <Icon name="person" size={25} color="#00BFFF" />
+                            <Text style={styles.navButtonText}>Perfil</Text>
+                        </TouchableOpacity>
+                     </View>
         </View>
-        
-        {/* Seção de Imagens/Anúncios */}
-        <View style={styles.section}>
-        <Text style={styles.text02}>
-            Minhas Vacinas
-        </Text>
-        <TextInput
-            style={styles.input}
-            mode="outlined"
-            label="Vacina 1"
-            value={text}
-            onChangeText={text => setText(text)} />
-        <TextInput
-            style={styles.input}
-            mode="outlined"
-            label="Vacina 2"
-            value={Vacina2}
-            onChangeText={text => setText(Vacina2)} />
-        <TextInput
-            style={styles.input}
-            mode="outlined"
-            label="Vacina 3"
-            value={Vacina2}
-            onChangeText={text => setText(Vacina2)} />
-        <Text
-            style={styles.text01} onPress={() => navigation.navigate('')}>
-               Histórico de Vacinas
-        </Text>
-        </View>
-        
-        <View style={styles.cards}>
-            <Text style={styles.text02}>
-        Doses para Tomar
-         </Text>
-         <ScrollView horizontal>
-         <View style={{...styles.cardContainer, flexDirection: 'row', justifyContent: 'space-between' }}>
-  <Card style={styles.card}>
-    <Card.Cover style={styles.Cover} source={{ uri: 'https://picsum.photos/700' }} />
-    <Card.Title style={styles.title} title="Criança" />
-  </Card>
-  <Card style={styles.card}>
-    <Card.Cover style={styles.Cover} source={{ uri: 'https://picsum.photos/700' }} />
-    <Card.Title style={styles.title} title="Adolescente" />
-  </Card>
-  <Card style={styles.card}>
-    <Card.Cover style={styles.Cover} source={{ uri: 'https://picsum.photos/700' }} />
-    <Card.Title style={styles.title} title="Adulto" />
-  </Card>
-  <Card style={styles.card}>
-    <Card.Cover style={styles.Cover} source={{ uri: 'https://picsum.photos/700' }} />
-    <Card.Title style={styles.title} title="Gestante" />
-  </Card>
-  <Card style={styles.card}>
-    <Card.Cover style={styles.Cover} source={{ uri: 'https://picsum.photos/700' }} />
-    <Card.Title style={styles.title} title="Idoso" />
-  </Card>
-
-</View>
-        </ScrollView>
-        </View>
-    {/* Barra de Navegação com botões*/}
-    <View style={styles.banner}>
-    <Text style={styles.text02}>
-    Carteira De Vacinação
-         </Text>
-         <View style={styles.space}>
-  <Image source={{uri: '../../assets/teste.png'}} style={{ width: '100%', height: '100%' }} />
-</View>
-          
-         
-      </View>
-      </ScrollView>
-      
-      {/* Barra de Navegação com botões*/}
-      <View style={styles.navBar}>
-        <TouchableOpacity style={styles.navButton} onPress={handlePressInicio}>
-          <Icon name="home" size={25} color="#00BFFF" />
-          <Text style={styles.navButtonText}>Início</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.navButton} onPress={handlePressVacinas}>
-          <Icon name="medkit" size={25} color="#00BFFF" />
-          <Text style={styles.navButtonText}>Vacinas</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.navButton} onPress={handlePressAgenda}>
-          <Icon name="calendar" size={25} color="#00BFFF" />
-          <Text style={styles.navButtonText}>Agenda</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.navButton} onPress={handlePressPerfil}>
-          <Icon name="person" size={25} color="#00BFFF" />
-          <Text style={styles.navButtonText}>Perfil</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
+    );
 };
 
 const styles = StyleSheet.create({
@@ -168,7 +170,7 @@ const styles = StyleSheet.create({
     height:135,
     marginHorizontal:3,
     marginBottom:6,
-    fontSize:22,
+     
   },
   Cover:{
     marginLeft:4.25,
@@ -186,6 +188,7 @@ const styles = StyleSheet.create({
   },
   header: {
     width: width,
+    marginTop: 20,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
