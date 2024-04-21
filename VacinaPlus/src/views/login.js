@@ -60,10 +60,10 @@ const LoginComponent = () => {
         style={styles.esqueceuSenha} onPress={() => navigation.navigate('EsqueceuSenha')}>
         Esqueceu a senha ?
       </Text>
-      
+
       <Button
         style={styles.button}
-        mode="contained" onPress={handleSignIn}>
+        mode="contained" onPress={() => navigation.navigate('Home')}>
         Entrar
       </Button>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { useNavigation } from '@react-navigation/native';
 
 
 const { width, height } = Dimensions.get('window');
@@ -22,6 +23,8 @@ const TelaHome = () => {
   const handlePressPerfil = () => {
     console.log('Perfil pressionado');
   };
+
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -46,11 +49,11 @@ const TelaHome = () => {
       
       {/* Barra de Navegação com botões*/}
       <View style={styles.navBar}>
-        <TouchableOpacity style={styles.navButton} onPress={handlePressInicio}>
+        <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('Home')}>
           <Icon name="home" size={25} color="#00BFFF" />
           <Text style={styles.navButtonText}>Início</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navButton} onPress={handlePressVacinas}>
+        <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('Vacina')}>
           <Icon name="medkit" size={25} color="#00BFFF" />
           <Text style={styles.navButtonText}>Vacinas</Text>
         </TouchableOpacity>

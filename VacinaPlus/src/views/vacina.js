@@ -6,9 +6,10 @@ import { useNavigation } from '@react-navigation/native';
 
 const { width, height } = Dimensions.get('window');
 
-const TelaHome = () => {
+const VacinaComponent = () => {
 
     const navigation = useNavigation();
+    
     const [text, setText] = React.useState("");
     const [Vacina2, setVacina2] = React.useState("");
     const handlePressInicio = () => {
@@ -37,7 +38,7 @@ const TelaHome = () => {
             <ScrollView style={styles.scrollView}>
                 {/* Header*/}
                 <View style={styles.header}>
-                    <Appbar.BackAction  style={styles.appbar} onPress={() => {}} />
+                    <Appbar.BackAction  style={styles.appbar}  onPress={() => navigation.goBack()} />
                     <Text style={styles.welcome}>Vacinas</Text>
                     <TouchableOpacity style={styles.notificationButton}>
                     <Icon name="notifications" size={25} color="#00BFFF" />                        
@@ -113,24 +114,24 @@ const TelaHome = () => {
             </ScrollView>
         
                     {/* Barra de Navegação com botões*/}
-                    <View style={styles.navBar}>
-                        <TouchableOpacity style={styles.navButton} onPress={handlePressInicio}>
-                            <Icon name="home" size={25} color="#00BFFF" />
-                            <Text style={styles.navButtonText}>Início</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.navButton} onPress={handlePressVacinas}>
-                            <Icon name="medkit" size={25} color="#00BFFF" />
-                            <Text style={styles.navButtonText}>Vacinas</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.navButton} onPress={handlePressAgenda}>
-                            <Icon name="calendar" size={25} color="#00BFFF" />
-                            <Text style={styles.navButtonText}>Agenda</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.navButton} onPress={handlePressPerfil}>
-                            <Icon name="person" size={25} color="#00BFFF" />
-                            <Text style={styles.navButtonText}>Perfil</Text>
-                        </TouchableOpacity>
-                     </View>
+            <View style={styles.navBar}>
+                <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('Home')}>
+                  <Icon name="home" size={25} color="#00BFFF" />
+                  <Text style={styles.navButtonText}>Início</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('Vacina')}>
+                  <Icon name="medkit" size={25} color="#00BFFF" />
+                  <Text style={styles.navButtonText}>Vacinas</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.navButton} onPress={handlePressAgenda}>
+                    <Icon name="calendar" size={25} color="#00BFFF" />
+                    <Text style={styles.navButtonText}>Agenda</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.navButton} onPress={handlePressPerfil}>
+                    <Icon name="person" size={25} color="#00BFFF" />
+                    <Text style={styles.navButtonText}>Perfil</Text>
+                </TouchableOpacity>
+              </View>
         </View>
     );
 };
@@ -260,4 +261,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TelaHome;
+export default VacinaComponent;
