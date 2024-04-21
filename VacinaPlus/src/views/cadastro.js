@@ -55,10 +55,10 @@ const CadastroComponent = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 20,
-    marginTop: -55,
+    margin: 10,
+    paddingTop: 50
   },
   title: {
     fontSize: 24,
@@ -70,8 +70,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   input: {
-    width: '100%',
-    height: 40,
+    width: '80%',
+    height: 45,
     borderColor: 'gray',
     borderWidth: 1,
     borderRadius: 5,

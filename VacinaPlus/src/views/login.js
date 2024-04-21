@@ -43,13 +43,11 @@ const LoginComponent = () => {
 
       <TextInput
         style={styles.input}
-        mode="outlined"
         value={email}
         placeholder='Email'
         onChangeText={setEmail} />
       <TextInput
         style={styles.input}
-        mode="outlined"
         value={password}
         placeholder='Sua senha'
         onChangeText={setPassword}
@@ -83,7 +81,8 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
-    padding: 10,
+    margin: 10,
+    paddingTop: 50
   },
   footer: {
     justifyContent: 'flex-end',
@@ -95,10 +94,10 @@ const styles = StyleSheet.create({
     height: 300,
   },
   button: {
-    marginTop: 20,
+    marginTop: 10,
     paddingVertical: 3,
-    borderRadius: 5,
-    width: 300,
+    borderRadius: 20,
+    width: '50%',
     backgroundColor: '#1fb6ff',
   },
   esqueceuSenha: {
@@ -128,9 +127,14 @@ const styles = StyleSheet.create({
     marginBottom: 30
   },
   input: {
-    width: 300,
-    height: 57,
-    marginVertical: 10,
+    width: '75%',
+    height: 45,
+    backgroundColor: 'white',
+    borderColor: 'gray',
+    borderWidth: 1,
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    marginBottom: 10,
   }
 });
 

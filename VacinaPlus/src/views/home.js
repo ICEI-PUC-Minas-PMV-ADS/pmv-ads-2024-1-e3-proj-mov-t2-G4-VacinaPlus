@@ -3,7 +3,6 @@ import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, Dimensions
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 
-
 const { width, height } = Dimensions.get('window');
 
 const TelaHome = () => {
@@ -61,7 +60,7 @@ const TelaHome = () => {
           <Icon name="calendar" size={25} color="#00BFFF" />
           <Text style={styles.navButtonText}>Agenda</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navButton} onPress={handlePressPerfil}>
+        <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('Perfil')}>
           <Icon name="person" size={25} color="#00BFFF" />
           <Text style={styles.navButtonText}>Perfil</Text>
         </TouchableOpacity>

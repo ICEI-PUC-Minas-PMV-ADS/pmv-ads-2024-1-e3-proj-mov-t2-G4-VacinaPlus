@@ -113,25 +113,25 @@ const VacinaComponent = () => {
                     </View>
             </ScrollView>
         
-                    {/* Barra de Navegação com botões*/}
+            {/* Barra de Navegação com botões*/}
             <View style={styles.navBar}>
-                <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('Home')}>
-                  <Icon name="home" size={25} color="#00BFFF" />
-                  <Text style={styles.navButtonText}>Início</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('Vacina')}>
-                  <Icon name="medkit" size={25} color="#00BFFF" />
-                  <Text style={styles.navButtonText}>Vacinas</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.navButton} onPress={handlePressAgenda}>
-                    <Icon name="calendar" size={25} color="#00BFFF" />
-                    <Text style={styles.navButtonText}>Agenda</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.navButton} onPress={handlePressPerfil}>
-                    <Icon name="person" size={25} color="#00BFFF" />
-                    <Text style={styles.navButtonText}>Perfil</Text>
-                </TouchableOpacity>
-              </View>
+              <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('Home')}>
+                <Icon name="home" size={25} color="#00BFFF" />
+                <Text style={styles.navButtonText}>Início</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('Vacina')}>
+                <Icon name="medkit" size={25} color="#00BFFF" />
+                <Text style={styles.navButtonText}>Vacinas</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.navButton} onPress={handlePressAgenda}>
+                <Icon name="calendar" size={25} color="#00BFFF" />
+                <Text style={styles.navButtonText}>Agenda</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('Perfil')}>
+                <Icon name="person" size={25} color="#00BFFF" />
+                <Text style={styles.navButtonText}>Perfil</Text>
+              </TouchableOpacity>
+            </View>
         </View>
     );
 };
