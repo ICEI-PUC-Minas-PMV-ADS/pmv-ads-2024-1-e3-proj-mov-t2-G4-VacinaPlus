@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app"; //importando fire base
+import { initializeApp } from "firebase/app"; //importando inicialização fire base
 import {initializeAuth, getReactNativePersistence} from "firebase/auth/react-native"; // importa auth e persistência de dados 
 import AsyncStorage from "@react-native-async-storage/async-storage"; // armazenamento assincrono paara pequenas quantidades de dados (semelhante ao localStorage)
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -9,7 +9,7 @@ API_KEY,AUTH_DOMAIN,
 PROJECT_ID,STORAGE_BUCKET,
 MESSAGING_SENDER_ID,
 APP_ID,
-MEASUREMENT_ID,} from "@env"  //importando informações do .env (variáveis de ambiente)
+MEASUREMENT_ID} from "@env"  //importando informações do .env (variáveis de ambiente)
 
 const firebaseConfig = {
     apiKey: API_KEY,
