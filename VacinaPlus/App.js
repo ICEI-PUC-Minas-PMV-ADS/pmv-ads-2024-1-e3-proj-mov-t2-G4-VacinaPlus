@@ -7,6 +7,7 @@ import SenhaComponent from './src/views/esqueceuSenha';
 import TelaHome from './src/views/home';
 import VacinaComponent from './src/views/vacina';
 import PerfilComponent from './src/views/perfil';
+import UsuariosComponent from './src/views/usuarios';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +22,7 @@ export default function App() {
         <Stack.Screen name="Home" component={TelaHome} options={{header:() => null}}/>
         <Stack.Screen name="Vacina" component={VacinaComponent} options={{ header:() => null}}/>
         <Stack.Screen name="Perfil" component={PerfilComponent} options={{ header:() => null}}/>
+        <Stack.Screen name="Usuarios" component={UsuariosComponent} options={{ header:() => null}}/>
        </Stack.Navigator>
     </NavigationContainer>
   );
