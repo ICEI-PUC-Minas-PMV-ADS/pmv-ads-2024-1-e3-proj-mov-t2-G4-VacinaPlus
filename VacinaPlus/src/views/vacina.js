@@ -1,14 +1,20 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, Dimensions } from 'react-native';
+import React,{useRef} from 'react';
+import { useState } from 'react';
+import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, Dimensions,Pressable } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { TextInput,Appbar,Card } from 'react-native-paper';
+import { TextInput,Appbar,Card,Modal,Portal,PaperProvider ,Button} from 'react-native-paper';
+import { Modalize } from 'react-native-modalize';
 import { useNavigation } from '@react-navigation/native';
 import BarraNavegacao from '../components/BarraNavegacao';
-
+import CardDoses from '../components/CardDoses';
 const { width, height } = Dimensions.get('window');
 
 const VacinaComponent = () => {
-
+  const [nome, setNome] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [email, setEmail] = useState("");
+  const [datanascimento, setDataNascimento] = useState("");
+  const [cnis, setCnis] = useState("");
     const navigation = useNavigation();
     
     const [text, setText] = React.useState("");
@@ -32,8 +38,12 @@ const VacinaComponent = () => {
     const [visible, setVisible] = React.useState(false);
     const showModal = () => setVisible(true);
     const hideModal = () => setVisible(false);
-    const containerStyle = {backgroundColor: 'white', padding: 20};
-
+    const containerStyle = {backgroundColor: 'green', padding: 20 };
+    
+    const modalizeRef = useRef(null);
+    function onOpen(){
+      modalizeRef.current?.open();
+    }
     return (
         <View style={styles.container}>
             <ScrollView style={styles.scrollView}>
@@ -45,11 +55,72 @@ const VacinaComponent = () => {
                     <Icon name="notifications" size={25} color="#00BFFF" />                        
                     </TouchableOpacity>
                 </View>
+                 
+                 
+
+                 
                 {/* Seção de Vacinas */}
                 <View style={styles.section}>
                     <Text style={styles.text02}>
                         Minhas Vacinas
                     </Text>
+                    <View>
+                      <TouchableOpacity onPress={onOpen}>
+                        <Text style={styles.text02}>
+                          Vacinas
+                        </Text>
+                      </TouchableOpacity>
+                      <Modalize 
+                      style={{alignItems: 'center', justifyContent: 'center'}} 
+                      ref={modalizeRef}
+                      snapPoint={3} 
+                        > 
+                          <View style={{ fontSize:33,marginBottom:-33,justifyContent:'center'}}>
+                          <Text>Adicionar Vacina</Text>
+                        </View>
+                          <View style={{flex: 1,height:420,justifyContent:'center',alignItems:'center'}} >
+                            <TextInput
+                              style={styles.input}
+                              placeholder=" 👨🏽‍⚕️ Nome"
+                              onChangeText={text => setNome(text)}
+                              value={nome}
+                           />
+                            <TextInput
+                              style={styles.input}
+                              placeholder=" 💳 CPF"
+                              onChangeText={text => setCpf(text)}
+                              value={cpf}
+                            />
+                            <TextInput
+                                        style={styles.input}
+                                        placeholder=" 📬 E-mail"
+                                        onChangeText={text => setEmail(text)}
+                                        value={email}
+                                      />
+                                      <TextInput
+                                        style={styles.input}
+                                        placeholder=" 📆 Data nascimento (dd/mm/aaaa)"
+                                        onChangeText={text => setDataNascimento(text)}
+                                        value={datanascimento}
+                                      />
+                                      <TextInput
+                                        style={styles.input}
+                                        placeholder=" 📋 CNIS"
+                                        onChangeText={text => setCnis(text)}
+                                        value={cnis}
+                                      />
+                          </View>
+                          <View style={styles.buttons}>
+                              <Pressable style={styles.button}>
+                                <Text style={styles.buttonText}>Criar</Text>
+                              </Pressable>
+                              <Pressable style={styles.button}  >
+                                <Text style={styles.buttonText}>Ver lista</Text>
+                              </Pressable>
+                            </View>
+                      </Modalize>
+                    </View>
+                     
                     <TextInput
                         style={styles.input}
                         mode="outlined"
@@ -74,35 +145,7 @@ const VacinaComponent = () => {
                     </Text>
                     </View>
                     {/* Cards de doses por idade*/}
-                    <View style={styles.cards}>
-                        <Text style={styles.text02}>
-                           Doses para Tomar
-                        </Text>
-                        <ScrollView horizontal>
-                            <View style={{...styles.cardContainer, flexDirection: 'row', justifyContent: 'space-between' }}>
-                                <Card style={styles.card}>
-                                    <Card.Cover style={styles.Cover} source={{ uri: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSIqDF-F2_tSXys9VvU7mRI6QmSmvkSpfSGeFBxlpLhf3Yt_x_9' }} />
-                                    <Card.Title style={styles.title} title="Criança" />
-                                </Card>
-                                <Card style={styles.card}>
-                                    <Card.Cover style={styles.Cover} source={{ uri: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSIqDF-F2_tSXys9VvU7mRI6QmSmvkSpfSGeFBxlpLhf3Yt_x_9' }} />
-                                    <Card.Title style={styles.title} title="Adolescente" />
-                                </Card>
-                                <Card style={styles.card}>
-                                    <Card.Cover style={styles.Cover} source={{ uri: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSIqDF-F2_tSXys9VvU7mRI6QmSmvkSpfSGeFBxlpLhf3Yt_x_9' }} />
-                                    <Card.Title style={styles.title} title="Adulto" />
-                                </Card>
-                                <Card style={styles.card}>
-                                    <Card.Cover style={styles.Cover} source={{ uri: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSIqDF-F2_tSXys9VvU7mRI6QmSmvkSpfSGeFBxlpLhf3Yt_x_9' }} />
-                                    <Card.Title style={styles.title} title="Gestante" />
-                                </Card>
-                                <Card style={styles.card}>
-                                    <Card.Cover style={styles.Cover} source={{ uri: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSIqDF-F2_tSXys9VvU7mRI6QmSmvkSpfSGeFBxlpLhf3Yt_x_9' }} />
-                                    <Card.Title style={styles.title} title="Idoso" />
-                                </Card>
-                            </View>
-                        </ScrollView>
-                    </View>
+                    <CardDoses/>
                     {/* Carteira De Vacinação*/}
                     <View style={styles.banner}>
                         <Text style={styles.text02}>
@@ -143,34 +186,7 @@ const styles = StyleSheet.create({
   appbar:{
     size:22,
     marginLeft:-5
-  },
-  cards:{
-    marginTop:-15,
-    marginLeft:15
-  },
-  card:{
-    backgroundColor: '#fff',
-    borderRadius: 11,
-    width: 94,
-    height:135,
-    marginHorizontal:3,
-    marginBottom:6,
-     
-  },
-  Cover:{
-    marginLeft:4.25,
-    marginTop:6,
-    height:85,
-    borderRadius:43,
-    width:85,
-    justifyContent:'center'
-  },
-  title:{
-    marginLeft:2,
-    marginTop:-1,
-    textAlign:'center',
-     
-  },
+  },   
   header: {
     width: width,
     marginTop: 20,
@@ -190,8 +206,23 @@ const styles = StyleSheet.create({
     margin: 10,
     marginLeft:-3
   },
-  button:{
-     backgroundColor:'green',   
+  buttons: {
+     
+    flexDirection: 'row',
+    justifyContent: 'center',
+    
+  },
+  button: {
+    backgroundColor: '#007AFF',
+    justifyContent: "center",
+    borderRadius: 20,
+    alignItems: 'center',
+    
+    aspectRatio: 2.10,
+  },
+  buttonText: {
+    color: '#fff',
+     
   },
   notificationButton: {
     padding: 10,
