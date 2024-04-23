@@ -56,7 +56,7 @@ const TelaHome = () => {
           <Icon name="medkit" size={25} color="#00BFFF" />
           <Text style={styles.navButtonText}>Vacinas</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navButton} onPress={handlePressAgenda}>
+        <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('Calendario')}>
           <Icon name="calendar" size={25} color="#00BFFF" />
           <Text style={styles.navButtonText}>Agenda</Text>
         </TouchableOpacity>
