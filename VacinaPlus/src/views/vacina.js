@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, Dimensions
 import Icon from 'react-native-vector-icons/Ionicons';
 import { TextInput,Appbar,Card } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
+import BarraNavegacao from '../components/BarraNavegacao';
 
 const { width, height } = Dimensions.get('window');
 
@@ -114,24 +115,7 @@ const VacinaComponent = () => {
             </ScrollView>
         
             {/* Barra de Navegação com botões*/}
-            <View style={styles.navBar}>
-              <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('Home')}>
-                <Icon name="home" size={25} color="#00BFFF" />
-                <Text style={styles.navButtonText}>Início</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('Vacina')}>
-                <Icon name="medkit" size={25} color="#00BFFF" />
-                <Text style={styles.navButtonText}>Vacinas</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.navButton} onPress={handlePressAgenda}>
-                <Icon name="calendar" size={25} color="#00BFFF" />
-                <Text style={styles.navButtonText}>Agenda</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('Perfil')}>
-                <Icon name="person" size={25} color="#00BFFF" />
-                <Text style={styles.navButtonText}>Perfil</Text>
-              </TouchableOpacity>
-            </View>
+            <BarraNavegacao/>
         </View>
     );
 };
@@ -242,23 +226,7 @@ const styles = StyleSheet.create({
   },
   sectionText: {
     marginTop: 10,
-  },
-  navBar: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    backgroundColor: 'transparent', 
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    paddingBottom: 10,
-  },
-  navButton: {
-    alignItems: 'center',
-  },
-  navButtonText: {
-    color: '#00BFFF', 
-  },
+  } 
 });
 
 export default VacinaComponent;

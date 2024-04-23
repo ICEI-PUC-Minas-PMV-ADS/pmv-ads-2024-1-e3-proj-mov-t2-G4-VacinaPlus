@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 import { Calendar, LocaleConfig } from 'react-native-calendars';
 import { TextInputMask } from 'react-native-masked-text';
 import { useNavigation } from '@react-navigation/native';
-
+import BarraNavegacao from '../components/BarraNavegacao';
 LocaleConfig.locales['pt-br'] = {
   monthNames: [
     'Janeiro',
@@ -216,6 +216,7 @@ const MyCalendarAdmin = () => {
           </View>
         ))}
       </View>
+      <BarraNavegacao/>
     </View>
   );
 };

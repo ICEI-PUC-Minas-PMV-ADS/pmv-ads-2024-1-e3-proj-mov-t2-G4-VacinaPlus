@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { ScrollView, View, StyleSheet, TextInput, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
+import BarraNavegacao from '../components/BarraNavegacao';
 const PerfilComponent = () => {
     const [user, setUser] = useState({ 
         name: 'Seu Nome',
@@ -91,6 +91,7 @@ const PerfilComponent = () => {
               <Button title="Salvar Alterações" onPress={handleSave} />
             </View>
           </ScrollView>
+          <BarraNavegacao/>
         </View>
       );
     };     
