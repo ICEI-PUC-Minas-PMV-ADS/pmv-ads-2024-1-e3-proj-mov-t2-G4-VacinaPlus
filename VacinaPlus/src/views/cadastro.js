@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Image, StyleSheet, Text, TextInput, ScrollView, Pressable, } from 'react-native';
 import { widthPercentageToDP, heightPercentageToDP } from 'react-native-responsive-screen';
 import { useState } from 'react';
-import firebase from '../../firebase';
+import firebase from '../config/firebase';
 import { useNavigation } from '@react-navigation/native';
 
 const CadastroComponent = () => {
