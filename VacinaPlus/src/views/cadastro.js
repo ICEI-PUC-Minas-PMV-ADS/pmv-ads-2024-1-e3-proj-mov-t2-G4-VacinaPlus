@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Image, StyleSheet, Text, TextInput, Pressable } from 'react-native';
+import { View, Image, StyleSheet, Text, TextInput, ScrollView, Pressable, } from 'react-native';
+import { widthPercentageToDP, heightPercentageToDP } from 'react-native-responsive-screen';
 import { useState } from 'react';
 import firebase from '../../firebase';
 import { useNavigation } from '@react-navigation/native';
@@ -30,9 +31,11 @@ const CadastroComponent = () => {
   }
 
   return (
-    <View style={styles.container}>
+<ScrollView style={styles.scrollView}>
+  <View style={styles.container}>
+    
       <Image
-            style={styles.Logo}
+            style={styles.logo}
             source={require('../../assets/logo-plus.png')}
         />
       <Text style={styles.title}>Vamos lá!</Text>
@@ -89,54 +92,65 @@ const CadastroComponent = () => {
           <Text style={styles.buttonText}>Ver lista</Text>
         </Pressable>
       </View>
-    </View>
+    
+  </View>
+</ScrollView> 
   );
 }
 
 const styles = StyleSheet.create({
+  scrollView: {
+    flex: 1,
+    backgroundColor: '#fff', // Cor de fundo do ScrollView
+  },
   container: {
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
-    margin: 10,
-    paddingTop: 50
+    margin: widthPercentageToDP('5%'), // Margem responsiva
+    paddingTop: heightPercentageToDP('5%'), // Padding superior responsivo
+  },
+  logo: {
+    width: widthPercentageToDP('50%'), // Largura responsiva
+    height: heightPercentageToDP('20%'), // Altura responsiva
+    marginBottom: heightPercentageToDP('5%'), // Margem inferior responsiva
   },
   title: {
-    fontSize: 24,
+    fontSize: widthPercentageToDP('5%'), // Tamanho de fonte responsivo
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginBottom: heightPercentageToDP('2%'), // Margem inferior responsiva
   },
   subtitle: {
-    fontSize: 16,
-    marginBottom: 20,
+    fontSize: widthPercentageToDP('3%'), // Tamanho de fonte responsivo
+    marginBottom: heightPercentageToDP('5%'), // Margem inferior responsiva
   },
   input: {
-    width: '65%',
-    height: 40,
-    marginVertical: 10,
-    paddingHorizontal: 10,
+    width: widthPercentageToDP('65%'), // Largura responsiva
+    height: heightPercentageToDP('5%'), // Altura responsiva
+    marginVertical: heightPercentageToDP('1%'), // Margem vertical responsiva
+    paddingHorizontal: widthPercentageToDP('3%'), // Padding horizontal responsivo
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 5,
   },
   buttons: {
-    width: '65%',
+    width: widthPercentageToDP('65%'), // Largura responsiva
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginTop: heightPercentageToDP('3%'), // Margem superior responsiva
   },
   button: {
-    marginTop: 20,
     backgroundColor: '#007AFF',
     justifyContent: "center",
     borderRadius: 20,
     alignItems: 'center',
-    width: "35%",
-    aspectRatio: 2.10
+    width: widthPercentageToDP('24%'), // Largura responsiva
+    aspectRatio: 2.10,
   },
   buttonText: {
     color: '#fff',
-    fontSize: 16,
-  }
+    fontSize: widthPercentageToDP('3%'), // Tamanho de fonte responsivo
+  },
 });
 
 export default CadastroComponent;
