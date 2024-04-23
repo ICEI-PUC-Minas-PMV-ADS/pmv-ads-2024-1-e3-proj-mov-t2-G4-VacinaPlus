@@ -141,7 +141,7 @@ const MyCalendarAdmin = () => {
   };
 
   return (
-    <View style={{ flex: 1, marginTop: 20 }}>
+    <View style={{ flex: 1, marginTop: 20, marginHorizontal:8 }}>
       <Calendar
         markingType="multi-period"
         markedDates={markedDates}
@@ -190,7 +190,7 @@ const MyCalendarAdmin = () => {
             }} />
           </TouchableOpacity>
         ))}
-      </View>
+      </View >
       <TouchableOpacity onPress={removePeriodsBySelectedColor}>
         <Text>Remover Intervalos</Text>
       </TouchableOpacity>
@@ -205,7 +205,7 @@ const MyCalendarAdmin = () => {
       <TouchableOpacity onPress={() => addLegenda(legendDescription, selectedColor)}>
         <Text>Adicionar Legenda</Text>
       </TouchableOpacity>
-      <View>
+      <View >
         {legendas.map((legenda, index) => (
           <View key={index} style={{ flexDirection: 'row', alignItems: 'center', margin: 10 }}>
             <View style={{ width: 20, height: 20, backgroundColor: legenda.color, marginRight: 5 }} />
