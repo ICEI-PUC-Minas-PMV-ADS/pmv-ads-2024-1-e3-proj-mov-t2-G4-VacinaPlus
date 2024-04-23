@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FlatList, Image, Pressable, StyleSheet, Text, View, TextInput } from 'react-native';
-import firebase from '../../firebase';
+import firebase from '../config/firebase';
 import { useNavigation } from '@react-navigation/native';
 
 const UsuariosComponent = () => {
