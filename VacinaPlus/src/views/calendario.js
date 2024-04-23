@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 import { Calendar, LocaleConfig } from 'react-native-calendars';
 import { TextInputMask } from 'react-native-masked-text';
+import { useNavigation } from '@react-navigation/native';
 
 LocaleConfig.locales['pt-br'] = {
   monthNames: [
@@ -47,6 +48,7 @@ LocaleConfig.locales['pt-br'] = {
 
 LocaleConfig.defaultLocale = 'pt-br';
 
+
 const MyCalendarAdmin = () => {
   const [markedDates, setMarkedDates] = useState({});
   const [legendas, setLegendas] = useState([]);
@@ -56,6 +58,8 @@ const MyCalendarAdmin = () => {
   const [legendDescription, setLegendDescription] = useState('');
   const [colorFilters, setColorFilters] = useState({});
   const [legendIdCounter, setLegendIdCounter] = useState(0);
+
+  const navigation = useNavigation();
 
   const colors = [
     { label: 'Vermelho', value: 'red' },
