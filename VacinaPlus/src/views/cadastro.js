@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     margin: widthPercentageToDP('5%'), // Margem responsiva
-    paddingTop: heightPercentageToDP('-1%'), // Padding superior responsivo
+    paddingTop: heightPercentageToDP('1%'), // Padding superior responsivo
   },
   logo: {
     width: widthPercentageToDP('50%'), // Largura responsiva
