@@ -36,6 +36,19 @@ const UsuariosComponent = () => {
   const showEdit = (id) => {
     setEditState("flex")
     setEditId(id)
+    const pessoaSelecionada = pessoas.find(pessoa => pessoa.id === id);
+    if (pessoaSelecionada) {
+      setEditState("flex");
+      setEditId(id);
+      setNome(pessoaSelecionada.nome);
+      setCpf(pessoaSelecionada.cpf);
+      setEmail(pessoaSelecionada.email);
+      setDataNascimento(pessoaSelecionada.datanascimento);
+      setCns(pessoaSelecionada.cns);
+      setSenha(pessoaSelecionada.senha);
+    } else {
+      console.log("Pessoa não encontrada.");
+    }
   }
 
   const closeEdit = () => {

@@ -38,7 +38,7 @@ const CadastroComponent = () => {
             style={styles.logo}
             source={require('../../assets/logo-plus.png')}
         />
-      <Text style={styles.title}>Vamos lá!</Text>
+      <Text style={styles.title} onPress={() => navigation.navigate('Usuarios')}>Vamos lá!</Text>
       <Text style={styles.subtitle}>Crie uma conta para continuar</Text>
 
       <TextInput
@@ -88,9 +88,6 @@ const CadastroComponent = () => {
         <Pressable style={styles.button} onPress={handle}>
           <Text style={styles.buttonText}>Criar</Text>
         </Pressable>
-        <Pressable style={styles.button} onPress={() => navigation.navigate('Usuarios')}>
-          <Text style={styles.buttonText}>Ver lista</Text>
-        </Pressable>
       </View>
     
   </View>
@@ -134,7 +131,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   buttons: {
-    width: widthPercentageToDP('65%'), // Largura responsiva
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: heightPercentageToDP('2%'), // Margem superior responsiva
@@ -144,12 +140,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 20,
     alignItems: 'center',
-    width: widthPercentageToDP('22%'), // Largura responsiva
-    aspectRatio: 2.10,
+    width: widthPercentageToDP('37%'), // Largura responsiva
+    aspectRatio: 4,
   },
   buttonText: {
     color: '#fff',
-    fontSize: widthPercentageToDP('3%'), // Tamanho de fonte responsivo
+    fontSize: widthPercentageToDP('3.5%'), // Tamanho de fonte responsivo
   },
 });
 
