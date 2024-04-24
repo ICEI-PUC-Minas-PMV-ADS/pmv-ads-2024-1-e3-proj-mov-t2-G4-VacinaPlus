@@ -56,9 +56,6 @@ const VacinaComponent = () => {
                     </TouchableOpacity>
                 </View>
                  
-                 
-
-                 
                 {/* Seção de Vacinas */}
                 <View style={styles.section}>
                     <Text style={styles.text02}>
@@ -92,23 +89,23 @@ const VacinaComponent = () => {
                               value={cpf}
                             />
                             <TextInput
-                                        style={styles.input}
-                                        placeholder=" 📬 E-mail"
-                                        onChangeText={text => setEmail(text)}
-                                        value={email}
-                                      />
-                                      <TextInput
-                                        style={styles.input}
-                                        placeholder=" 📆 Data nascimento (dd/mm/aaaa)"
-                                        onChangeText={text => setDataNascimento(text)}
-                                        value={datanascimento}
-                                      />
-                                      <TextInput
-                                        style={styles.input}
-                                        placeholder=" 📋 CNIS"
-                                        onChangeText={text => setCnis(text)}
-                                        value={cnis}
-                                      />
+                              style={styles.input}
+                              placeholder=" 📬 E-mail"
+                              onChangeText={text => setEmail(text)}
+                              value={email}
+                            />
+                            <TextInput
+                              style={styles.input}
+                              placeholder=" 📆 Data nascimento (dd/mm/aaaa)"
+                              onChangeText={text => setDataNascimento(text)}
+                              value={datanascimento}
+                            />
+                            <TextInput
+                              style={styles.input}
+                              placeholder=" 📋 CNIS"
+                              onChangeText={text => setCnis(text)}
+                              value={cnis}
+                            />
                           </View>
                           <View style={styles.buttons}>
                               <Pressable style={styles.button}>

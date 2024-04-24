@@ -12,7 +12,7 @@ const CadastroComponent = () => {
   const [cpf, setCpf] = useState("");
   const [email, setEmail] = useState("");
   const [datanascimento, setDataNascimento] = useState("");
-  const [cnis, setCnis] = useState("");
+  const [cns, setCns] = useState("");
   const [senha, setSenha] = useState("");
 
   const handle = async (e) => {
@@ -23,7 +23,7 @@ const CadastroComponent = () => {
       cpf: cpf,
       email: email,
       datanascimento: datanascimento,
-      cnis: cnis,
+      cns: cns,
       senha: senha
     })
 
@@ -67,9 +67,9 @@ const CadastroComponent = () => {
       />
       <TextInput
         style={styles.input}
-        placeholder=" 📋 CNIS"
-        onChangeText={text => setCnis(text)}
-        value={cnis}
+        placeholder=" 📋 CNS"
+        onChangeText={text => setCns(text)}
+        value={cns}
       />
       <TextInput
         style={styles.input}
@@ -137,14 +137,14 @@ const styles = StyleSheet.create({
     width: widthPercentageToDP('65%'), // Largura responsiva
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: heightPercentageToDP('3%'), // Margem superior responsiva
+    marginTop: heightPercentageToDP('2%'), // Margem superior responsiva
   },
   button: {
-    backgroundColor: '#007AFF',
+    backgroundColor: '#1fb6ff',
     justifyContent: "center",
     borderRadius: 20,
     alignItems: 'center',
-    width: widthPercentageToDP('24%'), // Largura responsiva
+    width: widthPercentageToDP('22%'), // Largura responsiva
     aspectRatio: 2.10,
   },
   buttonText: {

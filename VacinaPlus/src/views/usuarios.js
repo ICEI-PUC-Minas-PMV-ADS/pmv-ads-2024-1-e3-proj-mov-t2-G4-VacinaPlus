@@ -8,7 +8,7 @@ const UsuariosComponent = () => {
   const [cpf, setCpf] = useState("");
   const [email, setEmail] = useState("");
   const [datanascimento, setDataNascimento] = useState("");
-  const [cnis, setCnis] = useState("");
+  const [cns, setCns] = useState("");
   const [senha, setSenha] = useState("");
   const [pessoas, setPessoas] = useState([]);
   const [editId, setEditId] = useState("");
@@ -48,16 +48,19 @@ const UsuariosComponent = () => {
       <View style={styles.variaveis}>
         <Text style={styles.nome}>{`${item.nome}`}</Text>
         <Text style={styles.cpf}>{`CPF: ${item.cpf}`}</Text>
+        <Text style={styles.email}>{`Email: ${item.email}`}</Text>
+        <Text style={styles.datanascimento}>{`Data Nasc: ${item.datanascimento}`}</Text>
+        <Text style={styles.cns}>{`CNS: ${item.cnis}`}</Text>
       </View>
       <View style={styles.acoes}>
         <Pressable onPress={() => showEdit(item.id)}>
           <Image style={styles.edit} source={require(
-            '../../assets/splash.png',
+            '../../assets/pencil.png',
           )}></Image>
         </Pressable>
         <Pressable onPress={() => excluirPessoa(item.id)}>
           <Image style={styles.trash} source={require(
-            '../../assets/splash.png',
+            '../../assets/trash.png',
           )}></Image>
         </Pressable>
       </View>
@@ -98,9 +101,9 @@ const UsuariosComponent = () => {
             />
             <TextInput
               style={styles.input}
-              placeholder='CNIS'
-              onChangeText={text => setCnis(text)}
-              value={cnis}
+              placeholder='CNS'
+              onChangeText={text => setCns(text)}
+              value={cns}
             />
             <TextInput
               style={styles.input}
@@ -113,7 +116,7 @@ const UsuariosComponent = () => {
             <Pressable style={styles.editButton} onPress={closeEdit}>
               <Text style={styles.editButtonText}>Voltar</Text>
             </Pressable>
-            <Pressable style={styles.editButton} onPress={() => atualizarPessoa(editId, { nome, cpf })}>
+            <Pressable style={styles.editButton} onPress={() => atualizarPessoa(editId, { nome, cpf, email, datanascimento, cns, senha })}>
               <Text style={styles.editButtonText}>Editar</Text>
             </Pressable>
           </View>
@@ -161,26 +164,37 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   pessoa: {
-    display:"flex",
     flexDirection: "row",
     backgroundColor: '#eee',
     padding: 10,
-    marginVertical: 5,
+    marginVertical: 10,
     width: '90%',
-    borderRadius: 5,
+    borderRadius: 8,
     alignItems: 'flex-start',
-    aspectRatio: 5,
     justifyContent: "space-between"
   },
   variaveis: {
-    height: "100%",
-    gap: 5,
+    flexDirection: "column",
+    justifyContent: "space-between",
+    marginHorizontal: 10,
+    marginVertical: 7,
+    gap: 4,
+    flex: 1 
   },
   nome: {
     fontSize: 18,
     fontWeight: 'bold',
   },
   cpf: {
+    fontSize: 16,
+  },
+  email: {
+    fontSize: 16,
+  },
+  datanascimento: {
+    fontSize: 16,
+  },
+  cns: {
     fontSize: 16,
   },
   acoes: {
@@ -190,7 +204,6 @@ const styles = StyleSheet.create({
   edit: {
     height: 20,
     width: 20,
-
   },
   trash: {
     height: 25,
@@ -199,10 +212,11 @@ const styles = StyleSheet.create({
     borderRadius: 5
   },
   button: {
-    backgroundColor: '#007AFF',
+    backgroundColor: '#1fb6ff',
     paddingVertical: 10,
     paddingHorizontal: 20,
-    borderRadius: 5,
+    borderRadius: 20,
+    width: '35%', // Largura responsiva
     alignItems: 'center',
   },
   buttonText: {
@@ -213,20 +227,21 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: 0,
     right: 0,
+    top: '11%',
+    height: '100%',
     alignItems: 'center',
-    zIndex: 1
+    justifyContent: 'center',
+    zIndex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)',
   },
   editBox: {
     backgroundColor: '#fff',
-    borderRadius: 5,
-    width: "80%",
-    aspectRatio: 1,
+    borderRadius: 10,
+    width: "85%",
+    aspectRatio: 0.8,
     elevation: 5,
-    display: 'flex',
-    flexDirection: "column",
+    padding: 15,
     alignItems: "center",
-    justifyContent: "center",
-    gap: 15
   },
   buttons: {
     width: '65%',
@@ -234,17 +249,18 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   editButtons: {
-    width: '65%',
+    width: '80%',
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
   editButton:{
-    backgroundColor: '#007AFF',
+    backgroundColor: '#1fb6ff',
     justifyContent: "center",
-    borderRadius: 5,
+    borderRadius: 20,
     alignItems: 'center',
-    width: "35%",
-    aspectRatio: 2.10
+    width: "30%",
+    aspectRatio: 1.9,
+    marginTop: 15,
   },
   editButtonText: {
     color: '#fff',
@@ -255,10 +271,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   input: {
-    paddingHorizontal: 12,
-    width: '65%',
-    height: 30,
-    marginVertical: 10,
+    padding: 12,
+    width: '80%',
+    height: 40,
+    marginVertical: 8,
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 5,
