@@ -1,5 +1,6 @@
 import firebase from "firebase/compat/app"; //importando inicialização fire base
 import 'firebase/compat/firestore';
+import 'firebase/compat/auth';
 
 import 'firebase/compat/database'; // Importe o módulo do Realtime Database
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Image, Text, StyleSheet } from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
+import firebase from '../config/firebase';
 
 const LoginComponent = () => {
 
@@ -9,38 +10,37 @@ const LoginComponent = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  // Para mostrar ou esconder a senha
+  const [showPassword, setShowPassword] = useState(false);
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
-  function handleSignIn() {
-    if (email === '' || password === '') {
-      alert("Preencha os campos")
-      return;
-    }
-    const data = {
-      email,
-      password
-    }
+  const handleSignIn = async () => {
+    try {
+      if (email === '' || password === '') {
+        alert("Preencha os campos");
+        return;
+      }
 
-    console.log(data);
-  }
+      // Autenticação com Firebase
+      await firebase.auth().signInWithEmailAndPassword(email, password);
+      
+      // Se o login for bem-sucedido, navegue para a tela Home
+      navigation.navigate('Home');
+    } catch (error) {
+      alert("Erro ao fazer login: " + error.message);
+    }
+  };
 
   return (
     <View style={styles.container}>
-
       <Image
         style={styles.Logo}
         source={require('../../assets/logo-plus.png')}
       />
-
-      <Text
-        style={styles.h1}>
-        Bem-vindo
-      </Text>
-
-      <Text
-        style={styles.h3}>
-        Faça login para continuar
-      </Text>
-
+      <Text style={styles.title}>Bem-vindo</Text>
+      <Text style={styles.subtitle}>Faça login para continuar</Text>
       <TextInput
         style={styles.input}
         value={email}
@@ -51,27 +51,27 @@ const LoginComponent = () => {
         value={password}
         placeholder='Sua senha'
         onChangeText={setPassword}
-        secureTextEntry
-        right={<TextInput.Icon icon="eye" />} />
-
+        secureTextEntry={!showPassword}
+        right={<TextInput.Icon
+          icon={showPassword ? 'eye-off' : 'eye'}
+          onPress={togglePasswordVisibility}
+         />}
+      />
       <Text
-        style={styles.esqueceuSenha} onPress={() => navigation.navigate('EsqueceuSenha')}>
+        style={styles.forgotPassword} onPress={() => navigation.navigate('EsqueceuSenha')}>
         Esqueceu a senha ?
       </Text>
-
       <Button
         style={styles.button}
-        mode="contained" onPress={() => navigation.navigate('Home')}>
+        mode="contained" onPress={handleSignIn}>
         Entrar
       </Button>
-
       <View style={styles.footer}>
         <Text
-          style={styles.CadastreSe}>
-          Não tem uma Conta? <Text style={styles.textcolor} onPress={() => navigation.navigate('Cadastro')}>Cadastre-se</Text>
+          style={styles.createAccount}>
+          Não tem uma Conta? <Text style={styles.textLink} onPress={() => navigation.navigate('Cadastro')}>Cadastre-se</Text>
         </Text>
       </View>
-
     </ View>
   );
 };
@@ -79,10 +79,21 @@ const LoginComponent = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
+    backgroundColor: '#fff',
     alignItems: 'center',
+    justifyContent: 'center',
     margin: 10,
-    paddingTop: 50
+    paddingTop: '25%'
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#1fb6ff',
+    marginBottom: 10
+  },
+  subtitle: {
+    fontSize: 16,
+    marginBottom: 20,
   },
   footer: {
     justifyContent: 'flex-end',
@@ -90,8 +101,8 @@ const styles = StyleSheet.create({
     flex: 3,
   },
   Logo: {
-    width: 300,
-    height: 300,
+    width: 250,
+    height: 250,
   },
   button: {
     marginTop: 10,
@@ -100,35 +111,21 @@ const styles = StyleSheet.create({
     width: '50%',
     backgroundColor: '#1fb6ff',
   },
-  esqueceuSenha: {
-    marginRight: 165,
-    fontSize: 15,
+  forgotPassword: {
+    marginRight: '37.5%',
+    fontSize: 17,
     color: '#1fb6ff',
     marginBottom: 20
   },
-  CadastreSe: {
-    fontSize: 15,
-    color: '#000',
+  createAccount: {
+    fontSize: 17,
     marginVertical: 20
   },
-  textcolor: {
+  textLink: {
     color: '#1fb6ff',
-  },
-  h1: {
-    fontSize: 25,
-    fontWeight: 'bold',
-    color: '#1fb6ff',
-    marginBottom: 10
-  },
-  h3: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#000',
-    marginBottom: 30
   },
   input: {
     width: '75%',
-    height: 45,
     backgroundColor: 'white',
     borderColor: 'gray',
     borderWidth: 1,

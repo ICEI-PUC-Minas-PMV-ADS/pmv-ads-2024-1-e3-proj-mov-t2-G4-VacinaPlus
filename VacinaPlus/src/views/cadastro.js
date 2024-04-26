@@ -105,21 +105,21 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     margin: widthPercentageToDP('5%'), // Margem responsiva
-    paddingTop: heightPercentageToDP('1%'), // Padding superior responsivo
+    paddingTop: heightPercentageToDP('7%'), // Padding superior responsivo
   },
   logo: {
     width: widthPercentageToDP('50%'), // Largura responsiva
     height: heightPercentageToDP('20%'), // Altura responsiva
-    marginBottom: heightPercentageToDP('5%'), // Margem inferior responsiva
+    marginBottom: heightPercentageToDP('2%'), // Margem inferior responsiva
   },
   title: {
     fontSize: widthPercentageToDP('5%'), // Tamanho de fonte responsivo
     fontWeight: 'bold',
-    marginBottom: heightPercentageToDP('2%'), // Margem inferior responsiva
+    marginBottom: heightPercentageToDP('1%'), // Margem inferior responsiva
   },
   subtitle: {
     fontSize: widthPercentageToDP('3%'), // Tamanho de fonte responsivo
-    marginBottom: heightPercentageToDP('5%'), // Margem inferior responsiva
+    marginBottom: heightPercentageToDP('3%'), // Margem inferior responsiva
   },
   input: {
     width: widthPercentageToDP('65%'), // Largura responsiva
