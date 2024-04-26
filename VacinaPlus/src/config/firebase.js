@@ -1,6 +1,10 @@
 import firebase from "firebase/compat/app"; //importando inicialização fire base
 import 'firebase/compat/firestore';
 
+import 'firebase/compat/database'; // Importe o módulo do Realtime Database
+
+
+
 let firebaseConfig = {
   apiKey: "AIzaSyAVZK5jpVmUyvIE6mwWV-T5ZFr7YXaR-P8",
   authDomain: "vacina-plus.firebaseapp.com",

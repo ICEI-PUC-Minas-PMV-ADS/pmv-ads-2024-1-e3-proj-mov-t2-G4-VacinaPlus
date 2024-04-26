@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import MainComponent from './src/views/index';
@@ -9,10 +10,16 @@ import VacinaComponent from './src/views/vacina';
 import PerfilComponent from './src/views/perfil';
 import UsuariosComponent from './src/views/usuarios';
 import MyCalendarAdmin from './src/views/calendario';
+import inserirDadosVacinas from './src/backend/db_firebase'; // Importe a função de inserção de dados
 
 const Stack = createStackNavigator();
 
 export default function App() {
+  useEffect(() => {
+    // Chama a função de inserção de dados quando o componente for montado
+    inserirDadosVacinas();
+  }, []); // O array vazio como segundo argumento garante que a função seja chamada apenas uma vez, quando o componente for montado
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -25,7 +32,7 @@ export default function App() {
         <Stack.Screen name="Perfil" component={PerfilComponent} options={{ header:() => null}}/>
         <Stack.Screen name="Usuarios" component={UsuariosComponent} options={{ header:() => null}}/>
         <Stack.Screen name="Calendario" component={MyCalendarAdmin} options={{ header:() => null}}/>
-       </Stack.Navigator>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }

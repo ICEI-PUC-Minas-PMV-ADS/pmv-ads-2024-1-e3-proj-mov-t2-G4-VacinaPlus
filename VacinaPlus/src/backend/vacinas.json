@@ -1,0 +1,15 @@
+[
+    {
+      "vacina": "Covid-19 - AstraZeneca",
+      "dataAplicacao": "2024-04-27",
+      "localAplicacao": "Rua das Flores, 12",
+      "nomeProprietario": "João"
+    },
+    {
+      "vacina": "Vacina X",
+      "dataAplicacao": "2024-04-28",
+      "localAplicacao": "Rua XYZ, 123",
+      "nomeProprietario": "Maria"
+    }
+  ]
+  
