@@ -9,7 +9,7 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
 |:---:	|:---	|
 |	Requisito Associado 	| RF-001 - O sistema deve permitir criar o perfil de usuários autorizados com credenciais únicas |
 | Objetivo do Teste 	| Verificar se o usuário consegue se cadastrar na aplicação. |
-| Passos 	| - Acessar a aplicação <br> - Clicar em "Começar" <br> - Preencher os campos obrigatórios (Nome, CPF, E-mail, Data de Nascimento, CNS, Senha,  Confirmar senha) <br> - Clicar em "Criar" |
+| Passos 	| - Acessar a aplicação <br> - Clicar em "Entrar" <br> - Preencher os campos obrigatórios (Nome, CPF, E-mail, Data de Nascimento, CNS, Senha,  Confirmar senha) <br> - Clicar em "Criar" |
 |Critério de Êxito | O cadastro foi realizado com sucesso. |
 |  	|  	|
 | **Caso de Teste** 	| **CT-02 – Efetuar login**	|
