@@ -9,7 +9,6 @@ const UsuariosComponent = () => {
   const [email, setEmail] = useState("");
   const [datanascimento, setDataNascimento] = useState("");
   const [cns, setCns] = useState("");
-  const [senha, setSenha] = useState("");
   const [pessoas, setPessoas] = useState([]);
   const [editId, setEditId] = useState("");
   let [editState, setEditState] = useState("none");
@@ -26,6 +25,24 @@ const UsuariosComponent = () => {
   
   const excluirPessoa = (id) => {
     firebase.firestore().collection('Pessoas').doc(id).delete();
+  }
+
+  const criarUsuario = async () => {
+    try {
+      const newUserCredential = await firebase.auth().createUserWithEmailAndPassword(email, senha);
+  
+      await firebase.firestore().collection("Pessoas").doc(newUserCredential.user.uid).set({
+        nome: nome,
+        cpf: cpf,
+        email: email,
+        datanascimento: datanascimento,
+        cns: cns,
+      });
+  
+      alert("Usuário criado com sucesso! ID: " + newUserCredential.user.uid);
+    } catch (error) {
+      alert("Erro ao criar usuário: " + error.message);
+    }
   }
 
   const atualizarPessoa = (id, dados) => {
@@ -45,7 +62,6 @@ const UsuariosComponent = () => {
       setEmail(pessoaSelecionada.email);
       setDataNascimento(pessoaSelecionada.datanascimento);
       setCns(pessoaSelecionada.cns);
-      setSenha(pessoaSelecionada.senha);
     } else {
       console.log("Pessoa não encontrada.");
     }
@@ -63,7 +79,7 @@ const UsuariosComponent = () => {
         <Text style={styles.cpf}>{`CPF: ${item.cpf}`}</Text>
         <Text style={styles.email}>{`Email: ${item.email}`}</Text>
         <Text style={styles.datanascimento}>{`Data Nasc: ${item.datanascimento}`}</Text>
-        <Text style={styles.cns}>{`CNS: ${item.cnis}`}</Text>
+        <Text style={styles.cns}>{`CNS: ${item.cns}`}</Text>
       </View>
       <View style={styles.acoes}>
         <Pressable onPress={() => showEdit(item.id)}>
@@ -118,18 +134,12 @@ const UsuariosComponent = () => {
               onChangeText={text => setCns(text)}
               value={cns}
             />
-            <TextInput
-              style={styles.input}
-              placeholder='Senha'
-              onChangeText={text => setSenha(text)}
-              value={senha}
-            />
           </View>
           <View style={styles.editButtons}>
             <Pressable style={styles.editButton} onPress={closeEdit}>
               <Text style={styles.editButtonText}>Voltar</Text>
             </Pressable>
-            <Pressable style={styles.editButton} onPress={() => atualizarPessoa(editId, { nome, cpf, email, datanascimento, cns, senha })}>
+            <Pressable style={styles.editButton} onPress={() => atualizarPessoa(editId, { nome, cpf, email, datanascimento, cns })}>
               <Text style={styles.editButtonText}>Editar</Text>
             </Pressable>
           </View>

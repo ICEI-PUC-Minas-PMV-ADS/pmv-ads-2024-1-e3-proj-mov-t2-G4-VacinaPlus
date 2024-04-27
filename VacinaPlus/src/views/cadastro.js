@@ -18,16 +18,23 @@ const CadastroComponent = () => {
   const handle = async (e) => {
     e.preventDefault();
 
-    const novoUsuarioRef = await firebase.firestore().collection("Pessoas").add({
-      nome: nome,
-      cpf: cpf,
-      email: email,
-      datanascimento: datanascimento,
-      cns: cns,
-      senha: senha
-    })
-
-    alert("Usuário criado com sucesso! ID: " + novoUsuarioRef.id)
+    try {
+      const newUserCredential = await firebase.auth().createUserWithEmailAndPassword(email, senha);
+    
+      // Se a criação do usuário for bem-sucedida, você pode adicionar os detalhes adicionais ao Firestore
+      await firebase.firestore().collection("Pessoas").doc(newUserCredential.user.uid).set({
+        nome: nome,
+        cpf: cpf,
+        email: email,
+        datanascimento: datanascimento,
+        cns: cns,
+        // Não armazene a senha diretamente no Firestore por razões de segurança
+      });
+    
+      alert("Usuário criado com sucesso! ID: " + newUserCredential.user.uid);
+    } catch (error) {
+      alert("Erro ao criar usuário: " + error.message);
+    }
   }
 
   return (
