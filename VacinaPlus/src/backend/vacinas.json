@@ -88,5 +88,13 @@
     "dataAplicacao": "2024-05-11",
     "localAplicacao": "Praça das Bromélias, 73",
     "nomeProprietario": "Patrícia"
+  } ,
+
+
+  {
+    "vacina": "Haemophilus influenzae b",
+    "dataAplicacao": "2024-05-11",
+    "localAplicacao": "Praça das Bromélias, 73",
+    "nomeProprietario": "Patrícia"
   } 
 ]
