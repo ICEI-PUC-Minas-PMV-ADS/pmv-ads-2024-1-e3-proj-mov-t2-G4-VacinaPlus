@@ -13,12 +13,13 @@ const TelaHome = () => {
   return (
     <View style={styles.container}>
       <ScrollView style={styles.scrollView}>        
-        <View style={styles.header}>       
-          <Image source={require('../../assets/logo-plus.png')} style={styles.logo} />
-          <Text style={styles.welcome}>Olá, Usuário!</Text>
-          <TouchableOpacity style={styles.notificationButton}>
-            <Icon name="notifications" size={25} color="#00BFFF" />
-          </TouchableOpacity>
+        {/* Header*/}
+        <View style={styles.header}>
+            <Image source={require('../../assets/logo-plus.png')} style={styles.logo} />
+            <Text style={styles.welcome}>Olá, Usuário!</Text>
+            <TouchableOpacity style={styles.notificationButton}>
+            <Icon name="notifications" size={25} color="#00BFFF" onPress={() => navigation.navigate('Notificacao')}/>                        
+            </TouchableOpacity>
         </View>
         {/* Seção de Imagens */}
         <View style={styles.section}>
@@ -53,20 +54,22 @@ const styles = StyleSheet.create({
   },
   header: {
     width: width,
+    marginTop: 25,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
     padding: 10,
   },
   logo: {
-    width: 50, 
-    height: 50, 
+    width: 60, 
+    height: 60, 
     marginRight: 10,
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 22,
     textAlign: 'left',
     margin: 10,
+    marginLeft:-3
   },
   notificationButton: {
     padding: 10,
