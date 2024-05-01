@@ -1,71 +1,119 @@
 import React, { useRef } from 'react';
-import { useState } from 'react';
+ 
 import { Modalize } from 'react-native-modalize';
-import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Pressable } from 'react-native';
-import { Card, List, MD3Colors } from 'react-native-paper';
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { Card } from 'react-native-paper';
+import VacinaCrianca from '../components/VacinaCrianca';
+import VacinaAdolescente from '../components/VacinaAdolescente'
+import VacinaAdulto from '../components/VacinaAdulto'
+import VacinaGestante from '../components/VacinaGestante';
+import VacinaIdoso from '../components/VacinaIdoso';
+
 
 const CardDoses = () => {
-    const [nome, setNome] = useState("");
-    const [cpf, setCpf] = useState("");
-    const [email, setEmail] = useState("");
-    const [datanascimento, setDataNascimento] = useState("");
-    const [cnis, setCnis] = useState("");
-    const modalizeRef = useRef(null);
-    function onOpen() {
-        modalizeRef.current?.open();
+
+    const modalizeAdolescente = useRef(null);
+
+     const onOpen = () => {
+        modalizeCrianca.current?.open();}
+    
+        const modalizeCrianca = useRef(null);
+    function OnAdo() {
+        modalizeAdolescente.current?.open();
+    }
+    const modalizeAdulto = useRef(null);
+    function OnAdult() {
+        modalizeAdulto.current?.open();
+    }
+    const modalizeGestante = useRef(null);
+    function OnGestante() {
+        modalizeGestante.current?.open();
+    }
+    const modalizeIdoso = useRef(null);
+    function OnIdoso() {
+        modalizeIdoso.current?.open();
     }
     return (
-         
+
         <View style={styles.cards}>
             <Text style={styles.text03}>
                 Doses para Tomar
             </Text>
             <Modalize
                 style={{ alignItems: 'center', justifyContent: 'center' }}
-                ref={modalizeRef}
-                snapPoint={345}
-                modalHeight={650}
-                >
-                    <View >
-                        <Text style={styles.text04}>Vacinas Crianças</Text>
-                        <List.Section style={styles.section}>
-                            <List.Item title="First Item" left={() => <List.Icon icon="folder" />} />
-                            <List.Item title="Second Item" left={() => <List.Icon color={'green'} icon="folder" />}/>
-                            <List.Item title="Second Item" left={() => <List.Icon color={'green'} icon="folder" />}/>
-                            <List.Item title="Second Item" left={() => <List.Icon color={'green'} icon="folder" />}/>
-                            <List.Item title="Second Item" left={() => <List.Icon color={'green'} icon="folder" />}/>  
-                        </List.Section>
-                    </View>
+                handleStyle={styles.handle__shape}
+                ref={modalizeCrianca}
+                snapPoint={444}
+                modalHeight={650}>
+                <VacinaCrianca />
+            </Modalize>
+            <Modalize
+                style={{ alignItems: 'center', justifyContent: 'center' }}
+                handleStyle={styles.handle__shape}
+                ref={modalizeAdolescente}
+                snapPoint={444}
+                modalHeight={650}>
+                <VacinaAdolescente />
+            </Modalize>
+            <Modalize
+                style={{ alignItems: 'center', justifyContent: 'center' }}
+                handleStyle={styles.handle__shape}
+                ref={modalizeAdulto}
+                snapPoint={444}
+                modalHeight={650}>
+                <VacinaAdulto />
+            </Modalize>
+            <Modalize
+                style={{ alignItems: 'center', justifyContent: 'center' }}
+                handleStyle={styles.handle__shape}
+                ref={modalizeGestante}
+                snapPoint={444}
+                modalHeight={650}>
+                <VacinaGestante />
+            </Modalize>
+            <Modalize
+                style={{ alignItems: 'center', justifyContent: 'center' }}
+                handleStyle={styles.handle__shape}
+                ref={modalizeIdoso}
+                snapPoint={444}
+                modalHeight={650}>
+                <VacinaIdoso />
             </Modalize>
             <ScrollView horizontal>
                 <View style={styles.doses}>
-                    <View>
-                        
-                        <TouchableOpacity onPress={onOpen}>
+                        <TouchableOpacity style={activeOpacity=0.1}onPress={onOpen}>
                             <Card style={styles.card}>
                                 <Card.Cover style={styles.Cover} source={require('../../assets/crianca.png')} />
                                 <Card.Title style={styles.title1} title="Criança" />
                             </Card>
                         </TouchableOpacity>
-
+                    <View>
+                        <TouchableOpacity onPress={OnAdo}>
+                            <Card style={styles.card}>
+                                <Card.Cover style={styles.Cover} source={require('../../assets/adolescentes.png')} />
+                                <Card.Title style={styles.title2} title="Adolescente" />
+                            </Card>
+                        </TouchableOpacity>
                     </View>
-                    <Card style={styles.card}>
-                        <Card.Cover style={styles.Cover} source={require('../../assets/adolescentes.png')} />
-                        <Card.Title style={styles.title2} title="Adolescente" />
-                    </Card>
-                    <Card style={styles.card}>
-                        <Card.Cover style={styles.Cover} source={require('../../assets/adulto.png')} />
-                        <Card.Title style={styles.title3} title="Adulto" />
-                    </Card>
+                    <TouchableOpacity onPress={OnAdult}>
+                        <Card style={styles.card}>
+                            <Card.Cover style={styles.Cover} source={require('../../assets/adulto.png')} />
+                            <Card.Title style={styles.title3} title="Adulto" />
+                        </Card>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={OnGestante}> 
                     <Card style={styles.card}>
                         <Card.Cover style={styles.Cover} source={require('../../assets/gestante.png')} />
                         <Card.Title style={styles.title4} title="Gestante" />
                     </Card>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={OnIdoso}> 
                     <Card style={styles.card}>
 
                         <Card.Cover style={styles.Cover} source={require('../../assets/idoso2.png')} />
                         <Card.Title style={styles.title5} title="Idoso" />
                     </Card>
+                    </TouchableOpacity>
                 </View>
             </ScrollView>
         </View>
@@ -136,19 +184,17 @@ const styles = StyleSheet.create({
         textAlign: 'left',
         justifyContent: 'center'
     },
-    section: {
-        marginLeft: 21,
-        marginTop: -1.5,
-        textAlign: 'left',
-        justifyContent: 'center'
-    },
-    text04: {
-        marginLeft: 21,
-        fontSize: 24,
-        color: '#8792A1',
-        marginTop: 11,
-        marginBottom: 5
-    },
+    handle__shape: {
+        alignSelf: 'center',
+    
+        top: 8,
+    
+        width: 45,
+        height: 5,
+    
+        borderRadius: 5,
+        backgroundColor: '#1fb6ff',
+      },
 });
-
+ 
 export default CardDoses;
