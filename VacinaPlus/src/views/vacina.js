@@ -52,7 +52,7 @@ const VacinaComponent = () => {
                     <Appbar.BackAction  style={styles.appbar}  onPress={() => navigation.goBack()} />
                     <Text style={styles.welcome}>Vacinas</Text>
                     <TouchableOpacity style={styles.notificationButton}>
-                    <Icon name="notifications" size={25} color="#00BFFF" />                        
+                    <Icon name="notifications" size={25} color="#00BFFF" onPress={() => navigation.navigate('Notificacao')}/>                        
                     </TouchableOpacity>
                 </View>
                  
