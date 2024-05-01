@@ -29,16 +29,14 @@ const NotComponent = () => {
             {[1, 2, 3, 4, 5].map((cardIndex) => (
                     <Card key={cardIndex} style={styles.card}>
                         <Card.Content>
-                            <Text variant="titleLarge" style={styles.dataTitle}>02/05/2024</Text>
-                            <Text 
-                                variant="bodyMedium" 
-                                style={[styles.text, { lineHeight: 20 }]} 
-                                numberOfLines={expandedCard === cardIndex ? undefined : 3} // Se expandedCard for igual ao índice do card, exibe todas as linhas
-                            >
-                                Lorem Ipsum is simply dummy text of the printing and 
-                                popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum 
-                                passages, and more recently with desktop publishing software like Aldus PageMaker 
-                                including versions of Lorem Ipsum.
+                            <Text variant="titleLarge" style={styles.dataTitle}>02/05/2024 - 20:00</Text>
+                            <Text variant="titleLarge" style={styles.title}>Lorem Ipsum</Text>
+                            <Text variant="bodyMedium" style={[styles.text, { lineHeight: 20 }]} 
+                                numberOfLines={expandedCard === cardIndex ? undefined : 3} >
+                                Lorem Ipsum is simply dummy text of the printing and popularised in the 1960s 
+                                with the release of Letraset sheets containing Lorem Ipsum passages, and more 
+                                recently with desktop publishing software like Aldus PageMakerincluding 
+                                versions of Lorem Ipsum.
                             </Text>
                             {expandedCard !== cardIndex && (
                                 <TouchableOpacity onPress={() => toggleExpandedCard(cardIndex)}>
@@ -92,6 +90,11 @@ const styles = StyleSheet.create({
     dataTitle: {
         fontSize: 14,
         paddingVertical: 10,
+        fontWeight: 'bold',
+    },
+    title: {
+        fontSize: 16,
+        paddingVertical: 5,
         fontWeight: 'bold',
     },
     text: {
