@@ -11,6 +11,7 @@ import PerfilComponent from './src/views/perfil';
 import UsuariosComponent from './src/views/usuarios';
 import MyCalendarAdmin from './src/views/calendario';
 import NotComponent from './src/views/notificacao';
+import ConfigNotComponent from './src/views/configNotificacao';
 import inserirDadosVacinas from './src/backend/db_firebase'; // Importe a função de inserção de dados
 
 const Stack = createStackNavigator();
@@ -34,6 +35,7 @@ export default function App() {
         <Stack.Screen name="Usuarios" component={UsuariosComponent} options={{ header:() => null}}/>
         <Stack.Screen name="Calendario" component={MyCalendarAdmin} options={{ header:() => null}}/>
         <Stack.Screen name="Notificacao" component={NotComponent} options={{ header:() => null}}/>
+        <Stack.Screen name="Configuracoes" component={ConfigNotComponent} options={{ header:() => null}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

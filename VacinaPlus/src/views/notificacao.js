@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { Appbar, Card } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import BarraNavegacao from '../components/BarraNavegacao';
-const { width, height } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
 const NotComponent = () => {
 
@@ -23,7 +23,7 @@ const NotComponent = () => {
                 <Appbar.BackAction style={styles.appbar} onPress={() => navigation.goBack()} />
                     <Text style={styles.welcome}>Notificações</Text>
                 <TouchableOpacity style={styles.notificationButton}>
-                    <Icon name="settings" size={25} color="#00BFFF" />
+                    <Icon name="settings" size={25} color="#00BFFF" onPress={() => navigation.navigate('Configuracoes')} />
                 </TouchableOpacity>
             </View>
             {[1, 2, 3, 4, 5].map((cardIndex) => (
