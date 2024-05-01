@@ -22,6 +22,14 @@ Definição de como o software é estruturado em termos dos componentes que faze
 ## 5.4 Modelo Físico
 
 
+
+
+![Diagrama modelo físico drawio (2)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/aff0daed-7736-4bbc-b999-ef44dc1bdf95)
+
+
+
+
+
 ## 5.5 Tecnologias Utilizadas
 
 Para a elaboração dos diagramas e do modelo físico no âmbito deste projeto de software, foram empregados os seguintes recursos online: 
