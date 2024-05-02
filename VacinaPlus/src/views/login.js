@@ -72,6 +72,7 @@ const LoginComponent = () => {
           Não tem uma Conta? <Text style={styles.textLink} onPress={() => navigation.navigate('Cadastro')}>Cadastre-se</Text>
         </Text>
       </View>
+      
     </ View>
   );
 };

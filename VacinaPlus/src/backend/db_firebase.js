@@ -1,8 +1,7 @@
 import firebase from '../config/firebase'; // Importe o firebase configurado
-import vacinasData from './vacinas.json'; // Importe o JSON com os dados das vacinas
 
 // Função para verificar se os dados já foram inseridos
-const verificarDadosInseridos = async () => {
+export const verificarDadosInseridos = async () => {
   try {
     // Referência para o nó 'vacinas' no Realtime Database
     const dbRef = firebase.database().ref('vacinas');
@@ -17,7 +16,7 @@ const verificarDadosInseridos = async () => {
 }
 
 // Função para inserir dados de várias vacinas no Realtime Database
-const inserirDadosVacinas = async () => {
+export const inserirDadosVacinas = async () => {
   try {
     // Verifica se os dados já foram inseridos anteriormente
     const dadosInseridos = await verificarDadosInseridos();
@@ -39,6 +38,29 @@ const inserirDadosVacinas = async () => {
     console.log("Dados das vacinas inseridos com sucesso!");
   } catch (error) {
     console.error("Erro ao inserir dados das vacinas:", error);
+  }
+}
+
+// Função para recuperar dados das vacinas do Realtime Database
+export const recuperarVacinas = async () => {
+  try {
+    // Referência para o nó 'vacinas' no Realtime Database
+    const dbRef = firebase.database().ref('vacinas');
+
+    // Obtém os dados das vacinas
+    const snapshot = await dbRef.once('value');
+    const data = snapshot.val();
+
+    // Transforma os dados em um array
+    const vacinas = Object.keys(data).map(key => ({
+      id: key,
+      ...data[key]
+    }));
+
+    return vacinas;
+  } catch (error) {
+    console.error("Erro ao recuperar dados das vacinas:", error);
+    return null;
   }
 }
 

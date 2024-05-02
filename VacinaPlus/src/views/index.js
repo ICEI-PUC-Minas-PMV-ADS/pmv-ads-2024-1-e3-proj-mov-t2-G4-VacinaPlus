@@ -25,6 +25,10 @@ export default function MainComponent() {
             mode="contained"  onPress={() => navigation.navigate('Login')}>
                 Começar
         </Button>
+
+        <View style={styles.footer}>
+            <Text style={styles.footerText}>© 2024 Vacina +. Todos os direitos reservados.</Text>
+        </View>
         
     </View>
   );
@@ -52,5 +56,19 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#1fb6ff',
     marginBottom: 40
+  },
+  footer: {
+    position: 'absolute',
+    bottom: -100,
+    backgroundColor: '#f2f2f2',
+    width: '100%',
+    paddingVertical: 10,
+    borderTopWidth: 1,
+    borderTopColor: '#ccc',
+    alignItems: 'center',
+  },
+  footerText: {
+    fontSize: 12,
+    color: '#888',
   }
 });

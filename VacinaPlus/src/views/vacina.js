@@ -1,5 +1,5 @@
 import React,{useRef} from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, Dimensions,Pressable } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { TextInput,Appbar,Card,Modal,Portal,PaperProvider ,Button} from 'react-native-paper';
@@ -7,40 +7,57 @@ import { Modalize } from 'react-native-modalize';
 import { useNavigation } from '@react-navigation/native';
 import BarraNavegacao from '../components/BarraNavegacao';
 import CardDoses from '../components/CardDoses';
+import { recuperarVacinas } from '../backend/db_firebase';
 const { width, height } = Dimensions.get('window');
 
 const VacinaComponent = () => {
+
+  useEffect(() => {
+  const fetchVacinas = async () => {
+      try {
+        const vacinasData = await recuperarVacinas();
+        if (vacinasData) {
+          setVacinas(vacinasData);
+        }
+      } catch (error) {
+        console.error('Erro ao recuperar dados das vacinas:', error);
+      }
+  };
+
+    fetchVacinas();
+  }, []);
+
   const [nome, setNome] = useState("");
   const [cpf, setCpf] = useState("");
   const [email, setEmail] = useState("");
   const [datanascimento, setDataNascimento] = useState("");
   const [cnis, setCnis] = useState("");
-    const navigation = useNavigation();
+  const navigation = useNavigation();
     
-    const [text, setText] = React.useState("");
-    const [Vacina2, setVacina2] = React.useState("");
-    const handlePressInicio = () => {
+  const [text, setText] = React.useState("");
+  const [Vacina2, setVacina2] = React.useState("");
+  const handlePressInicio = () => {
         console.log('Início pressionado');
     };
 
-    const handlePressVacinas = () => {
+  const handlePressVacinas = () => {
         console.log('Vacinas pressionado');
     };
 
-    const handlePressAgenda = () => {
+  const handlePressAgenda = () => {
         console.log('Agenda pressionado');
     };
 
-    const handlePressPerfil = () => {
+  const handlePressPerfil = () => {
         console.log('Perfil pressionado');
     };
 
-    const [visible, setVisible] = React.useState(false);
-    const showModal = () => setVisible(true);
-    const hideModal = () => setVisible(false);
-    const containerStyle = {backgroundColor: 'green', padding: 20 };
+  const [visible, setVisible] = React.useState(false);
+  const showModal = () => setVisible(true);
+  const hideModal = () => setVisible(false);
+  const containerStyle = {backgroundColor: 'green', padding: 20 };
     
-    const modalizeRef = useRef(null);
+  const modalizeRef = useRef(null);
     function onOpen(){
       modalizeRef.current?.open();
     }
@@ -137,7 +154,8 @@ const VacinaComponent = () => {
                         value={Vacina2}
                         onChangeText={text => setText(Vacina2)} />
                     <Text
-                        style={styles.text01} onPress={() => navigation.navigate('')}>
+                        style={styles.text01} 
+                        onPress={() => navigation.navigate('')}>
                             Histórico de Vacinas
                     </Text>
                     </View>
@@ -145,9 +163,10 @@ const VacinaComponent = () => {
                     <CardDoses/>
                     {/* Carteira De Vacinação*/}
                     <View style={styles.banner}>
-                        <Text style={styles.text02}>
-                            Carteira De Vacinação
-                        </Text>
+                      <Text 
+                        style={styles.text02}>
+                          Carteira De Vacinação
+                      </Text>
                         <View style={styles.space}>
                             <Image source={{uri: '../../assets/teste.png'}} style={{ width: '100%', height: '100%' }} />
                         </View>
