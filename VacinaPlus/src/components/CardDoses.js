@@ -45,7 +45,9 @@ const CardDoses = () => {
                 ref={modalizeCrianca}
                 snapPoint={444}
                 modalHeight={650}>
+                <ScrollView>
                 <VacinaCrianca />
+                </ScrollView>
             </Modalize>
             <Modalize
                 style={{ alignItems: 'center', justifyContent: 'center' }}
