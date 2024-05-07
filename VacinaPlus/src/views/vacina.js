@@ -27,11 +27,7 @@ const VacinaComponent = () => {
     fetchVacinas();
   }, []);
 
-  const [nome, setNome] = useState("");
-  const [cpf, setCpf] = useState("");
-  const [email, setEmail] = useState("");
-  const [datanascimento, setDataNascimento] = useState("");
-  const [cnis, setCnis] = useState("");
+   
   const navigation = useNavigation();
     
   const [text, setText] = React.useState("");
@@ -77,64 +73,7 @@ const VacinaComponent = () => {
                 <View style={styles.section}>
                     <Text style={styles.text02}>
                         Minhas Vacinas
-                    </Text>
-                    <View>
-                      <TouchableOpacity onPress={onOpen}>
-                        <Text style={styles.text02}>
-                          Vacinas
-                        </Text>
-                      </TouchableOpacity>
-                      <Modalize 
-                      style={{alignItems: 'center', justifyContent: 'center'}} 
-                      ref={modalizeRef}
-                      snapPoint={3} 
-                        > 
-                          <View style={{ fontSize:33,marginBottom:-33,justifyContent:'center'}}>
-                          <Text>Adicionar Vacina</Text>
-                        </View>
-                          <View style={{flex: 1,height:420,justifyContent:'center',alignItems:'center'}} >
-                            <TextInput
-                              style={styles.input}
-                              placeholder=" 👨🏽‍⚕️ Nome"
-                              onChangeText={text => setNome(text)}
-                              value={nome}
-                           />
-                            <TextInput
-                              style={styles.input}
-                              placeholder=" 💳 CPF"
-                              onChangeText={text => setCpf(text)}
-                              value={cpf}
-                            />
-                            <TextInput
-                              style={styles.input}
-                              placeholder=" 📬 E-mail"
-                              onChangeText={text => setEmail(text)}
-                              value={email}
-                            />
-                            <TextInput
-                              style={styles.input}
-                              placeholder=" 📆 Data nascimento (dd/mm/aaaa)"
-                              onChangeText={text => setDataNascimento(text)}
-                              value={datanascimento}
-                            />
-                            <TextInput
-                              style={styles.input}
-                              placeholder=" 📋 CNIS"
-                              onChangeText={text => setCnis(text)}
-                              value={cnis}
-                            />
-                          </View>
-                          <View style={styles.buttons}>
-                              <Pressable style={styles.button}>
-                                <Text style={styles.buttonText}>Criar</Text>
-                              </Pressable>
-                              <Pressable style={styles.button}  >
-                                <Text style={styles.buttonText}>Ver lista</Text>
-                              </Pressable>
-                            </View>
-                      </Modalize>
-                    </View>
-                     
+                    </Text>                     
                     <TextInput
                         style={styles.input}
                         mode="outlined"
