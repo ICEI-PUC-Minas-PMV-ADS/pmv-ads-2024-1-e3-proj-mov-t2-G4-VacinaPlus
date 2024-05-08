@@ -69,7 +69,7 @@ const CardDoses = () => {
                 style={{ alignItems: 'center', justifyContent: 'center' }}
                 handleStyle={styles.handle__shape}
                 ref={modalizeGestante}
-                snapPoint={444}
+                snapPoint={344}
                 modalHeight={650}>
                 <VacinaGestante />
             </Modalize>
@@ -77,7 +77,7 @@ const CardDoses = () => {
                 style={{ alignItems: 'center', justifyContent: 'center' }}
                 handleStyle={styles.handle__shape}
                 ref={modalizeIdoso}
-                snapPoint={444}
+                snapPoint={344}
                 modalHeight={650}>
                 <VacinaIdoso />
             </Modalize>

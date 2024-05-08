@@ -82,9 +82,9 @@ verticalLine: {
 });
 
 const vaccineItems = [
-{ title: 'Hepatite B', description: '3 doses a depender da situação vacinal' },
-{ title: 'Dupla adulto (DT)', description: '3 doses, de acordo com a situação vacinal' },
-{ title: 'dTPa (Tríplice bacteriana acelular do tipo adulto)', description: 'Uma dose a cada gestação a partir da 20a semana de gestação ou no puerpério (até 45 dias após o parto)' },
+{ title: 'Hepatite B', description: '3 Doses a depender da situação vacinal' },
+{ title: 'Dupla adulto (DT)', description: '3 Doses, de acordo com a situação vacinal' },
+{ title: 'dTPa (Tríplice bacteriana acelular do tipo adulto)', description: 'Uma Dose a cada gestação a partir da 20a semana de gestação ou no puerpério (até 45 dias após o parto)' },
 // Adicione outras vacinas conforme necessário
 ];
 

@@ -47,16 +47,9 @@ const VacinaComponent = () => {
   const handlePressPerfil = () => {
         console.log('Perfil pressionado');
     };
-
-  const [visible, setVisible] = React.useState(false);
-  const showModal = () => setVisible(true);
-  const hideModal = () => setVisible(false);
-  const containerStyle = {backgroundColor: 'green', padding: 20 };
     
   const modalizeRef = useRef(null);
-    function onOpen(){
-      modalizeRef.current?.open();
-    }
+
     return (
         <View style={styles.container}>
             <ScrollView style={styles.scrollView}>

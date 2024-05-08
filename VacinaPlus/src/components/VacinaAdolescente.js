@@ -80,14 +80,14 @@ const styles = StyleSheet.create({
 });
 
 const vaccineItems = [
-    { title: 'Meninas HPV', description: '2 doses com seis meses de intervalo' },
-    { title: 'HPV', description: '2 doses com seis meses de intervalo' },
+    { title: 'Meninas HPV', description: '2 Doses com seis meses de intervalo' },
+    { title: 'HPV', description: '2 Doses com seis meses de intervalo' },
     { title: 'Meningocócica C', description: 'Dose única ou reforço' },
-    { title: 'Hepatite B', description: '3 doses, de acordo com a situação vacinal' },
-    { title: "Febre Amarela", description: "1 dose se nunca tiver sido vacinado" },
+    { title: 'Hepatite B', description: '3 Doses, de acordo com a situação vacinal' },
+    { title: "Febre Amarela", description: "1 Dose se nunca tiver sido vacinado" },
     { title: "Dupla Adulto", description: "Reforço a cada 10 anos" },
-    { title: "Tríplice viral", description: "2 doses, a depender da situação vacinal anterior" },
-    { title: "Pneumocócica 23 Valente", description: "1 dose a depender da situação vacinal A vacina Pneumocócica 23V está indicada para grupos-alvo específicos" },
+    { title: "Tríplice viral", description: "2 Doses, a depender da situação vacinal anterior" },
+    { title: "Pneumocócica 23 Valente", description: "1 Dose a depender da situação vacinal" },
     // Adicione outras vacinas conforme necessário
 ];
 export default VacinaAdolescente;
