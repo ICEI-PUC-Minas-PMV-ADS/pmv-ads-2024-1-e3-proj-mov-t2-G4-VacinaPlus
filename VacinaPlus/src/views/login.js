@@ -5,13 +5,12 @@ import { useNavigation } from '@react-navigation/native';
 import firebase from '../config/firebase';
 
 const LoginComponent = () => {
-
   const navigation = useNavigation();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // Para mostrar ou esconder a senha
   const [showPassword, setShowPassword] = useState(false);
+
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -23,10 +22,7 @@ const LoginComponent = () => {
         return;
       }
 
-      // Autenticação com Firebase
       await firebase.auth().signInWithEmailAndPassword(email, password);
-      
-      // Se o login for bem-sucedido, navegue para a tela Home
       navigation.navigate('Home');
     } catch (error) {
       alert("Erro ao fazer login: " + error.message);
@@ -52,10 +48,14 @@ const LoginComponent = () => {
         placeholder='Sua senha'
         onChangeText={setPassword}
         secureTextEntry={!showPassword}
-        right={<TextInput.Icon
-          icon={showPassword ? 'eye-off' : 'eye'}
-          onPress={togglePasswordVisibility}
-         />}
+        right={({ color, size }) => (
+          <TextInput.Icon
+            name={showPassword ? 'eye-off' : 'eye'}
+            color={color}
+            size={size}
+            onPress={togglePasswordVisibility}
+          />
+        )}
       />
       <Text
         style={styles.forgotPassword} onPress={() => navigation.navigate('EsqueceuSenha')}>
@@ -72,7 +72,6 @@ const LoginComponent = () => {
           Não tem uma Conta? <Text style={styles.textLink} onPress={() => navigation.navigate('Cadastro')}>Cadastre-se</Text>
         </Text>
       </View>
-      
     </ View>
   );
 };
