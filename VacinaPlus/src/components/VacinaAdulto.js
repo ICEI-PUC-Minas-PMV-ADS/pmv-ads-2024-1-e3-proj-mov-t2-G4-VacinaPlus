@@ -79,11 +79,11 @@ const styles = StyleSheet.create({
 });
 
 const vaccineItems = [
-    { title: 'Hepatite B', description: '3 doses, de acordo com a situação vacinal' }, 
+    { title: 'Hepatite B', description: '3 Doses, de acordo com a situação vacinal' }, 
     { title: 'Febre amarela', description: 'Dose única, verificar situação vacinal' },
     { title: 'Dupla adulto (DT)', description: 'Reforço a cada 10 anos' },
-    { title: 'Tríplice viral', description: 'Se nunca vacinado: 2 doses (20 a 29 anos) e 1 dose (30 a 49 anos)' },
-    { title: "Pneumocócica 23 Valente", description: "1 dose é indicada para grupos-alvo específicos a depender da situação vacinal" },
+    { title: 'Tríplice viral', description: 'Se nunca vacinado: 2 Doses (20 a 29 anos) e 1 Dose (30 a 49 anos)' },
+    { title: "Pneumocócica 23 Valente", description: "1 Dose é indicada para grupos-alvo específicos a depender da situação vacinal" },
     // Adicione outras vacinas conforme necessário
 ];
 
