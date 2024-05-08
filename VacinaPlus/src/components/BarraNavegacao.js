@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
         flexDirection: 'row',
         justifyContent: 'space-around',
-        paddingVertical: 10,
+        paddingVertical: 20,
     },
     navButton: {
         alignItems: 'center',
