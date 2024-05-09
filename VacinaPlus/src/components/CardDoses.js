@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
- 
 import { Modalize } from 'react-native-modalize';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { Card } from 'react-native-paper';
@@ -43,7 +42,7 @@ const CardDoses = () => {
                 style={{ alignItems: 'center', justifyContent: 'center' }}
                 handleStyle={styles.handle__shape}
                 ref={modalizeCrianca}
-                snapPoint={444}
+                snapPoint={644}
                 modalHeight={650}>
                 <ScrollView>
                 <VacinaCrianca />

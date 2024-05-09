@@ -1,13 +1,13 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, {useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Dimensions } from 'react-native';
-import { TextInput, Appbar } from 'react-native-paper';
+import {Appbar, Button} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 import { recuperarVacinas } from '../backend/db_firebase';
 import BarraNavegacao from '../components/BarraNavegacao';
 import CardDoses from '../components/CardDoses';
 
-const { width, height } = Dimensions.get('window');
+const { width} = Dimensions.get('window');
 
 const VacinaComponent = () => {
   const navigation = useNavigation();
@@ -40,26 +40,31 @@ const VacinaComponent = () => {
           </TouchableOpacity>
         </View>
 
-         {/* Lista de Vacinas */} 
-        <View style={styles.section}>
-          <Text style={styles.text02}>Minhas Vacinas</Text>
-          {vacinas.map((vacina, index) => (
-            <View key={index} style={styles.vacinaItem}>
-              <Text>Vacina: {vacina.vacina}</Text>
-              <Text>Data de Aplicação: {vacina.dataAplicacao}</Text>
-               
-            </View>
-          ))}
-          
-        </View>
+        {/* Lista de Vacinas */}
+        <ScrollView>
+          <View style={styles.section}>
+            <Text style={styles.text02}>Minhas Vacinas</Text>
+            {vacinas.map((vacina, index) => (
+              <View key={index} style={styles.vacinaItem}>
+                <Text style={styles.vacinaNome}>{vacina.vacina}</Text>
+                <Text>Dose: {vacina.dose}</Text>
+                <Text>Data de Aplicação: {vacina.dataAplicacao}</Text>
+
+              </View>
+            ))}
+          </View>
+        </ScrollView>
 
         {/* Cards de doses por idade*/}
         <CardDoses />
-           
-        {/* Lista de Vacinas */}
-    </ScrollView>
-      {/* Barra de Navegação com botões*/}
-      <BarraNavegacao />
+        <View>
+          <Button style={styles.button} icon="download" mode="contained" onPress={() => console.log('Pressed')}>
+            Carteira Nacional de Vacinação
+          </Button>
+        </View>
+      </ScrollView>
+        {/* Barra de Navegação com botões*/}
+        <BarraNavegacao />
     </View>
   );
 };
@@ -99,35 +104,39 @@ const styles = StyleSheet.create({
     marginTop: -15,
     alignItems: 'left',
   },
-  text01: {
-    fontSize: 15,
-    color: '#1fb6ff',
-    marginBottom: 20
-  },
   text02: {
     fontSize: 24,
     color: '#8792A1',
     marginTop: 11,
     marginBottom: 5
   },
-  input: {
-    width: 300,
-    height: 44,
-    marginVertical: 5,
-    borderRadius: 3,
-  },
   vacinasList: {
     marginTop: 20,
-    marginBottom:20,
+    marginBottom: 20,
     paddingHorizontal: 15,
     maxHeight: 200, // Defina a altura máxima para ativar a barra de rolagem
   },
   vacinaItem: {
     marginBottom: 10,
-    marginRight:15,
+    marginRight: 15,
     padding: 10,
     backgroundColor: '#f0f0f0',
+    borderColor:'#00BFFF',
     borderRadius: 10,
+    borderWidth:1.5,
+  },
+  vacinaNome: {
+    fontSize: 16
+  },
+  button:{
+    backgroundColor: '#00BFFF',
+    borderRadius: 10,
+    width:'80%',
+    alignItems:'center',
+    justifyContent:'center',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop:15,
   },
 });
 
