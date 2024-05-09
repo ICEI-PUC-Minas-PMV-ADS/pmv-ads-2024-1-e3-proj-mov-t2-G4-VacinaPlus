@@ -40,33 +40,23 @@ const VacinaComponent = () => {
           </TouchableOpacity>
         </View>
 
-        {/* Seção de Vacinas */}
+         {/* Lista de Vacinas */} 
         <View style={styles.section}>
           <Text style={styles.text02}>Minhas Vacinas</Text>
-          <TextInput style={styles.input} mode="outlined" label="Vacina 1" value="" />
-          <TextInput style={styles.input} mode="outlined" label="Vacina 2" value="" />
-          <TextInput style={styles.input} mode="outlined" label="Vacina 3" value="" />
-          <Text style={styles.text01} onPress={() => navigation.navigate('')}>Histórico de Vacinas</Text>
+          {vacinas.map((vacina, index) => (
+            <View key={index} style={styles.vacinaItem}>
+              <Text>Vacina: {vacina.vacina}</Text>
+              <Text>Data de Aplicação: {vacina.dataAplicacao}</Text>
+               
+            </View>
+          ))}
+          
         </View>
 
         {/* Cards de doses por idade*/}
         <CardDoses />
            
         {/* Lista de Vacinas */}
-        <ScrollView style={styles.vacinasList}>
-            <Text 
-              style={styles.text02}>
-              Carteira De Vacinação
-            </Text>
-          {vacinas.map((vacina, index) => (
-            <View key={index} style={styles.vacinaItem}>
-              <Text>Vacina: {vacina.vacina}</Text>
-              <Text>Data de Aplicação: {vacina.dataAplicacao}</Text>
-              <Text>Local de Aplicação: {vacina.localAplicacao}</Text>
-              <Text>Nome do Proprietário: {vacina.nomeProprietario}</Text>
-            </View>
-          ))}
-        </ScrollView>
     </ScrollView>
       {/* Barra de Navegação com botões*/}
       <BarraNavegacao />
@@ -134,6 +124,7 @@ const styles = StyleSheet.create({
   },
   vacinaItem: {
     marginBottom: 10,
+    marginRight:15,
     padding: 10,
     backgroundColor: '#f0f0f0',
     borderRadius: 10,
