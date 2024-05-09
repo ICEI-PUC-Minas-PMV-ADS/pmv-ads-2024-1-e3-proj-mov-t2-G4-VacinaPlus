@@ -1,4 +1,5 @@
 import firebase from '../config/firebase'; // Importe o firebase configurado
+import vacinasData from './vacinas.json'; // Importe o arquivo JSON com os dados das vacinas
 
 // Função para verificar se os dados já foram inseridos
 export const verificarDadosInseridos = async () => {
