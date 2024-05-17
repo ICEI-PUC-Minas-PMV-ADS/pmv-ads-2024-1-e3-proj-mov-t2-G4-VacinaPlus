@@ -32,6 +32,10 @@ const CadastroComponent = () => {
       });
     
       alert("Usuário criado com sucesso! ID: " + newUserCredential.user.uid);
+      
+      // Navega para a tela de login após o cadastro bem-sucedido
+      navigation.navigate('Login');
+
     } catch (error) {
       alert("Erro ao criar usuário: " + error.message);
     }
@@ -42,9 +46,9 @@ const CadastroComponent = () => {
   <View style={styles.container}>
     
       <Image
-            style={styles.logo}
-            source={require('../../assets/logo-plus.png')}
-        />
+          style={styles.logo}
+          source={require('../../assets/logo-plus.png')}
+      />
       <Text style={styles.title} onPress={() => navigation.navigate('Usuarios')}>Vamos lá!</Text>
       <Text style={styles.subtitle}>Crie uma conta para continuar</Text>
 

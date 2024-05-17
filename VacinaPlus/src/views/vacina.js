@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   },
   header: {
     width: width,
-    marginTop: 20,
+    marginTop: 40,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
