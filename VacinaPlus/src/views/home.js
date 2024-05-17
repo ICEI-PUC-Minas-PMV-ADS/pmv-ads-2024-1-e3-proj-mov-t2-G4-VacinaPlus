@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 import BarraNavegacao from '../components/BarraNavegacao';
+import firebase from '../config/firebase';
 
 const { width, height } = Dimensions.get('window');
 
@@ -10,10 +11,25 @@ const TelaHome = () => {
   
   const navigation = useNavigation();
   const [expandedCard, setExpandedCard] = useState(null);
+  const [usuarioNome, setUsuarioNome] = useState("");
 
   const toggleExpandedCard = (cardIndex) => {
     setExpandedCard(expandedCard === cardIndex ? null : cardIndex);
   };
+
+  useEffect(() => {
+    const fetchUsuarioNome = async () => {
+      const user = firebase.auth().currentUser;
+      if (user) {
+        const userDoc = await firebase.firestore().collection("Pessoas").doc(user.uid).get();
+        if (userDoc.exists) {
+          setUsuarioNome(userDoc.data().nome);
+        }
+      }
+    };
+
+    fetchUsuarioNome();
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -21,7 +37,7 @@ const TelaHome = () => {
         {/* Header*/}
         <View style={styles.header}>
             <Image source={require('../../assets/logo-plus.png')} style={styles.logo} />
-            <Text style={styles.welcome}>Olá, Usuário!</Text>
+            <Text style={styles.welcome}>Olá, {usuarioNome ? usuarioNome : 'Usuário'}</Text>
             <TouchableOpacity style={styles.notificationButton}>
             <Icon name="notifications" size={25} color="#00BFFF" onPress={() => navigation.navigate('Notificacao')}/>                        
             </TouchableOpacity>
