@@ -56,11 +56,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#f5f5f5', // Background mais suave
-      },
-      scrollView: {
+    },
+    scrollView: {
         marginBottom: 70,
-      },
-      header: {
+    },
+    header: {
         width: width,
         marginTop: 35,
         flexDirection: 'row',
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff', // Fundo branco para o header
         borderBottomWidth: 1,
         borderBottomColor: '#ddd', // Linha sutil no fundo
-      },
+    },
     appbar: {
         size: 22,
         marginLeft: -5
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
         marginLeft: 'auto',
     },
     card: {
-        backgroundColor: '#f0f0f0',
+        backgroundColor: '#fff',
         margin: 15,
         borderRadius: 10,
     },
