@@ -103,28 +103,22 @@ const switchStyles = {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#fff',
+    flex: 1,
+        backgroundColor: '#f5f5f5', // Background mais suave
     },
     scrollView: {
         marginBottom: 60,
     },
     header: {
         width: width,
-        marginTop: 40,
+        marginTop: 35,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'flex-start',
         padding: 10,
-    },
-    body: {
-        width: width,
-        marginTop: 10,
-        padding: 10,
-    },
-    opcBody: {
-        marginBottom: 20,
-        paddingHorizontal: 15,
+        backgroundColor: '#fff', // Fundo branco para o header
+        borderBottomWidth: 1,
+        borderBottomColor: '#ddd', // Linha sutil no fundo
     },
     appbar: {
         size: 22,
@@ -134,7 +128,16 @@ const styles = StyleSheet.create({
         fontSize: 22,
         textAlign: 'left',
         margin: 10,
-        marginLeft: -3
+        marginLeft:-3
+    },
+    body: {
+        width: width,
+        marginTop: 10,
+        padding: 10,
+    },
+    opcBody: {
+        marginBottom: 20,
+        paddingHorizontal: 15,
     },
     title: {
         fontSize: 20,

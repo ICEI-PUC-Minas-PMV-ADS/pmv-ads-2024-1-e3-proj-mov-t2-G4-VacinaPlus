@@ -57,10 +57,6 @@ const LoginComponent = () => {
           />
         )}
       />
-      <Text
-        style={styles.forgotPassword} onPress={() => navigation.navigate('EsqueceuSenha')}>
-        Esqueceu a senha ?
-      </Text>
       <Button
         style={styles.button}
         mode="contained" onPress={handleSignIn}>
@@ -109,12 +105,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     width: '50%',
     backgroundColor: '#1fb6ff',
-  },
-  forgotPassword: {
-    marginRight: '37.5%',
-    fontSize: 17,
-    color: '#1fb6ff',
-    marginBottom: 20
   },
   createAccount: {
     fontSize: 17,
