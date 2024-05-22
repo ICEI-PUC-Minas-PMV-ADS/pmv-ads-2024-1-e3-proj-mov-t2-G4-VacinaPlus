@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, Dimensions } from 'react-native';
+import Swiper from 'react-native-swiper';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 import BarraNavegacao from '../components/BarraNavegacao';
@@ -8,7 +9,6 @@ import firebase from '../config/firebase';
 const { width, height } = Dimensions.get('window');
 
 const TelaHome = () => {
-
   const navigation = useNavigation();
   const [expandedCard, setExpandedCard] = useState(null);
   const [usuarioNome, setUsuarioNome] = useState("");
@@ -33,18 +33,33 @@ const TelaHome = () => {
 
   return (
     <View style={styles.container}>
-      <ScrollView style={styles.scrollView}>        
+      <ScrollView style={styles.scrollView}>
         {/* Header */}
         <View style={styles.header}>
-            <Image source={require('../../assets/logo-plus.png')} style={styles.logo} />
-            <Text style={styles.welcome}>Olá, {usuarioNome ? usuarioNome : 'Usuário'}</Text>
-            <TouchableOpacity style={styles.notificationButton}>
-              <Icon name="notifications" size={25} color="#00BFFF" onPress={() => navigation.navigate('Notificacao')}/>                        
-            </TouchableOpacity>
+          <Image source={require('../../assets/logo-plus.png')} style={styles.logo} />
+          <Text style={styles.welcome}>Olá, {usuarioNome ? usuarioNome : 'Usuário'}</Text>
+          <TouchableOpacity style={styles.notificationButton}>
+            <Icon name="notifications" size={25} color="#00BFFF" onPress={() => navigation.navigate('Notificacao')} />
+          </TouchableOpacity>
         </View>
         {/* Seção de Imagens */}
-        <View style={styles.section}>
-          <Image source={require('../../assets/vacina.jpg')} style={styles.imageBanner} />
+        <View style={styles.swiperContainer}>
+          <Swiper
+            style={styles.wrapper}
+            showsButtons={false}
+            autoplay={true}
+            autoplayTimeout={4}
+          >
+            <View style={styles.slide}>
+              <Image source={require('../../assets/vacina.jpg')} style={styles.image} />
+            </View>
+            <View style={styles.slide}>
+              <Image source={require('../../assets/vacina.jpg')} style={styles.image} />
+            </View>
+            <View style={styles.slide}>
+              <Image source={require('../../assets/vacina.jpg')} style={styles.image} />
+            </View>
+          </Swiper>
         </View>
         {/* Seção de Notícias */}
         <View style={[styles.sectionCard, styles.sectionCardWithImageRight]}>
@@ -85,10 +100,10 @@ const TelaHome = () => {
         </View>
       </ScrollView>
       {/* Barra de Navegação com botões */}
-      <BarraNavegacao/>
+      <BarraNavegacao />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -100,7 +115,7 @@ const styles = StyleSheet.create({
   },
   header: {
     width: width,
-    marginTop: 35,
+    marginTop: 35, // Reduzido para diminuir o espaçamento
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
@@ -110,26 +125,33 @@ const styles = StyleSheet.create({
     borderBottomColor: '#ddd', // Linha sutil no fundo
   },
   logo: {
-    width: 60, 
-    height: 60, 
-    marginRight: 10,
+    width: 65, 
+    height: 65, 
+    marginRight: 5,
   },
   welcome: {
     fontSize: 22,
     textAlign: 'left',
     margin: 10,
-    marginLeft:-3
+    marginLeft: -3,
   },
   notificationButton: {
     padding: 10,
     marginLeft: 'auto', 
   },
-  imageBanner: {
-    width: width - 40, 
-    height: height / 4, 
-    resizeMode: 'contain', 
-    borderRadius: 10, // Adicionado borda arredondada
-    marginBottom: 10, // Espaçamento inferior
+  image: {
+    width: '95%', // Ocupa toda a largura do dispositivo
+    height: '85%', // Ocupa toda a altura do contêiner
+    resizeMode: 'cover', // Cobre todo o espaço do contêiner
+    borderRadius: 8,
+  },
+  swiperContainer: {
+    height: height / 4, // Ajuste a altura do Swiper conforme necessário
+  },
+  slide: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   section: {
     padding: 20,

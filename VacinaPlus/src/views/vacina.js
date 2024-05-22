@@ -49,7 +49,6 @@ const VacinaComponent = () => {
                 <Text style={styles.vacinaNome}>{vacina.vacina}</Text>
                 <Text>Dose: {vacina.dose}</Text>
                 <Text>Data de Aplicação: {vacina.dataAplicacao}</Text>
-
               </View>
             ))}
           </View>
@@ -123,8 +122,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginRight: 15,
     padding: 10,
-    backgroundColor: '#f0f0f0',
-    borderColor:'#00BFFF',
+    backgroundColor: '#fff',
+    borderColor:'#8792A0',
     borderRadius: 10,
     borderWidth:1.5,
   },
