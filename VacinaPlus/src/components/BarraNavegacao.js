@@ -37,10 +37,10 @@ const styles = StyleSheet.create({
         bottom: 0,
         left: 0,
         right: 0,
-        backgroundColor: 'transparent',
+        backgroundColor: '#fff',
         flexDirection: 'row',
         justifyContent: 'space-around',
-        paddingVertical: 10,
+        paddingVertical: 13,
     },
     navButton: {
         alignItems: 'center',

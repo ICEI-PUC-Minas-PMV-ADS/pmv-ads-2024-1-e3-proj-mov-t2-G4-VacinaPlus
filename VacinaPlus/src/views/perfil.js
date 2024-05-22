@@ -245,8 +245,32 @@ const PerfilComponent = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
+  flex: 1,
+    backgroundColor: '#f5f5f5', // Background mais suave
+  },
+  scrollView: {
+      marginBottom: 60,
+  },
+  header: {
+    width: width,
+    marginTop: 35,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    padding: 10,
+    backgroundColor: '#fff', // Fundo branco para o header
+    borderBottomWidth: 1,
+    borderBottomColor: '#ddd', // Linha sutil no fundo
+  },
+  appbar: {
+    size: 22,
+    marginLeft: -5
+  },
+  welcome: {
+    fontSize: 22,
+    textAlign: 'left',
+    margin: 10,
+    marginLeft:-3
   },
   space: {
     borderColor: '#343F4B',
@@ -255,27 +279,6 @@ const styles = StyleSheet.create({
     height: 222,
     borderRadius: 10,
     overflow: 'hidden'
-  },
-  scrollView: {
-    marginBottom: 60,
-  },
-  appbar: {
-    size: 22,
-    marginLeft: -5
-  },
-  header: {
-    width: width,
-    marginTop: 40,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    padding: 10,
-  },
-  welcome: {
-    fontSize: 22,
-    textAlign: 'left',
-    margin: 10,
-    marginLeft: -3
   },
   notificationButton: {
     padding: 10,
@@ -294,7 +297,7 @@ const styles = StyleSheet.create({
   text02: {
     fontSize: 24,
     color: '#8792A1',
-    marginTop: 11,
+    marginTop: 35,
     marginBottom: 5
   },
   Perfil: {
