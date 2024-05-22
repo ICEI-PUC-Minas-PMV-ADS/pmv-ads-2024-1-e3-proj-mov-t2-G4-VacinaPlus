@@ -41,19 +41,20 @@ const VacinaComponent = () => {
         </View>
 
         {/* Lista de Vacinas */}
-        <ScrollView>
+        
           <View style={styles.section}>
+          <ScrollView style={styles.vacinasList}>
             <Text style={styles.text02}>Minhas Vacinas</Text>
             {vacinas.map((vacina, index) => (
               <View key={index} style={styles.vacinaItem}>
                 <Text style={styles.vacinaNome}>{vacina.vacina}</Text>
                 <Text>Dose: {vacina.dose}</Text>
                 <Text>Data de Aplicação: {vacina.dataAplicacao}</Text>
-
-              </View>
+                </View>
             ))}
+          </ScrollView>
           </View>
-        </ScrollView>
+        
 
         {/* Cards de doses por idade*/}
         <CardDoses />
@@ -114,7 +115,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 20,
     paddingHorizontal: 15,
-    maxHeight: 200, // Defina a altura máxima para ativar a barra de rolagem
+    maxHeight: 400, // Defina a altura máxima para ativar a barra de rolagem
   },
   vacinaItem: {
     marginBottom: 10,
