@@ -24,7 +24,7 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
 | Passos 	|  - Acessar a aplicação <br> - Entrar com seu email e senha <br> - Selecionar o icone de sino no canto superior direito <br> |
 |Critério de Êxito |  O usuário consegue ver suas notificações com sucesso |
 |  	|  	|
-| **Caso de Teste** 	| **CT-03 – Gerenciar Cadastro**	|
+| **Caso de Teste** 	| **CT-03 – Gerenciar Perfil**	|
 |Requisito Associado | RF-005	- O sistema deve permitir ao usuário gerenciar o cadastro das vacinas. |
 | Objetivo do Teste 	| Verificar se o usuário consegue modificar e adicionar informações. |
 | Passos 	| - Acessar a aplicação <br> - Entrar com seu email e senha <br> - Acessar a area de vacinas no campo inferior <br> - Adicionar, editar ou remover alguma informação em qualquer campo editável da tela <br> - Clicar em "Salvar" <br> |
