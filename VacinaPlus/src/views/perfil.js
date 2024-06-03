@@ -1,255 +1,225 @@
-import React, { useRef } from 'react';
-import { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, Dimensions, SafeAreaView, Alert, Modal, Pressable } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, Dimensions, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { TextInput, Appbar, Button } from 'react-native-paper';
+import { TextInput, Appbar, Button, Provider as PaperProvider, DefaultTheme } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
-import BarraNavegacao from '../components/BarraNavegacao';
 import firebase from '../config/firebase';
+import BarraNavegacao from '../components/BarraNavegacao';
 
-const { width, height } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#1fb6ff',
+  },
+};
 
 const PerfilComponent = () => {
 
+  // função para renderizar o nome do usario
+  const [usuarioNome, setUsuarioNome] = useState("");
   useEffect(() => {
-    const handleSave = async () => {
-      try {
-        await firebase.firestore('userData', JSON.stringify(user));
-        Alert.alert('Perfil Salvo', 'As alterações foram salvas com sucesso!');
-      } catch (error) {
-        console.error('Erro ao salvar perfil:', error);
-        Alert.alert('Erro', 'Ocorreu um erro ao salvar as alterações.');
+    const fetchUsuarioNome = async () => {
+      const user = firebase.auth().currentUser;
+      if (user) {
+        const userDoc = await firebase.firestore().collection("Pessoas").doc(user.uid).get();
+        if (userDoc.exists) {
+          setUsuarioNome(userDoc.data().nome);
+        }
       }
-      Alert.alert('Perfil Salvo', 'As alterações foram salvas com sucesso!');
     };
 
-    handleSave();
+    fetchUsuarioNome();
   }, []);
 
-  const [nome, setNome] = useState("");
-  const [cpf, setCpf] = useState("");
-  const [email, setEmail] = useState("");
-  const [datanascimento, setDataNascimento] = useState("");
-  const [cnis, setCnis] = useState("");
-  const [telefone, setTelefone] = useState("");
-  const [genero, setGenero] = useState("");
-  const [pais, setPais] = useState("");
   const navigation = useNavigation();
 
-  const [text, setText] = React.useState("");
-  const handlePressInicio = () => {
-    console.log('Início pressionado');
+  // função para buscar os dados do usuario no banco 
+  const [nome, setNome] = useState('');
+  const [cpf, setCpf] = useState('');
+  const [email, setEmail] = useState('');
+  const [datanascimento, setDataNascimento] = useState('');
+  const [cns, setCns] = useState('');
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const userId = firebase.auth().currentUser.uid;
+        const userDoc = await firebase.firestore().collection('Pessoas').doc(userId).get();
+        if (userDoc.exists) {
+          const userData = userDoc.data();
+          setNome(userData.nome);
+          setCpf(userData.cpf);
+          setEmail(userData.email);
+          setDataNascimento(userData.datanascimento);
+          setCns(userData.cns);
+        }
+      } catch (error) {
+        console.error("Erro ao buscar os dados do usuário: ", error);
+        Alert.alert("Erro", "Não foi possível carregar os dados do perfil.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // função para salvar e atualizar os dados do usuario
+  const handleSave = async () => {
+    try {
+      const userId = firebase.auth().currentUser.uid; // Obtém o ID do usuário logado
+      await firebase.firestore().collection('Pessoas').doc(userId).update({
+        nome,
+        cpf,
+        email,
+        datanascimento,
+        cns
+      });
+      Alert.alert("Sucesso", "Dados do perfil atualizados com sucesso!");
+    } catch (error) {
+      console.error("Erro ao atualizar os dados do usuário: ", error);
+      Alert.alert("Erro", "Não foi possível atualizar os dados do perfil.");
+    }
   };
 
-  const handlePressVacinas = () => {
-    console.log('Vacinas pressionado');
+  // função para deslogout da conta
+  const handleLogout = async () => {
+    try {
+      await firebase.auth().signOut();
+      navigation.navigate('Login'); // Redireciona para a tela de login após o logout
+    } catch (error) {
+      console.error("Erro ao sair da conta: ", error);
+      Alert.alert("Erro", "Não foi possível sair da conta.");
+    }
   };
 
-  const handlePressAgenda = () => {
-    console.log('Agenda pressionado');
-  };
-
-  const handlePressPerfil = () => {
-    console.log('Perfil pressionado');
-  };
-
-  const modalizeRef = useRef(null);
-  function onOpen() {
-    modalizeRef.current?.open();
+  if (loading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <Text>Carregando...</Text>
+      </View>
+    );
   }
-  const [modalVisible, setModalVisible] = useState(false);
+
   return (
-    <View style={styles.container}>
-      <ScrollView style={styles.scrollView}>
-        {/* Header*/}
-        <View style={styles.header}>
-          <Appbar.BackAction style={styles.appbar} onPress={() => navigation.goBack()} />
-          <Text style={styles.welcome}>Perfil</Text>
-          <TouchableOpacity style={styles.notificationButton}>
-            <Icon name="notifications" size={25} color="#00BFFF" onPress={() => navigation.navigate('Notificacao')} />
-          </TouchableOpacity>
-        </View>
+    <PaperProvider theme={theme}>
+      <View style={styles.container}>
+        <ScrollView style={styles.scrollView}>
+          <View style={styles.header}>
+            <Appbar.BackAction style={styles.appbar} onPress={() => navigation.goBack()} />
+            <Text style={styles.welcome}>Perfil</Text>
+            <TouchableOpacity style={styles.notificationButton}>
+              <Icon name="notifications" size={25} color="#00BFFF" onPress={() => navigation.navigate('Notificacao')} />
+            </TouchableOpacity>
+          </View>
 
-        <View style={styles.section}>
-          <Text style={styles.text02}>
-            Meu Perfil
-          </Text>
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>{usuarioNome ? usuarioNome : 'Usuário'}</Text>
+            <Image style={styles.profileImage} source={require('../../assets/Profile.png')} />
 
-          <View>
-            <Image
-              style={styles.image}
-              source={require('../../assets/Profile.png')}
+            <TextInput
+              style={styles.input}
+              label="Nome"
+              value={nome}
+              onChangeText={setNome}
+              theme={{ colors: { primary: '#1fb6ff' } }}
             />
-          </View>
-          <TextInput
-            style={styles.Perfil}
-            placeholder="Nome"
-            onChangeText={text => setNome(text)}
-            value={nome}
-          />
-          <TextInput
-            style={styles.Perfil}
-            placeholder="Data nascimento (dd/mm/aaaa)"
-            onChangeText={text => setDataNascimento(text)}
-            keyboardType="numeric"
-            value={datanascimento}
-          />
-          <TextInput
-            style={styles.Perfil}
-            placeholder="CPF"
-            onChangeText={text => setCpf(text)}
-            keyboardType="numeric"
-            value={cpf}
-          />
-          <TextInput
-            style={styles.Perfil}
-            placeholder="CNS"
-            onChangeText={text => setCnis(text)}
-            keyboardType="numeric"
-            value={cnis}
-          />
-          <TextInput
-            style={styles.Perfil}
-            placeholder="E-mail"
-            onChangeText={text => setEmail(text)}
-            keyboardType="email-address"
-            value={email}
-          />
-          <TextInput
-            style={styles.Perfil}
-            placeholder="Telefone"
-            onChangeText={text => setTelefone(text)}
-            keyboardType="numeric"
-            value={telefone}
-          />
-          <TextInput
-            style={styles.Perfil}
-            placeholder="Gênero"
-            onChangeText={text => setGenero(text)}
-            value={genero}
-          />
-          <TextInput
-            style={styles.Perfil}
-            placeholder="País"
-            onChangeText={text => setPais(text)}
-            value={pais}
-          />
+            <TextInput
+              style={styles.input}
+              label="Data de Nascimento"
+              value={datanascimento}
+              onChangeText={setDataNascimento}
+              keyboardType="numeric"
+              theme={{ colors: { primary: '#1fb6ff' } }}
+            />
+            <TextInput
+              style={styles.input}
+              label="CPF"
+              value={cpf}
+              onChangeText={setCpf}
+              keyboardType="numeric"
+              theme={{ colors: { primary: '#1fb6ff' } }}
+            />
+            <TextInput
+              style={styles.input}
+              label="CNS"
+              value={cns}
+              onChangeText={setCns}
+              keyboardType="numeric"
+              theme={{ colors: { primary: '#1fb6ff' } }}
+            />
+            <TextInput
+              style={styles.input}
+              label="E-mail"
+              value={email}
+              onChangeText={setEmail}
+              keyboardType="email-address"
+              theme={{ colors: { primary: '#1fb6ff' } }}
+            />
+            {/*
+            <TextInput
+              style={styles.input}
+              label="Telefone"
+              value={telefone}
+              keyboardType="numeric"
+              theme={{ colors: { primary: '#1fb6ff' } }}
+            />
 
-          <SafeAreaView style={styles.container1}>
-            <View style={styles.fixToText}>
-              <Button mode="contained" onPress={() => Alert.alert('Cancelado')}>
-                Cancelar
-              </Button>
-              <Button mode="contained" onPress={() => Alert.alert('Salvo')}>
-                Salvar
-              </Button>
+            <View style={styles.generoContainer}>
+              <Text style={styles.generoLabel}>Gênero:</Text>
+              <View style={styles.checkboxContainer}>
+                <View style={styles.checkbox}>
+                  <Checkbox
+                    status={genero === 'Homem' ? 'checked' : 'unchecked'}
+                    onPress={() => handleGeneroChange('Homem')}
+                    color="#1fb6ff"
+                  />
+                  <Text>Homem</Text>
+                </View>
+                <View style={styles.checkbox}>
+                  <Checkbox
+                    status={genero === 'Mulher' ? 'checked' : 'unchecked'}
+                    onPress={() => handleGeneroChange('Mulher')}
+                    color="#1fb6ff"
+                  />
+                  <Text>Mulher</Text>
+                </View>
+              </View>
             </View>
-          </SafeAreaView>
-        </View>
-        <View>
-          <TextInput
-            style={styles.Meu}
-            placeholder="Cartão Nacional de Saúde"
-            onChangeText={text => setCnis(text)}
-            value={cnis}
-          />
-          <TextInput
-            style={styles.Meu}
-            placeholder="Alergias/Restrições"
-            onChangeText={text => setCnis(text)}
-            value={cnis}
-          />
-          <TextInput
-            style={styles.Meu}
-            placeholder="Alterar Senha"
-            onChangeText={text => setCnis(text)}
-            value={cnis}
-          />
-          <View style={styles.centeredView}>
-            <Modal
-              animationType="slide"
-              transparent={true}
-              visible={modalVisible}
-              onRequestClose={() => {
-                Alert.alert('Modal has been closed.');
-                setModalVisible(!modalVisible);
-              }}>
-              <View style={styles.centeredView}>
-                <View style={styles.modalView}>
-                  <Text style={styles.modalText}>Lorem Ipsum is simply dummy text of the printing and popularised in the 1960s
-                    with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                    recently with desktop publishing software like Aldus PageMakerincluding
-                    versions of Lorem Ipsum.</Text>
-                  <Pressable
-                    style={[styles.button, styles.buttonClose]}
-                    onPress={() => setModalVisible(!modalVisible)}>
-                    <Text style={styles.textStyle}>Ok</Text>
-                  </Pressable>
-                </View>
-              </View>
-            </Modal>
-            <Pressable
-              style={[styles.button, styles.buttonOpen]}
-              onPress={() => setModalVisible(true)}>
-              <Text style={styles.textStyle}>Termos e Condições de Uso</Text>
-            </Pressable>
+
+            <TextInput
+              style={[styles.input, styles.largeInput]}
+              label="Alergias/Restrições"
+              value={alergias}
+              multiline={true}
+              numberOfLines={4}
+              theme={{ colors: { primary: '#1fb6ff' } }}
+            />
+            */}
+            <View style={styles.buttonContainer}>
+              <Button mode="contained" onPress={handleLogout} style={styles.button}>Sair</Button>
+              <Button mode="contained" onPress={handleSave} style={styles.button}>Salvar</Button>
+            </View>
           </View>
-          <View style={styles.centeredView}>
-            <Modal
-              animationType="slide"
-              transparent={true}
-              visible={modalVisible}
-              onRequestClose={() => {
-                Alert.alert('Modal has been closed.');
-                setModalVisible(!modalVisible);
-              }}>
-              <View style={styles.centeredView}>
-                <View style={styles.modalView}>
-                  <Text style={styles.modalText}>Lorem Ipsum is simply dummy text of the printing and popularised in the 1960s
-                    with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                    recently with desktop publishing software like Aldus PageMakerincluding
-                    versions of Lorem Ipsum.</Text>
-                  <Pressable
-                    style={[styles.button, styles.buttonClose]}
-                    onPress={() => setModalVisible(!modalVisible)}>
-                    <Text style={styles.textStyle}>Ok</Text>
-                  </Pressable>
-                </View>
-              </View>
-            </Modal>
-            <Pressable
-              style={[styles.button, styles.buttonOpen]}
-              onPress={() => setModalVisible(true)}>
-              <Text style={styles.textStyle}>Política de Privacidade</Text>
-            </Pressable>
-          </View>
-        </View>
-        <View>
-          <Image
-            style={styles.image2}
-            source={require('../../assets/imgteste.jpeg')}
-          />
-        </View>
-        <View>
-          <Image
-            style={styles.image2}
-            source={require('../../assets/imgteste.jpeg')}
-          />
-        </View>
-      </ScrollView>
-      {/* Barra de Navegação com botões*/}
-      <BarraNavegacao />
-    </View>
+        </ScrollView>
+        <BarraNavegacao />
+      </View>
+    </PaperProvider>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-  flex: 1,
-    backgroundColor: '#f5f5f5', // Background mais suave
+    flex: 1,
+    backgroundColor: '#f5f5f5',
   },
   scrollView: {
-      marginBottom: 60,
+    marginBottom: 70,
   },
   header: {
     width: width,
@@ -258,113 +228,88 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     padding: 10,
-    backgroundColor: '#fff', // Fundo branco para o header
+    backgroundColor: '#fff',
     borderBottomWidth: 1,
-    borderBottomColor: '#ddd', // Linha sutil no fundo
+    borderBottomColor: '#ddd',
   },
   appbar: {
     size: 22,
-    marginLeft: -5
+    marginLeft: -5,
   },
   welcome: {
     fontSize: 22,
     textAlign: 'left',
     margin: 10,
-    marginLeft:-3
-  },
-  space: {
-    borderColor: '#343F4B',
-    borderWidth: 2,
-    width: '95%',
-    height: 222,
-    borderRadius: 10,
-    overflow: 'hidden'
+    marginLeft: -3,
   },
   notificationButton: {
     padding: 10,
     marginLeft: 'auto',
   },
   section: {
-    marginLeft: 15,
-    marginTop: -15,
-    alignItems: 'left',
+    padding: 15,
+    alignItems: 'center',
   },
-  text01: {
-    fontSize: 15,
-    color: '#1fb6ff',
-    marginBottom: 20
-  },
-  text02: {
+  sectionTitle: {
     fontSize: 24,
     color: '#8792A1',
-    marginTop: 35,
-    marginBottom: 5
+    marginBottom: 20,
   },
-  Perfil: {
-    width: 300,
-    height: 40,
-    marginHorizontal: 10,
-  },
-  Meu: {
-    width: 350,
-    height: 38,
-    marginHorizontal: 9,
-    marginVertical: 5,
-  },
-  image: {
+  profileImage: {
     width: 150,
     height: 150,
-    marginHorizontal: 85,
-    marginVertical: 20,
+    borderRadius: 75,
+    marginBottom: 20,
   },
-  image2: {
-    width: 360,
-    height: 70,
-    marginHorizontal: 10,
-    marginVertical: 3,
+  input: {
+    width: width * 0.85,
+    backgroundColor: '#fff',
+    borderColor: '#D4D4D4',
+    borderWidth: 1,
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    marginBottom: 10,
+    
   },
-  fixToText: {
+  largeInput: {
+    height: 100,
+  },
+  generoContainer: {
+    width: width * 0.9,
+    marginBottom: 10,
+    backgroundColor: '#fff',
+    padding: 10,
+    borderRadius: 5,
+    borderColor: '#f0f0f0',
+    borderWidth: 1,
+  },
+  generoLabel: {
+    fontSize: 16,
+    marginBottom: 5,
+  },
+  checkboxContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  checkbox: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    borderRadius: 20,
-    marginVertical: 8,
-    marginHorizontal: 20,
-  },
-  container1: {
-    flex: 1,
-    justifyContent: 'center',
-    marginHorizontal: 16,
-  },
-  centeredView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: 20,
-  },
-  modalView: {
-    margin: 20,
-    backgroundColor: 'white',
-    padding: 35,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
+    width: '95%',
+    marginTop: 10,
   },
   button: {
-    padding: 10,
+    flex: 1,
+    margin: 10,
+    borderRadius: 17,
   },
-  textStyle: {
-    color: 'black',
-    textAlign: 'center',
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: 'center',
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
