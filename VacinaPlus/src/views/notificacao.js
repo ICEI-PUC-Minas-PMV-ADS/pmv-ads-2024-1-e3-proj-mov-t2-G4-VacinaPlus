@@ -26,26 +26,28 @@ const NotComponent = () => {
                     <Icon name="settings" size={25} color="#00BFFF" onPress={() => navigation.navigate('Configuracoes')} />
                 </TouchableOpacity>
             </View>
-            {[1, 2, 3, 4, 5].map((cardIndex) => (
-                    <Card key={cardIndex} style={styles.card}>
-                        <Card.Content>
-                            <Text variant="titleLarge" style={styles.dataTitle}>02/05/2024 - 20:00</Text>
-                            <Text variant="titleLarge" style={styles.title}>Lorem Ipsum</Text>
-                            <Text variant="bodyMedium" style={[styles.text, { lineHeight: 20 }]} 
-                                numberOfLines={expandedCard === cardIndex ? undefined : 3} >
-                                Lorem Ipsum is simply dummy text of the printing and popularised in the 1960s 
-                                with the release of Letraset sheets containing Lorem Ipsum passages, and more 
-                                recently with desktop publishing software like Aldus PageMakerincluding 
-                                versions of Lorem Ipsum.
+            {[1, 2, 3].map((cardIndex) => (
+                <Card key={cardIndex} style={styles.card}>
+                    <Card.Content>
+                        <Text variant="titleLarge" style={styles.dataTitle}>02/05/2024 - 20:00</Text>
+                        <Text variant="titleLarge" style={styles.title}>Vacinação aberta, a partir desta sexta-feira (19)</Text>
+                        <Text variant="bodyMedium" style={[styles.text, { lineHeight: 20 }]} 
+                            numberOfLines={expandedCard === cardIndex ? undefined : 3}>
+                            Para evitar a perda de imunizantes e garantir a vacinação da população, 
+                            a partir desta sexta-feira (19), a Prefeitura de Belo Horizonte vai 
+                            concentrar a oferta das vacinas. A doses contra dengue serão ofertadas 
+                            em 13 postos de saúde e contra a covid-19 em 30 unidades. Os endereços 
+                            dos locais que vão ofertar os imunizantes em cada regional, por tipo, 
+                            podem ser verificados on-line.
+                        </Text>
+                        <TouchableOpacity onPress={() => toggleExpandedCard(cardIndex)}>
+                            <Text style={styles.readMore}>
+                                {expandedCard === cardIndex ? 'Ler menos' : 'Ler mais'}
                             </Text>
-                            {expandedCard !== cardIndex && (
-                                <TouchableOpacity onPress={() => toggleExpandedCard(cardIndex)}>
-                                    <Text style={styles.readMore}>Ler mais</Text>
-                                </TouchableOpacity>
-                            )}
-                        </Card.Content>
-                    </Card>
-                ))}
+                        </TouchableOpacity>
+                    </Card.Content>
+                </Card>
+            ))}
         </ScrollView>
         <BarraNavegacao />
     </View>
