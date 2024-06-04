@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, Dimensions, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { TextInput, Appbar, Button, Provider as PaperProvider, DefaultTheme } from 'react-native-paper';
+import { TextInput, Appbar, Button, Checkbox, Provider as PaperProvider, DefaultTheme } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import firebase from '../config/firebase';
 import BarraNavegacao from '../components/BarraNavegacao';
@@ -17,6 +17,7 @@ const theme = {
 };
 
 const PerfilComponent = () => {
+  const navigation = useNavigation();
 
   // função para renderizar o nome do usario
   const [usuarioNome, setUsuarioNome] = useState("");
@@ -34,15 +35,16 @@ const PerfilComponent = () => {
     fetchUsuarioNome();
   }, []);
 
-  const navigation = useNavigation();
-
   // função para buscar os dados do usuario no banco 
   const [nome, setNome] = useState('');
   const [cpf, setCpf] = useState('');
   const [email, setEmail] = useState('');
   const [datanascimento, setDataNascimento] = useState('');
   const [cns, setCns] = useState('');
-
+  const [telefone, setTelefone] = useState('');
+  const [genero, setGenero] = useState('');
+  const [alergias, setAlergias] = useState('');
+  
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -57,6 +59,9 @@ const PerfilComponent = () => {
           setEmail(userData.email);
           setDataNascimento(userData.datanascimento);
           setCns(userData.cns);
+          setTelefone(userData.telefone || '');
+          setGenero(userData.genero || '');
+          setAlergias(userData.alergias || '');
         }
       } catch (error) {
         console.error("Erro ao buscar os dados do usuário: ", error);
@@ -72,13 +77,16 @@ const PerfilComponent = () => {
   // função para salvar e atualizar os dados do usuario
   const handleSave = async () => {
     try {
-      const userId = firebase.auth().currentUser.uid; // Obtém o ID do usuário logado
+      const userId = firebase.auth().currentUser.uid; 
       await firebase.firestore().collection('Pessoas').doc(userId).update({
         nome,
         cpf,
         email,
         datanascimento,
-        cns
+        cns,
+        telefone,
+        genero,
+        alergias
       });
       Alert.alert("Sucesso", "Dados do perfil atualizados com sucesso!");
     } catch (error) {
@@ -112,7 +120,7 @@ const PerfilComponent = () => {
         <ScrollView style={styles.scrollView}>
           <View style={styles.header}>
             <Appbar.BackAction style={styles.appbar} onPress={() => navigation.goBack()} />
-            <Text style={styles.welcome}>Perfil</Text>
+            <Text style={styles.welcome}>Meu Perfil</Text>
             <TouchableOpacity style={styles.notificationButton}>
               <Icon name="notifications" size={25} color="#00BFFF" onPress={() => navigation.navigate('Notificacao')} />
             </TouchableOpacity>
@@ -161,46 +169,44 @@ const PerfilComponent = () => {
               keyboardType="email-address"
               theme={{ colors: { primary: '#1fb6ff' } }}
             />
-            {/*
             <TextInput
               style={styles.input}
               label="Telefone"
               value={telefone}
+              onChangeText={setTelefone}
               keyboardType="numeric"
               theme={{ colors: { primary: '#1fb6ff' } }}
             />
-
             <View style={styles.generoContainer}>
               <Text style={styles.generoLabel}>Gênero:</Text>
               <View style={styles.checkboxContainer}>
                 <View style={styles.checkbox}>
                   <Checkbox
                     status={genero === 'Homem' ? 'checked' : 'unchecked'}
-                    onPress={() => handleGeneroChange('Homem')}
+                    onPress={() => setGenero('Homem')}
                     color="#1fb6ff"
                   />
-                  <Text>Homem</Text>
+                  <Text style={styles.checkboxLabel}>Homem</Text>
                 </View>
                 <View style={styles.checkbox}>
                   <Checkbox
                     status={genero === 'Mulher' ? 'checked' : 'unchecked'}
-                    onPress={() => handleGeneroChange('Mulher')}
+                    onPress={() => setGenero('Mulher')}
                     color="#1fb6ff"
                   />
-                  <Text>Mulher</Text>
+                  <Text style={styles.checkboxLabel}>Mulher</Text>
                 </View>
               </View>
             </View>
-
             <TextInput
               style={[styles.input, styles.largeInput]}
               label="Alergias/Restrições"
               value={alergias}
+              onChangeText={setAlergias}
               multiline={true}
               numberOfLines={4}
               theme={{ colors: { primary: '#1fb6ff' } }}
             />
-            */}
             <View style={styles.buttonContainer}>
               <Button mode="contained" onPress={handleLogout} style={styles.button}>Sair</Button>
               <Button mode="contained" onPress={handleSave} style={styles.button}>Salvar</Button>
@@ -263,42 +269,64 @@ const styles = StyleSheet.create({
   },
   input: {
     width: width * 0.85,
+    marginBottom: 20,
     backgroundColor: '#fff',
-    borderColor: '#D4D4D4',
+    padding: 8,
+    borderRadius: 7,
+    borderColor: '#d4d4d4',
     borderWidth: 1,
-    borderRadius: 5,
-    paddingHorizontal: 10,
-    marginBottom: 10,
-    
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 5,
+    elevation: 5,
   },
   largeInput: {
-    height: 100,
+    height: 110,
   },
   generoContainer: {
-    width: width * 0.9,
-    marginBottom: 10,
+    width: width * 0.85,
+    marginBottom: 20,
     backgroundColor: '#fff',
-    padding: 10,
-    borderRadius: 5,
-    borderColor: '#f0f0f0',
+    padding: 15,
+    borderRadius: 7,
+    borderColor: '#d4d4d4',
     borderWidth: 1,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 5,
+    elevation: 5,
   },
   generoLabel: {
-    fontSize: 16,
-    marginBottom: 5,
+    fontSize: 14,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    color: '#333',
   },
   checkboxContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
   checkbox: {
     flexDirection: 'row',
     alignItems: 'center',
+    padding: 5,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#d4d4d4',
+    backgroundColor: '#f9f9f9',
+  },
+  checkboxLabel: {
+    marginLeft: 10,
+    fontSize: 16,
+    color: '#333',
   },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    width: '95%',
+    width: '97%',
     marginTop: 10,
   },
   button: {
