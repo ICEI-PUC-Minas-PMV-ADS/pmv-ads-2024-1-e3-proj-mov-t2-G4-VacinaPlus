@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 import BarraNavegacao from '../components/BarraNavegacao';
 import firebase from '../config/firebase';
-import Noticias from '../components/Noticias';
+import Noticias from '../components/Noticiais';
 
 const { width, height } = Dimensions.get('window');
 
