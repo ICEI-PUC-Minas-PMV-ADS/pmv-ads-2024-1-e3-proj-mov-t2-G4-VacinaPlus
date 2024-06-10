@@ -45,14 +45,9 @@ const Noticias = () => {
                         <Text style={styles.cardContent} numberOfLines={expandedCard === index ? undefined : 3}>
                             {cleanDescription(article.description)}
                         </Text>
-                        <TouchableOpacity onPress={() => toggleExpandedCard(index)}>
-                            <Text style={styles.readMore}>{expandedCard === index ? 'Ler menos' : 'Ler mais'}</Text>
+                        <TouchableOpacity onPress={() => openArticle(article.url)}>
+                            <Text style={styles.readMore}>Leia mais no site</Text>
                         </TouchableOpacity>
-                        {expandedCard === index && (
-                            <TouchableOpacity onPress={() => openArticle(article.url)}>
-                                <Text style={styles.readMore}>Leia mais no site</Text>
-                            </TouchableOpacity>
-                        )}
                     </View>
                     {article.urlToImage && (
                         <Image source={{ uri: article.urlToImage }} style={styles.imageRight} />
@@ -79,14 +74,15 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start',
     },
     cardTitle: {
-        fontSize: 18, // Aumentado para mais destaque
+        fontSize: 16, // Aumentado para mais destaque
+        textAlign: 'justify',
         fontWeight: 'bold',
         marginBottom: 8,
     },
     cardContent: {
-        fontSize: 14, // Levemente maior
+        fontSize: 13, // Levemente maior
         textAlign: 'justify',
-        lineHeight: 22, // Melhor espaçamento entre linhas
+        lineHeight: 20, // Melhor espaçamento entre linhas
     },
     sectionCardWithImageRight: {
         flexDirection: 'row',
@@ -94,7 +90,7 @@ const styles = StyleSheet.create({
     },
     imageRight: {
         width: width / 3,
-        height: height / 7.5,
+        height: height / 6,
         resizeMode: 'cover', // Melhor preenchimento
         alignSelf: 'flex-start',
         marginLeft: 15, // Mais espaçamento à esquerda
@@ -105,8 +101,8 @@ const styles = StyleSheet.create({
     },
     readMore: {
         color: '#1e90ff', // Azul mais vibrante
-        fontSize: 15, // Levemente maior
-        marginTop: 10, // Mais espaçamento superior
+        fontSize: 13.5, // Levemente maior
+        marginTop: 8, // Mais espaçamento superior
     }
 });
 

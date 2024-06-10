@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import BarraNavegacao from '../components/BarraNavegacao';
 import firebase from '../config/firebase';
 import Noticias from '../components/Noticiais';
+import { useNotification } from '../context/NotificationContext';
 
 const { width, height } = Dimensions.get('window');
 
@@ -13,6 +14,7 @@ const TelaHome = () => {
   const navigation = useNavigation();
   const [expandedCard, setExpandedCard] = useState(null);
   const [usuarioNome, setUsuarioNome] = useState("");
+  const { notificationCount } = useNotification(); // Use o contexto
 
   const toggleExpandedCard = (cardIndex) => {
     setExpandedCard(expandedCard === cardIndex ? null : cardIndex);
@@ -39,9 +41,16 @@ const TelaHome = () => {
         <View style={styles.header}>
           <Image source={require('../../assets/logo-plus.png')} style={styles.logo} />
           <Text style={styles.welcome}>Olá, {usuarioNome ? usuarioNome : 'Usuário'}</Text>
-          <TouchableOpacity style={styles.notificationButton}>
-            <Icon name="notifications" size={25} color="#00BFFF" onPress={() => navigation.navigate('Notificacao')} />
-          </TouchableOpacity>
+          <View style={styles.notificationContainer}>
+            <TouchableOpacity style={styles.notificationButton} onPress={() => navigation.navigate('Notificacao')}>
+              <Icon name="notifications" size={25} color="#00BFFF" />
+              {notificationCount > 0 && (
+                <View style={styles.notificationBadge}>
+                  <Text style={styles.notificationCount}>{notificationCount}</Text>
+                </View>
+              )}
+            </TouchableOpacity>
+          </View>
         </View>
         {/* Seção de Imagens */}
         <View style={styles.swiperContainer}>
@@ -104,9 +113,27 @@ const styles = StyleSheet.create({
     margin: 10,
     marginLeft: -3,
   },
-  notificationButton: {
-    padding: 10,
+  notificationContainer: {
     marginLeft: 'auto',
+    position: 'relative',
+  },
+  notificationButton: {
+    padding: 15,
+  },
+  notificationBadge: {
+    position: 'absolute',
+    right: 7,
+    top: 6,
+    backgroundColor: 'red',
+    borderRadius: 10,
+    width: 20,
+    height: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  notificationCount: {
+    color: 'white',
+    fontSize: 12,
   },
   image: {
     width: '95%', // Ocupa toda a largura do dispositivo

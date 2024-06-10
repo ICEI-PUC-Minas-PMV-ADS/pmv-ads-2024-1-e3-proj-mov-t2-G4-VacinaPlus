@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import MainComponent from './src/views/index';
+import { NotificationProvider } from './src/context/NotificationContext';
 import LoginComponent from './src/views/login';
 import CadastroComponent from './src/views/cadastro';
 import TelaHome from './src/views/home';
@@ -22,6 +23,7 @@ export default function App() {
   }, []); // O array vazio como segundo argumento garante que a função seja chamada apenas uma vez, quando o componente for montado
 
   return (
+  <NotificationProvider>
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Main" component={MainComponent} options={{ header:() => null}}/>
@@ -36,5 +38,6 @@ export default function App() {
         <Stack.Screen name="Configuracoes" component={ConfigNotComponent} options={{ header:() => null}}/>
       </Stack.Navigator>
     </NavigationContainer>
+  </NotificationProvider>
   );
 }
