@@ -51,13 +51,16 @@ const TelaHome = () => {
             autoplayTimeout={4}
           >
             <View style={styles.slide}>
-              <Image source={require('../../assets/vacina.jpg')} style={styles.image} />
+              <Image source={require('../../assets/Slide01.png')} style={styles.image} />
             </View>
             <View style={styles.slide}>
-              <Image source={require('../../assets/vacina.jpg')} style={styles.image} />
+              <Image source={require('../../assets/Slide02.png')} style={styles.image} />
             </View>
             <View style={styles.slide}>
-              <Image source={require('../../assets/vacina.jpg')} style={styles.image} />
+              <Image source={require('../../assets/Slide03.png')} style={styles.image} />
+            </View>
+            <View style={styles.slide}>
+              <Image source={require('../../assets/Slide04.png')} style={styles.image} />
             </View>
           </Swiper>
         </View>
