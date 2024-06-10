@@ -1,35 +1,69 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, Dimensions, ScrollView, Linking } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
 
 const Noticias = () => {
     const [expandedCard, setExpandedCard] = useState(null);
+    const [articles, setArticles] = useState([]);
 
+    useEffect(() => {
+        fetch('https://newsapi.org/v2/everything?q=vacina&language=pt&sortBy=popularity&apiKey=4d352007640942af9d9092d6bc6d6da3')
+            .then(response => response.json())
+            .then(data => {
+                // Filtra apenas os artigos que possuem imagens e título
+                const filteredArticles = data.articles
+                    .filter(article => article.urlToImage && article.title)
+                    .slice(0, 5); // Limita a 5 artigos
+                setArticles(filteredArticles);
+            })
+            .catch(error => console.error('Erro ao buscar os dados: ', error));
+    }, []);
 
     const toggleExpandedCard = (cardIndex) => {
         setExpandedCard(expandedCard === cardIndex ? null : cardIndex);
     };
-    
-    return (
 
-        <View style={[styles.sectionCard, styles.sectionCardWithImageRight]}>
-            <View style={styles.textContainer}>
-                <Text style={styles.cardTitle}>Vacinação aberta, a partir desta sexta-feira (19)</Text>
-                <Text style={styles.cardContent} numberOfLines={expandedCard === 1 ? undefined : 3}>
-                    Para evitar a perda de imunizantes e garantir a vacinação da população, a partir desta sexta-feira (19), a Prefeitura de Belo Horizonte vai concentrar a oferta das vacinas. A doses contra dengue serão ofertadas em 13 postos de saúde e contra a covid-19 em 30 unidades. Os endereços dos locais que vão ofertar os imunizantes em cada regional, por tipo, podem ser verificados on-line.
-                </Text>
-                <TouchableOpacity onPress={() => toggleExpandedCard(1)}>
-                    <Text style={styles.readMore}>{expandedCard === 1 ? 'Ler menos' : 'Ler mais'}</Text>
-                </TouchableOpacity>
-            </View>
-            <Image source={require('../../assets/vacinacovid.jpg')} style={styles.imageRight} />
-        </View>
+    const openArticle = (url) => {
+        Linking.openURL(url);
+    };
+
+    const cleanDescription = (description) => {
+        const unwantedText = 'appeared first on Giz Brasil.';
+        if (description.endsWith(unwantedText)) {
+            return description.replace(unwantedText, '').trim();
+        }
+        return description;
+    };
+
+    return (
+        <ScrollView>
+            {articles.map((article, index) => (
+                <View key={index} style={[styles.sectionCard, styles.sectionCardWithImageRight]}>
+                    <View style={styles.textContainer}>
+                        <Text style={styles.cardTitle}>{article.title}</Text>
+                        <Text style={styles.cardContent} numberOfLines={expandedCard === index ? undefined : 3}>
+                            {cleanDescription(article.description)}
+                        </Text>
+                        <TouchableOpacity onPress={() => toggleExpandedCard(index)}>
+                            <Text style={styles.readMore}>{expandedCard === index ? 'Ler menos' : 'Ler mais'}</Text>
+                        </TouchableOpacity>
+                        {expandedCard === index && (
+                            <TouchableOpacity onPress={() => openArticle(article.url)}>
+                                <Text style={styles.readMore}>Leia mais no site</Text>
+                            </TouchableOpacity>
+                        )}
+                    </View>
+                    {article.urlToImage && (
+                        <Image source={{ uri: article.urlToImage }} style={styles.imageRight} />
+                    )}
+                </View>
+            ))}
+        </ScrollView>
     );
 };
 
 const styles = StyleSheet.create({
-
     sectionCard: {
         flexDirection: 'row',
         borderRadius: 10, // Bordas mais arredondadas
