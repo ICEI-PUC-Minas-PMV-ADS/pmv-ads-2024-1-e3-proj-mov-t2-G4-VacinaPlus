@@ -1,30 +1,38 @@
-import React, { useRef } from 'react';
-import { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, Dimensions, SafeAreaView, Alert, Modal, Pressable } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, Dimensions, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { TextInput, Appbar, Button, Checkbox, Provider as PaperProvider, DefaultTheme } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
-import BarraNavegacao from '../components/BarraNavegacao';
 import firebase from '../config/firebase';
+import BarraNavegacao from '../components/BarraNavegacao';
 
-const { width, height } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#1fb6ff',
+  },
+};
 
 const PerfilComponent = () => {
   const navigation = useNavigation();
 
+  // função para renderizar o nome do usario
+  const [usuarioNome, setUsuarioNome] = useState("");
   useEffect(() => {
-    const handleSave = async () => {
-      try {
-        await firebase.firestore('userData', JSON.stringify(user));
-        Alert.alert('Perfil Salvo', 'As alterações foram salvas com sucesso!');
-      } catch (error) {
-        console.error('Erro ao salvar perfil:', error);
-        Alert.alert('Erro', 'Ocorreu um erro ao salvar as alterações.');
+    const fetchUsuarioNome = async () => {
+      const user = firebase.auth().currentUser;
+      if (user) {
+        const userDoc = await firebase.firestore().collection("Pessoas").doc(user.uid).get();
+        if (userDoc.exists) {
+          setUsuarioNome(userDoc.data().nome);
+        }
       }
-      Alert.alert('Perfil Salvo', 'As alterações foram salvas com sucesso!');
     };
 
-    handleSave();
+    fetchUsuarioNome();
   }, []);
 
   // função para buscar os dados do usuario no banco 
@@ -87,23 +95,25 @@ const PerfilComponent = () => {
     }
   };
 
-  const handlePressVacinas = () => {
-    console.log('Vacinas pressionado');
+  // função para deslogout da conta
+  const handleLogout = async () => {
+    try {
+      await firebase.auth().signOut();
+      navigation.navigate('Login'); // Redireciona para a tela de login após o logout
+    } catch (error) {
+      console.error("Erro ao sair da conta: ", error);
+      Alert.alert("Erro", "Não foi possível sair da conta.");
+    }
   };
 
-  const handlePressAgenda = () => {
-    console.log('Agenda pressionado');
-  };
-
-  const handlePressPerfil = () => {
-    console.log('Perfil pressionado');
-  };
-
-  const modalizeRef = useRef(null);
-  function onOpen() {
-    modalizeRef.current?.open();
+  if (loading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <Text>Carregando...</Text>
+      </View>
+    );
   }
-  const [modalVisible, setModalVisible] = useState(false);
+
   return (
     <PaperProvider theme={theme}>
       <View style={styles.container}>
@@ -115,59 +125,6 @@ const PerfilComponent = () => {
               <Icon name="notifications" size={25} color="#00BFFF" onPress={() => navigation.navigate('Notificacao')} />
             </TouchableOpacity>
           </View>
-          <TextInput
-            style={styles.Perfil}
-            placeholder="Nome"
-            onChangeText={text => setNome(text)}
-            value={nome}
-          />
-          <TextInput
-            style={styles.Perfil}
-            placeholder="Data nascimento (dd/mm/aaaa)"
-            onChangeText={text => setDataNascimento(text)}
-            keyboardType="numeric"
-            value={datanascimento}
-          />
-          <TextInput
-            style={styles.Perfil}
-            placeholder="CPF"
-            onChangeText={text => setCpf(text)}
-            keyboardType="numeric"
-            value={cpf}
-          />
-          <TextInput
-            style={styles.Perfil}
-            placeholder="CNS"
-            onChangeText={text => setCnis(text)}
-            keyboardType="numeric"
-            value={cnis}
-          />
-          <TextInput
-            style={styles.Perfil}
-            placeholder="E-mail"
-            onChangeText={text => setEmail(text)}
-            keyboardType="email-address"
-            value={email}
-          />
-          <TextInput
-            style={styles.Perfil}
-            placeholder="Telefone"
-            onChangeText={text => setTelefone(text)}
-            keyboardType="numeric"
-            value={telefone}
-          />
-          <TextInput
-            style={styles.Perfil}
-            placeholder="Gênero"
-            onChangeText={text => setGenero(text)}
-            value={genero}
-          />
-          <TextInput
-            style={styles.Perfil}
-            placeholder="País"
-            onChangeText={text => setPais(text)}
-            value={pais}
-          />
 
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>{usuarioNome ? usuarioNome : 'Usuário'}</Text>
@@ -255,62 +212,20 @@ const PerfilComponent = () => {
               <Button mode="contained" onPress={handleSave} style={styles.button}>Salvar</Button>
             </View>
           </View>
-          <View style={styles.centeredView}>
-            <Modal
-              animationType="slide"
-              transparent={true}
-              visible={modalVisible}
-              onRequestClose={() => {
-                Alert.alert('Modal has been closed.');
-                setModalVisible(!modalVisible);
-              }}>
-              <View style={styles.centeredView}>
-                <View style={styles.modalView}>
-                  <Text style={styles.modalText}>Lorem Ipsum is simply dummy text of the printing and popularised in the 1960s
-                    with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                    recently with desktop publishing software like Aldus PageMakerincluding
-                    versions of Lorem Ipsum.</Text>
-                  <Pressable
-                    style={[styles.button, styles.buttonClose]}
-                    onPress={() => setModalVisible(!modalVisible)}>
-                    <Text style={styles.textStyle}>Ok</Text>
-                  </Pressable>
-                </View>
-              </View>
-            </Modal>
-            <Pressable
-              style={[styles.button, styles.buttonOpen]}
-              onPress={() => setModalVisible(true)}>
-              <Text style={styles.textStyle}>Política de Privacidade</Text>
-            </Pressable>
-          </View>
-        </View>
-        <View>
-          <Image
-            style={styles.image2}
-            source={require('../../assets/imgteste.jpeg')}
-          />
-        </View>
-        <View>
-          <Image
-            style={styles.image2}
-            source={require('../../assets/imgteste.jpeg')}
-          />
-        </View>
-      </ScrollView>
-      {/* Barra de Navegação com botões*/}
-      <BarraNavegacao />
-    </View>
+        </ScrollView>
+        <BarraNavegacao />
+      </View>
+    </PaperProvider>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-  flex: 1,
-    backgroundColor: '#f5f5f5', // Background mais suave
+    flex: 1,
+    backgroundColor: '#f5f5f5',
   },
   scrollView: {
-      marginBottom: 60,
+    marginBottom: 70,
   },
   header: {
     width: width,
@@ -319,64 +234,38 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     padding: 10,
-    backgroundColor: '#fff', // Fundo branco para o header
+    backgroundColor: '#fff',
     borderBottomWidth: 1,
-    borderBottomColor: '#ddd', // Linha sutil no fundo
+    borderBottomColor: '#ddd',
   },
   appbar: {
     size: 22,
-    marginLeft: -5
+    marginLeft: -5,
   },
   welcome: {
     fontSize: 22,
     textAlign: 'left',
     margin: 10,
-    marginLeft:-3
-  },
-  space: {
-    borderColor: '#343F4B',
-    borderWidth: 2,
-    width: '95%',
-    height: 222,
-    borderRadius: 10,
-    overflow: 'hidden'
+    marginLeft: -3,
   },
   notificationButton: {
     padding: 10,
     marginLeft: 'auto',
   },
   section: {
-    marginLeft: 15,
-    marginTop: -15,
-    alignItems: 'left',
+    padding: 15,
+    alignItems: 'center',
   },
-  text01: {
-    fontSize: 15,
-    color: '#1fb6ff',
-    marginBottom: 20
-  },
-  text02: {
+  sectionTitle: {
     fontSize: 24,
     color: '#8792A1',
-    marginTop: 35,
-    marginBottom: 5
+    marginBottom: 20,
   },
-  Perfil: {
-    width: 300,
-    height: 40,
-    marginHorizontal: 10,
-  },
-  Meu: {
-    width: 350,
-    height: 38,
-    marginHorizontal: 9,
-    marginVertical: 5,
-  },
-  image: {
+  profileImage: {
     width: 150,
     height: 150,
-    marginHorizontal: 85,
-    marginVertical: 20,
+    borderRadius: 75,
+    marginBottom: 20,
   },
   input: {
     width: width * 0.85,
@@ -440,41 +329,15 @@ const styles = StyleSheet.create({
     width: '97%',
     marginTop: 10,
   },
-  container1: {
-    flex: 1,
-    justifyContent: 'center',
-    marginHorizontal: 16,
-  },
-  centeredView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: 20,
-  },
-  modalView: {
-    margin: 20,
-    backgroundColor: 'white',
-    padding: 35,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
-  },
   button: {
-    padding: 10,
+    flex: 1,
+    margin: 10,
+    borderRadius: 17,
   },
-  textStyle: {
-    color: 'black',
-    textAlign: 'center',
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: 'center',
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
