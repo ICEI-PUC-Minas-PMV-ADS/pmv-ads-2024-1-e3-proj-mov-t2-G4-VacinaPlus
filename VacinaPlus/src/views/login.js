@@ -3,6 +3,7 @@ import { View, Image, Text, StyleSheet } from 'react-native';
 import { Button, TextInput, Provider as PaperProvider, DefaultTheme } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import firebase from '../config/firebase';
+import { associarVacinasAoUsuario } from '../backend/db_firebase'; // Importa a função específica
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const theme = {
@@ -32,11 +33,28 @@ const LoginComponent = () => {
       }
 
       await firebase.auth().signInWithEmailAndPassword(email, password);
+
+      // Após o login bem-sucedido, obtenha o ID do usuário atual
+    const currentUser = firebase.auth().currentUser;
+    if (currentUser) {
+      const userId = currentUser.uid;
+
+      // Associe as vacinas ao usuário
+      await associarVacinasAoUsuario(userId);
+
+
+
+
+
+      // Navegue para a tela Home
       navigation.navigate('Home');
-    } catch (error) {
-      alert("Erro ao fazer login: " + error.message);
+    } else {
+      alert("Erro ao obter informações do usuário.");
     }
-  };
+  } catch (error) {
+    alert("Erro ao fazer login: " + error.message);
+  }
+};
 
   const PasswordIcon = ({ showPassword = false, togglePasswordVisibility = () => {} }) => (
     <Icon
