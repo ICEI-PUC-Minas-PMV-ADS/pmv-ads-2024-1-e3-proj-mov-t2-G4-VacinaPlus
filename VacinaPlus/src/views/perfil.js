@@ -5,6 +5,7 @@ import { TextInput, Appbar, Button, Checkbox, Provider as PaperProvider, Default
 import { useNavigation } from '@react-navigation/native';
 import firebase from '../config/firebase';
 import BarraNavegacao from '../components/BarraNavegacao';
+import { useNotification } from '../context/NotificationContext';
 
 const { width } = Dimensions.get('window');
 
@@ -18,6 +19,7 @@ const theme = {
 
 const PerfilComponent = () => {
   const navigation = useNavigation();
+  const { notificationCount } = useNotification();
 
   // função para renderizar o nome do usario
   const [usuarioNome, setUsuarioNome] = useState("");
@@ -121,9 +123,16 @@ const PerfilComponent = () => {
           <View style={styles.header}>
             <Appbar.BackAction style={styles.appbar} onPress={() => navigation.goBack()} />
             <Text style={styles.welcome}>Meu Perfil</Text>
-            <TouchableOpacity style={styles.notificationButton}>
-              <Icon name="notifications" size={25} color="#00BFFF" onPress={() => navigation.navigate('Notificacao')} />
+            <View style={styles.notificationContainer}>
+            <TouchableOpacity style={styles.notificationButton} onPress={() => navigation.navigate('Notificacao')}>
+              <Icon name="notifications" size={25} color="#00BFFF" />
+              {notificationCount > 0 && (
+                <View style={styles.notificationBadge}>
+                  <Text style={styles.notificationCount}>{notificationCount}</Text>
+                </View>
+              )}
             </TouchableOpacity>
+          </View>
           </View>
 
           <View style={styles.section}>
@@ -248,9 +257,27 @@ const styles = StyleSheet.create({
     margin: 10,
     marginLeft: -3,
   },
-  notificationButton: {
-    padding: 10,
+  notificationContainer: {
     marginLeft: 'auto',
+    position: 'relative',
+  },
+  notificationButton: {
+    padding: 15,
+  },
+  notificationBadge: {
+    position: 'absolute',
+    right: 7,
+    top: 6,
+    backgroundColor: 'red',
+    borderRadius: 10,
+    width: 20,
+    height: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  notificationCount: {
+    color: 'white',
+    fontSize: 12,
   },
   section: {
     padding: 15,

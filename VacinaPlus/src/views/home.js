@@ -14,7 +14,7 @@ const TelaHome = () => {
   const navigation = useNavigation();
   const [expandedCard, setExpandedCard] = useState(null);
   const [usuarioNome, setUsuarioNome] = useState("");
-  const { notificationCount } = useNotification(); // Use o contexto
+  const { notificationCount } = useNotification(); 
 
   const toggleExpandedCard = (cardIndex) => {
     setExpandedCard(expandedCard === cardIndex ? null : cardIndex);

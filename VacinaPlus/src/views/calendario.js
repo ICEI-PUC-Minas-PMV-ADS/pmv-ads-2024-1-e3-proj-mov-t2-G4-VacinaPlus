@@ -4,12 +4,14 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 import BarraNavegacao from '../components/BarraNavegacao';
 import Calendario from '../components/Calendario'
+import { useNotification } from '../context/NotificationContext';
 
 const { width} = Dimensions.get('window');
 
 const Agenda = () => {
 
   const navigation = useNavigation();
+  const { notificationCount } = useNotification();
 
   return (
     <View style={styles.container}>
@@ -18,9 +20,16 @@ const Agenda = () => {
         <View style={styles.header}>
           <Appbar.BackAction style={styles.appbar} onPress={() => navigation.goBack()} />
           <Text style={styles.welcome}>Meu Calendario</Text>
-          <TouchableOpacity style={styles.notificationButton}>
-            <Icon name="notifications" size={25} color="#00BFFF" onPress={() => navigation.navigate('Notificacao')} />
-          </TouchableOpacity>
+          <View style={styles.notificationContainer}>
+            <TouchableOpacity style={styles.notificationButton} onPress={() => navigation.navigate('Notificacao')}>
+              <Icon name="notifications" size={25} color="#00BFFF" />
+              {notificationCount > 0 && (
+                <View style={styles.notificationBadge}>
+                  <Text style={styles.notificationCount}>{notificationCount}</Text>
+                </View>
+              )}
+            </TouchableOpacity>
+          </View>
         </View>
       <Calendario/>
       </ScrollView>
@@ -58,9 +67,27 @@ const styles = StyleSheet.create({
       margin: 10,
       marginLeft:-3
   },
-  notificationButton: {
-    padding: 10,
+  notificationContainer: {
     marginLeft: 'auto',
+    position: 'relative',
+  },
+  notificationButton: {
+    padding: 15,
+  },
+  notificationBadge: {
+    position: 'absolute',
+    right: 7,
+    top: 6,
+    backgroundColor: 'red',
+    borderRadius: 10,
+    width: 20,
+    height: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  notificationCount: {
+    color: 'white',
+    fontSize: 12,
   },
 });
 
