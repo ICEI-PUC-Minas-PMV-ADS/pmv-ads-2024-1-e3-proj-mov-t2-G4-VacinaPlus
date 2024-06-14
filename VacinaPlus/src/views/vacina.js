@@ -76,9 +76,14 @@ const VacinaComponent = () => {
         {/* Cards de doses por idade */}
         <CardDoses />
         <View>
-          <Button style={styles.button} icon="download" mode="contained" onPress={() => console.log('Pressed')}>
-            Carteira Nacional de Vacinação
-          </Button>
+            <Button
+                style={[styles.button, { backgroundColor: '#00BFFF' }]} // Altera a cor de fundo do botão
+                icon={({ color, size }) => <Icon name="download" color="#00FF00" size={size} />} // Define a cor verde para o ícone
+                mode="contained"
+                onPress={() => console.log('Pressed')}
+                >
+                Baixar Carteira Nacional de Vacinação
+            </Button>
         </View>
       </ScrollView>
       {/* Barra de Navegação com botões */}

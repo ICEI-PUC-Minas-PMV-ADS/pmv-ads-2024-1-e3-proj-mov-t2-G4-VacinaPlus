@@ -52,62 +52,68 @@ const LoginComponent = () => {
   }
 };
 
-  const PasswordIcon = ({ showPassword = false, togglePasswordVisibility = () => {} }) => (
-    <Icon
-      name={showPassword ? 'eye-off' : 'eye'}
-      size={24}
-      onPress={togglePasswordVisibility}
-    />
-  );
+const PasswordIcon = ({ showPassword = false, togglePasswordVisibility = () => {}, color, size }) => (
+  <Icon
+    name={showPassword ? 'eye-off' : 'eye'}
+    size={size}
+    color={color}
+    onPress={togglePasswordVisibility}
+  />
+);
 
-  return (
-    <PaperProvider theme={theme}>
-      <View style={styles.container}>
-        <Image
-          style={styles.Logo}
-          source={require('../../assets/logo-plus.png')}
-        />
-        <Text style={styles.title}>Bem-vindo</Text>
-        <Text style={styles.subtitle}>Faça login para continuar</Text>
-        <TextInput
-          style={styles.input}
-          value={email}
-          placeholder='Email'
-          onChangeText={setEmail}
-          theme={{ colors: { primary: '#1fb6ff' } }}
-        />
-        <TextInput
-          style={styles.input}
-          value={password}
-          placeholder='Sua senha'
-          onChangeText={setPassword}
-          secureTextEntry={!showPassword}
-          theme={{ colors: { primary: '#1fb6ff' } }}
-          right={
-            <TextInput.Icon
-              icon={() => (
-                <PasswordIcon
-                  showPassword={showPassword}
-                  togglePasswordVisibility={togglePasswordVisibility}
-                />
-              )}
-            />
-          }
-        />
-        <Button
-          style={styles.button}
-          mode="contained" onPress={handleSignIn}>
-          Entrar
-        </Button>
-        <View style={styles.footer}>
-          <Text
-            style={styles.createAccount}>
-            Não tem uma Conta? <Text style={styles.textLink} onPress={() => navigation.navigate('Cadastro')}>Cadastre-se</Text>
-          </Text>
-        </View>
+
+return (
+  <PaperProvider theme={theme}>
+    <View style={styles.container}>
+      <Image
+        style={styles.Logo}
+        source={require('../../assets/logo-plus.png')}
+      />
+      <Text style={styles.title}>Bem-vindo</Text>
+      <Text style={styles.subtitle}>Faça login para continuar</Text>
+      <TextInput
+        style={styles.input}
+        value={email}
+        placeholder='Email'
+        onChangeText={setEmail}
+        theme={{ colors: { primary: '#1fb6ff' } }}
+      />
+      <TextInput
+        style={styles.input}
+        value={password}
+        placeholder='Sua senha'
+        onChangeText={setPassword}
+        secureTextEntry={!showPassword}
+        theme={{ colors: { primary: '#1fb6ff' } }}
+        right={
+          <TextInput.Icon
+            icon={() => (
+              // Adicionando o componente PasswordIcon 
+              <PasswordIcon
+                showPassword={showPassword}
+                togglePasswordVisibility={togglePasswordVisibility}
+                color='#1fb6ff' // Cor inserida como propriedade
+                size={24} // Tamanho inserido como propriedade
+              />
+            )}
+          />
+        }
+      />
+      <Button
+        style={styles.button}
+        mode="contained" onPress={handleSignIn}>
+        Entrar
+      </Button>
+      <View style={styles.footer}>
+        <Text
+          style={styles.createAccount}>
+          Não tem uma Conta? <Text style={styles.textLink} onPress={() => navigation.navigate('Cadastro')}>Cadastre-se</Text>
+        </Text>
       </View>
-    </PaperProvider>
-  );
+    </View>
+  </PaperProvider>
+);
+
 };
 
 const styles = StyleSheet.create({
