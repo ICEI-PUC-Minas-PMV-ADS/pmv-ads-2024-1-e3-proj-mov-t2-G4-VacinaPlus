@@ -1,8 +1,11 @@
 # Registro de Testes de Software
 
-Relatório com as evidências dos testes de software realizados no sistema pela equipe, baseado em um plano de testes pré-definido.
+Relatório com as evidências dos testes de software realizados no sistema pela equipe, baseado em um plano de testes pré-definido. Abaixo serão exibidas as telas correspondentes a cada CT definido por nossa equipe.
 
 ## Avaliação
+
+Todos os  Casos de Testes(CT's) foram satisfatórios, não houveram casos críticos de erro nem falhas durante a execução do procedimento de testes de software.
+
 
 ## Registro de Teste 01 (CT-01) Criar Perfil
 
