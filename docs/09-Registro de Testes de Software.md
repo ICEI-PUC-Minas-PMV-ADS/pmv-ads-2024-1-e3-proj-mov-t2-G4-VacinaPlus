@@ -36,3 +36,28 @@ Após passar pelas etapas do cadastro o usuário faz seu login no sistema!
 <img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/31fb6628-8eda-4a5b-b0e1-9a424617d4a0" alt="01" width="300"/>
 
 </div>
+
+
+## Registro de Teste 03 (CT-03) Gerenciar Perfil
+
+Logo após o usuário fazer o seu login ele tem a opção de adicionar mais informações ao seu perfil recentemente criado, ou seja ele tem a possibilidade de gerenciar seu perfil através das telas abaixo.
+
+
+<div style="display: flex; flex-direction: row; align-items: center;">
+
+<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/f65ee749-ae46-4bab-8197-ef83c8ed601a" alt="01" width="300"/>
+<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/7b5fd984-6e7d-4502-92a7-51426964ae09" alt="01" width="300"/>
+
+</div>
+
+## Registro de Teste 04 (CT-04) Histórico de Vacinas
+
+
+Uma das funcionalidades principais do nosso sistema é a exibição do histórico de vacinas que cada usuário possui, ou seja cada usuário tem a possibilidade de verificar o histórico de todas as vacinas que ele ja tomou, sabendo qual dose ele tomou, qual a data, local e nome da vacina como mostrado na tela abaixo.
+
+<div style="display: flex; flex-direction: row; align-items: center;">
+
+<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/70576fdd-2067-4282-a58b-781886c6e77a" alt="01" width="300"/>
+
+</div>
+
