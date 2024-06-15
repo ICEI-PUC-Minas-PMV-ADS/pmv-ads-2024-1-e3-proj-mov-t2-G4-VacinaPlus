@@ -10,12 +10,12 @@ Depois que o usuário abrir nosso app é exibido a tela inicial do nosso App(tel
 Após clicar no botão Começar, ele é direcionado para a tela de Login (tela ao centro).
 Como ele precisa se cadastrar no nosso sistema, ele clica em Cadastre-se e é direcionado para a tela de Cadastro (à direita)
 
-<div style="display: flex; flex-direction: row; align-items: center;">
+<p align="center">
     <img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/20e188d8-0ac9-4e40-ab07-76e2b33a257b" alt="01" width="300"/>
     <img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/db38ba1a-f7f8-4c18-8d1f-7abac37d6174" alt="01" width="300"/>
     <img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/1eaf591d-8f46-4e24-a481-8407ac458fd6" alt="01" width="300"/>
 
-</div>
+</p>
 
 
 
