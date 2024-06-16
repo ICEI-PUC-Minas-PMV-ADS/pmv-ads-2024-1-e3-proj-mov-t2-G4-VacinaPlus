@@ -78,7 +78,7 @@ const VacinaComponent = () => {
         <View>
             <Button
                 style={[styles.button, { backgroundColor: '#00BFFF' }]} // Altera a cor de fundo do botão
-                icon={({ color, size }) => <Icon name="download" color="#00FF00" size={size} />} // Define a cor verde para o ícone
+                icon={({ color, size }) => <Icon name="download" color="green" size={size} />} // Define a cor verde para o ícone
                 mode="contained"
                 onPress={() => console.log('Pressed')}
                 >
