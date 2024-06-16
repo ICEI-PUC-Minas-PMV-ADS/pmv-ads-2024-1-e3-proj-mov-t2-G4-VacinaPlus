@@ -1,9 +1,6 @@
 
 <div align="center">
-
-
-  ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/05f7c475-eaab-44ec-b10e-8a9f6df91a1e)
-       
+  <img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/74187849/89634257-9a93-4635-bc7c-6e55252887d4" alt="image" width="200" height="200">    
 </div>
 `ADS-2023-E3`
 
