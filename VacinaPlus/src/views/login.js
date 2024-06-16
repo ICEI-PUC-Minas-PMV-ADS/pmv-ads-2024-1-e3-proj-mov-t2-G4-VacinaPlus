@@ -42,10 +42,6 @@ const LoginComponent = () => {
       // Associe as vacinas ao usuário
       await associarVacinasAoUsuario(userId);
 
-
-
-
-
       // Navegue para a tela Home
       navigation.navigate('Home');
     } else {
