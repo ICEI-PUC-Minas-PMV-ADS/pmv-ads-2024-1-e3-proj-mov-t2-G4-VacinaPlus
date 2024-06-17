@@ -46,8 +46,9 @@ Logo após o usuário fazer o seu login ele tem a opção de adicionar mais info
 
 <p align="center">
 
-<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/f65ee749-ae46-4bab-8197-ef83c8ed601a" alt="01" width="300"/>
-<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/7b5fd984-6e7d-4502-92a7-51426964ae09" alt="01" width="300"/>
+
+<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/11a48268-4cf9-4f69-8d55-a4951ff17e50" alt="01" width="300"/>
+<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/a3d0db22-7a8e-4c50-8cbd-2025984b3867" alt="01" width="300"/>
 
 </p>
 
