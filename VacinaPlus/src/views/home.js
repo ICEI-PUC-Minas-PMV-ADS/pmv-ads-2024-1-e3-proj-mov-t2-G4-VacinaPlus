@@ -103,9 +103,9 @@ const styles = StyleSheet.create({
     borderBottomColor: '#ddd', // Linha sutil no fundo
   },
   logo: {
-    width: 65,
-    height: 65,
-    marginRight: 5,
+    width: 53,
+    height: 53,
+    marginRight: 10,
   },
   welcome: {
     fontSize: 22,

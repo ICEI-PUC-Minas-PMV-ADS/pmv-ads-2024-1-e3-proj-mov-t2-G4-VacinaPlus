@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
     marginBottom: 100
   },
   Logo: {
-    width: 320,
-    height: 320,
+    width: 250,
+    height: 250,
   },
   button: {
     paddingVertical: 3,
