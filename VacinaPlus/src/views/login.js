@@ -140,8 +140,8 @@ const styles = StyleSheet.create({
     flex: 3,
   },
   Logo: {
-    width: 250,
-    height: 250,
+    width: 230,
+    height: 230,
   },
   button: {
     marginTop: 10,
