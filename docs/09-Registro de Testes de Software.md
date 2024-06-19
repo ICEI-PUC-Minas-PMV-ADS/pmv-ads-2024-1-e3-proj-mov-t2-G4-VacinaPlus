@@ -55,10 +55,36 @@ Logo após o usuário fazer o seu login ele tem a opção de adicionar mais info
 ## Registro de Teste 04 (CT-04) Histórico de Vacinas
 
 
-Uma das funcionalidades principais do nosso sistema é a exibição do histórico de vacinas que cada usuário possui, ou seja cada usuário tem a possibilidade de verificar o histórico de todas as vacinas que ele ja tomou, sabendo qual dose ele tomou, qual a data, local e nome da vacina como mostrado na tela abaixo.
+Uma das funcionalidades principais do nosso sistema é a exibição do histórico de vacinas que cada usuário possui, ou seja cada usuário tem a possibilidade de verificar o histórico de todas as vacinas que ele ja tomou, 
+sabendo qual dose ele tomou, qual a data, local e nome da vacina como mostrado na tela abaixo.
 
 <p align="center">
 <img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/70576fdd-2067-4282-a58b-781886c6e77a" alt="01" width="300"/>
+
+</p>
+
+
+## Registro de Teste 05 (CT-06) Adicionar Informações
+
+Assim que o usuário estiver familiarizado com nosso sistema, ele pode ainda adicionar informações extras mas muito relevantes para compor as informações pessoais afim de servir de alerta para os profissionais da saúde sobre
+suas restrições e alergias como mostrado na tela de Perfil abaixo.
+
+
+<p align="center">
+<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/a3d0db22-7a8e-4c50-8cbd-2025984b3867" alt="01" width="300"/>
+</p>
+
+
+## Registro de Teste 06 (CT-08) Coleta de Informações
+
+Nosso App traz uma importante funcionalidade de informar ao nosso usuário sobre notícias relevantes relacionados à vacinação e outros assuntos da área médica e de saúde pública, para isso basta nosso usuário acessar a tela Home
+e nela será possivel encontrar todo o tipo de informação, relacionado à vacinação e saúde. Todas as notícias são atuais e precisas pois utilizamos uma APi específica para área da saúde. Como mostrado na tela abaixo.
+
+
+<p align="center">
+    
+
+<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus/assets/77369235/bd09a35c-3a6a-4fbb-8c3a-09871ecc1cec" alt="01" width="300"/>
 
 </p>
 
