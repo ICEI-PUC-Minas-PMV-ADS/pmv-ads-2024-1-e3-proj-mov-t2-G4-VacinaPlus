@@ -1,0 +1,33 @@
+message: Please cite this software using these metadata.
+title: Vacina + (Mais)
+authors:
+  - family-names: Gonçalves Sena
+    given-names:  Eduardo
+
+  - family-names: Siqueira de Almeida
+    given-names:  Felipe
+
+  - family-names: Moreira Laignier
+    given-names:  Gabriel Yan
+
+  - family-names: Gomes de Souza
+    given-names:  Pedro Henrique
+
+  - family-names: Souza Capanema
+    given-names:  Simon Henrique
+
+  - family-names: Barbosa Ribeiro
+    given-names:  Stefany
+    
+  - name-suffix:  Professor
+    affiliation:  PUC Minas
+    family-names: Fritzke Junior
+    given-names:  Udo
+
+keywords:
+  - Gestão
+  - Carteira de
+  - Vacinas
+
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t2-G4-VacinaPlus
+date-released: 2024-07-24
